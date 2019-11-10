@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import Navigation from "../components/Header/Navigation/navigation";
-import Carousel from "../components/Header/Carousel/carousel";
+import Navigation from "../components/Navigation/navigation";
+import BaseSection from "../components/BaseSection/baseSection";
 
 class  App extends Component {
     render() {
@@ -9,7 +9,10 @@ class  App extends Component {
             <>
                 <Router>
                     <Navigation/>
-                    <Carousel/>
+                    <BaseSection/>
+                    <section className={'dupa'}>
+                        <div>dupa</div>
+                    </section>
                 </Router>
             </>
         )
