@@ -1,0 +1,20 @@
+//APP
+@import "../js/App/App";
+
+//components
+@import "../js/components/Header/Navigation/navigation";
+@import "../js/components/Header/Carousel/Carousel";
+
+//page layout
+@import "layout/all";
+
+//reset
+ * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+ }
+
+ol,ul {
+  list-style: none;
+}

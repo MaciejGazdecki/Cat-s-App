@@ -1,0 +1,74 @@
+@import "../../../../sass/layout/mixins";
+
+.navigation {
+  background-color: rgba(0,0,0,0.28);
+  height: 20%;
+  position: fixed;
+  width: 100%;
+  @media screen and (min-width: 992px){
+    display: flex;
+  }
+  .nav-wrapper {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: left;
+    .hamburger {
+     @media screen and (min-width: 992px){
+       display: none;
+     }
+      .fas {
+        font-size: 2.5rem;
+        margin: 2rem;
+        cursor: pointer;
+      }
+    }
+    @include media-desktop-1680px {
+    }
+    @include media-desktop-big {
+    }
+  }
+  ul.list {
+    position: fixed;
+    width: 100%;
+    height: 80%;
+    background-color: rgba(0,0,0,0.28);
+    clip-path: circle(80px at 0 -25%);
+    transition: clip-path 1s ease-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    @media screen and (min-width: 992px){
+      clip-path: none;
+      background-color: transparent;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      position: relative;
+      height: 100%;
+    }
+    li {
+      text-align: center;
+      font-size: 1.5rem;
+      @include media-mobile-S {
+        font-size: 2rem;
+      }
+      @include media-tablet {
+        font-size: 2rem;
+      }
+      @include media-desktop {
+        font-size: 1.2rem;
+      }
+      a {
+        text-decoration: none;
+        color: white;
+      }
+    }
+  }
+}
+ul.list.open {
+  clip-path: circle(1000px at 0% -15%);
+  @include media-tablet {
+    clip-path: circle(1300px at 0% -15%);
+  }
+}

@@ -1,11 +1,23 @@
-import React from 'react';
-import ReactDOM from "react-dom";
+import React, {Component} from 'react';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import Navigation from "../components/Header/Navigation/navigation";
+import Carousel from "../components/Header/Carousel/carousel";
 
-
-function App () {
-    return (
-        <div>React</div>
-    )
+class  App extends Component {
+    render() {
+        return (
+            <>
+            <Router>
+                <header>
+                    <Navigation/>
+                </header>
+                <section>
+                    <Carousel/>
+                </section>
+            </Router>
+            </>
+        )
+    }
 }
 
 export default App;

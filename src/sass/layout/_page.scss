@@ -1,0 +1,16 @@
+@import "mixins";
+
+.wrapper {
+  @include media-desktop {
+    margin: 0 auto;
+    width: 1260px;
+  }
+  @include media-desktop-1680px {
+    margin: 0 auto;
+    width: 1400px;
+  }
+  @include media-desktop-big {
+    margin: 0 auto;
+    width: 1600px;
+  }
+}
