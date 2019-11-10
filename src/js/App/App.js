@@ -7,14 +7,10 @@ class  App extends Component {
     render() {
         return (
             <>
-            <Router>
-                <header>
+                <Router>
                     <Navigation/>
-                </header>
-                <section>
                     <Carousel/>
-                </section>
-            </Router>
+                </Router>
             </>
         )
     }
