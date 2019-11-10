@@ -7,6 +7,7 @@
   width: 100%;
   @media screen and (min-width: 992px){
     display: flex;
+    height: 120px;
   }
   .nav-wrapper {
     display: flex;
@@ -54,10 +55,16 @@
         font-size: 2rem;
       }
       @include media-tablet {
-        font-size: 2rem;
+        font-size: 1.5rem;
       }
       @include media-desktop {
-        font-size: 1.2rem;
+        font-size: 1rem;
+      }
+      @include media-desktop-1680px {
+        font-size: 1.1rem;
+      }
+      @include media-desktop-big {
+        font-size: 0.8rem;
       }
       a {
         text-decoration: none;

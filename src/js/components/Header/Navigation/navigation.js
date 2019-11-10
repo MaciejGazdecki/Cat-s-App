@@ -19,7 +19,7 @@ function Navigation() {
                     <li><NavLink to='/'>STRONA DOMOWA</NavLink></li>
                     <li><NavLink to='/kot-domowy'>HISTORIA KOTA DOMOWEGO</NavLink></li>
                     <li><NavLink to='/rasy-kotow-domowych'>RASY KOTÓW DOMOWYCH</NavLink></li>
-                    <li><NavLink to='/wyszukiwarka-zdjec'>WYSZUKIWARKA ZDJĘĆ</NavLink></li>
+                    <li><NavLink to='/wyszukiwarka-zdjec'>WYSZUKAJ ZDJĘCIE</NavLink></li>
                     <li><NavLink to='/ulubione-zdjecia'>ULUBIONE ZDJĘCIA</NavLink></li>
                     <li><NavLink to='/Logowanie'>LOGOWANIE</NavLink></li>
                 </ul>
