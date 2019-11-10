@@ -2,15 +2,15 @@
 
 .wrapper {
   @include media-desktop {
-    margin: 0 auto;
-    width: 1260px;
+    margin: 0 auto !important;
+    width: 1260px !important;
   }
   @include media-desktop-1680px {
-    margin: 0 auto;
-    width: 1400px;
+    margin: 0 auto !important;
+    width: 1400px !important;
   }
   @include media-desktop-big {
-    margin: 0 auto;
-    width: 1600px;
+    margin: 0 auto !important;
+    width: 1600px !important;
   }
 }
