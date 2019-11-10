@@ -13,20 +13,19 @@ $align-items:flex-start) {
 @mixin media-mobile-S {
   @media screen and (min-width: 374px) and (max-width: 460px){
   @content;
+    }
 }
 
-}
 @mixin media-mobile-M {
   @media screen and (min-width: 461px) and (max-width: 520px){
   @content;
+    }
 }
 
-}
 @mixin media-mobile-L {
   @media screen and (min-width: 521px) and (max-width: 600px){
-  @content;
-}
-
+    @content;
+  }
 }
 
 @mixin media-mobile-XL {
@@ -47,14 +46,14 @@ $align-items:flex-start) {
 }
 }
 @mixin media-desktop-1680px {
-  @media screen and (min-width: 1281px) and (max-width: 1680px){
+  @media screen and (min-width: 1281px) {
   @content
 }
 
 }
+
 @mixin media-desktop-big {
   @media screen and (min-width: 1681px) {
   @content
-}
-
+  }
 }

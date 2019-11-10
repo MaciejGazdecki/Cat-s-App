@@ -40,8 +40,6 @@
     //}
     @include media-desktop-1680px {
     }
-    @include media-desktop-big {
-    }
   }
   ul.list {
     position: fixed;
@@ -74,13 +72,13 @@
         font-size: 1.5rem;
       }
       @include media-desktop {
-        font-size: 1rem;
+        font-size: 1.2rem;
       }
       @include media-desktop-1680px {
         font-size: 1.4rem;
       }
       @include media-desktop-big {
-        font-size: 1em;
+        font-size: 1.4em;
       }
       a {
         text-decoration: none;

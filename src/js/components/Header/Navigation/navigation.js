@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import {Route, Switch, NavLink} from 'react-router-dom'
 import logo from './assets/clipart-10-9-18-34-33.png';
-import style from './_navigation.scss'
 
 function Navigation() {
     const [navOpen, setNavOpen] = useState(false);
