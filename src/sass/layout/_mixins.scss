@@ -31,29 +31,36 @@ $align-items:flex-start) {
 @mixin media-mobile-XL {
   @media screen and (min-width: 601px) and (max-width: 767px){
   @content;
-}
+  }
 }
 
 @mixin media-tablet {
   @media screen and (min-width: 768px) and (max-width: 991px) {
   @content;
+  }
 }
 
-}
 @mixin media-desktop {
   @media screen and (min-width: 992px) and (max-width: 1280px){
   @content;
-}
+  }
 }
 @mixin media-desktop-1680px {
   @media screen and (min-width: 1281px) {
   @content
-}
-
+  }
 }
 
 @mixin media-desktop-big {
   @media screen and (min-width: 1681px) {
   @content
+  }
+}
+
+//landscape
+
+@mixin orientation-landscape {
+  @media screen and (orientation: landscape) and (max-width: 991px){
+    @content
   }
 }

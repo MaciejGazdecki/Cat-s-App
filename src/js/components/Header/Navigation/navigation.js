@@ -6,25 +6,27 @@ function Navigation() {
     const [navOpen, setNavOpen] = useState(false);
      return (
         <>
-            <nav className={"navigation"}>
-                <div className={"wrapper"}>
-                    <div className={"nav-wrapper"}>
-                        <div className={"hamburger"}
-                             onClick={() => setNavOpen(!navOpen)}>
-                            <i className="fas fa-bars"></i>
+            <header>
+                <nav className={"navigation"}>
+                    <div className={"wrapper"}>
+                        <div className={"nav-wrapper"}>
+                            <div className={"hamburger"}
+                                 onClick={() => setNavOpen(!navOpen)}>
+                                <i className="fas fa-bars"></i>
+                            </div>
+                            <div className={"logo"}><img  src={logo} alt="kot"/></div>
                         </div>
-                        <div className={"logo"}><img  src={logo} alt="kot"/></div>
+                        <ul className={navOpen ? "list open" : "list"}>
+                            <li><NavLink to='/'>STRONA DOMOWA</NavLink></li>
+                            <li><NavLink to='/kot-domowy'>HISTORIA KOTA DOMOWEGO</NavLink></li>
+                            <li><NavLink to='/rasy-kotow-domowych'>RASY KOTÓW DOMOWYCH</NavLink></li>
+                            <li><NavLink to='/wyszukiwarka-zdjec'>WYSZUKAJ ZDJĘCIE</NavLink></li>
+                            <li><NavLink to='/ulubione-zdjecia'>ULUBIONE ZDJĘCIA</NavLink></li>
+                            <li><NavLink to='/Logowanie'>LOGOWANIE</NavLink></li>
+                        </ul>
                     </div>
-                    <ul className={navOpen ? "list open" : "list"}>
-                        <li><NavLink to='/'>STRONA DOMOWA</NavLink></li>
-                        <li><NavLink to='/kot-domowy'>HISTORIA KOTA DOMOWEGO</NavLink></li>
-                        <li><NavLink to='/rasy-kotow-domowych'>RASY KOTÓW DOMOWYCH</NavLink></li>
-                        <li><NavLink to='/wyszukiwarka-zdjec'>WYSZUKAJ ZDJĘCIE</NavLink></li>
-                        <li><NavLink to='/ulubione-zdjecia'>ULUBIONE ZDJĘCIA</NavLink></li>
-                        <li><NavLink to='/Logowanie'>LOGOWANIE</NavLink></li>
-                    </ul>
-                </div>
-            </nav>
+                </nav>
+            </header>
         </>
     )
 }

@@ -3,11 +3,15 @@ import Cat from './assets/white-4557097_1920.jpg'
 
 function Carousel() {
     const style = {
-      backgroundImage: `url("${Cat}")`
+      backgroundImage: `url('${Cat}')`
     };
     return(
         <>
-            <div className={"carousel-background"} style={style}></div>
+            <section className={'carousel-section'} style={style}>
+                <div className={"wrapper"} >
+                    {/*<div>dupa</div>*/}
+                </div>
+            </section>
         </>
     )
 }

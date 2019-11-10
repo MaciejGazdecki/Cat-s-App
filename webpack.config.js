@@ -35,6 +35,7 @@ module.exports = {
                         loader: 'css-loader',
                         options: {
                             sourceMap: true,
+                            url:true
                         },
                     },
                     {
@@ -61,7 +62,8 @@ module.exports = {
                     {
                         loader: 'file-loader',
                         options: {
-                            name: 'images/[contenthash].[ext]',
+                            name: '[contenthash].[ext]',
+                            outputPath:'images/',
                         },
                     },
                 ],
