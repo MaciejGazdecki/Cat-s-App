@@ -1,4 +1,5 @@
 @import "../../../../sass/layout/mixins";
+@import "../../../../sass/layout/variables";
 
 .navigation {
   background-color: rgba(0,0,0,0.28);
@@ -9,21 +10,19 @@
     height: 120px;
   }
   div.wrapper {
-  display: flex;
+    display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
     @media screen and (min-width: 992px){
       flex-direction: row;
-      justify-content: space-between;
+     justify-content: space-between;
       align-items: center;
     }
   }
   .nav-wrapper {
     display: flex;
     height: 100%;
-    align-items: center;
-    justify-content: left;
+    //align-self: flex-end;
+    //justify-self: flex-start;
     .hamburger {
      @media screen and (min-width: 992px){
        display: none;
@@ -32,8 +31,13 @@
         font-size: 2.5rem;
         margin: 2rem;
         cursor: pointer;
+        color: $main-font-color;
       }
     }
+    //@media screen and (min-width: 992px){
+    //  align-self: normal;
+    //  justify-self: normal;
+    //}
     @include media-desktop-1680px {
     }
     @include media-desktop-big {
@@ -80,7 +84,7 @@
       }
       a {
         text-decoration: none;
-        color: black;
+        color: $main-font-color;
       }
     }
   }
