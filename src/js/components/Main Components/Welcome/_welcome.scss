@@ -1,0 +1,41 @@
+@import "../../../../sass/layout/mixins";
+
+.welcome {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 4%;
+  @include media-tablet {
+    font-size: 3rem;
+  }
+  @include orientation-landscape {
+    font-size: 2rem;
+  }
+}
+p.welcome-content {
+  font-size: 1.15rem;
+  font-weight: 600;
+  @include media-mobile-S {
+  font-size: 1.45rem;
+  }
+  @include media-mobile-L {
+    font-size: 1.65rem;
+  }
+  @include media-tablet {
+    font-size: 2rem;
+  }
+  @include orientation-landscape {
+    font-size: 1rem;
+  }
+}
+
+.imageWrapper {
+  margin-top: 35px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+img.image {
+  width: 300px;
+  height: 400px;
+  cursor: pointer;
+}

@@ -1,6 +1,7 @@
 @import "mixins";
 
 .wrapper {
+
   @include media-desktop {
     margin: 0 auto !important;
     width: 960px !important;
