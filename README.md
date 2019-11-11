@@ -10,7 +10,3 @@ JS, React (with react-router and new Hooks, maybe Redux), Sass.
 
 More info will be provided soon.
 Project under developing currently.
-
-    
-
-
