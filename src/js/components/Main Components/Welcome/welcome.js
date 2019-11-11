@@ -7,8 +7,18 @@ import FSLightBox from "fslightbox-react";
 
 
 function welcome() {
-    const [toggler, setToggler] = useState(false);
     const cats = [siamCat,mainCoon,orangeCat,drinkingCat];
+    const [lightboxController, setLightboxController] = useState({
+        toggler: false,
+        slide: 1
+    });
+
+    function openLightboxOnSlide(number) {
+        setLightboxController({
+            toggler: !lightboxController.toggler,
+            slide: number
+        });
+    }
     return (
         <>
             <h1 className={'welcome'}>Witaj na stronie o kotach domowych</h1>
@@ -19,16 +29,18 @@ function welcome() {
             </p>
             <div className={'imageWrapper'}>
                 {cats.map((el,inx) =>
-                    <div key={inx} onClick={() => setToggler(!toggler)}>
+                    <div className={'tooltip'} key={inx} onClick={() => openLightboxOnSlide(inx+1)}>
                         <img className={'image'} src={el} alt="kot" />
+                        <span className={"tooltiptext"}>Kliknij aby powiękrzyć</span>
                     </div>
                 )}
             </div>
             <FSLightBox
-                toggler={toggler}
+                toggler={lightboxController.toggler}
                 sources={[ ...cats,
                     'https://www.youtube.com/watch?v=opcRx5fn8N8',
                 ]}
+                slide={ lightboxController.slide }
             />
         </>
     )

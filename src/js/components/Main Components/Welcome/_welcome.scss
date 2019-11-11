@@ -1,10 +1,15 @@
 @import "../../../../sass/layout/mixins";
+@import "../../../../sass/layout/variables";
 
 .welcome {
   font-size: 2rem;
   text-align: center;
   margin-bottom: 4%;
+  font-family: 'Pacifico', cursive;
   @include media-tablet {
+    font-size: 3rem;
+  }
+  @include all-big-screens {
     font-size: 3rem;
   }
   @include orientation-landscape {
@@ -23,6 +28,9 @@ p.welcome-content {
   @include media-tablet {
     font-size: 2rem;
   }
+  @include all-big-screens {
+    font-size: 1.5rem;
+  }
   @include orientation-landscape {
     font-size: 1rem;
   }
@@ -38,4 +46,27 @@ img.image {
   width: 300px;
   height: 400px;
   cursor: pointer;
+}
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 290px;
+  background-color: $navBar-color;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }
