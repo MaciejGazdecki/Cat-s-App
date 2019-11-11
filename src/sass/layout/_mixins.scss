@@ -64,3 +64,11 @@ $align-items:flex-start) {
     @content
   }
 }
+//all big screens
+@mixin all-big-screens {
+  @media screen and (min-width: 992px) {
+    @content
+  }
+}
+
+

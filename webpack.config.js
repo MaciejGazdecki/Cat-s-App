@@ -8,7 +8,9 @@ module.exports = {
         filename: "js/bundle.js"
     },
     devServer: {
-        contentBase: "./dist"
+        contentBase: "./dist",
+        port:3000,
+        host:"0.0.0.0",
     },
     devtool: "source-map",
     plugins: [
