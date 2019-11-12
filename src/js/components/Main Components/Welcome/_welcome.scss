@@ -65,6 +65,9 @@ img.image {
   @include only-mobiles-landscape {
     height: 110px;
   }
+  @include iPhonexAndPixel2XL {
+    height: 180px;
+  }
   @include media-tablet {
     width: 360px;
     height: 330px;
@@ -76,6 +79,10 @@ img.image {
   @include media-desktop {
     width: 240px;
     height: 200px;
+  }
+  @include iPhonexAndPixel2XL {
+    width: 170px;
+    height: 100px;
   }
 }
 .imageContainer {
