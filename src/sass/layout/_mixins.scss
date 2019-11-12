@@ -87,4 +87,10 @@ $align-items:flex-start) {
   }
 }
 
+//iphoneX pixel2xl
+@mixin iPhonexAndPixel2XL{
+  @media screen and (min-width: 800px) and (max-width: 825px),  handheld and (orientation: landscape){
+    @content
+  }
+}
 

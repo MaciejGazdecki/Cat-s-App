@@ -4,6 +4,9 @@
 .base-section {
   width: 100%;
   height: 120vh;
+  @include only-mobiles-landscape {
+    height: 130vh;
+  }
 
   .baseSectionContainer {
     display: flex;
