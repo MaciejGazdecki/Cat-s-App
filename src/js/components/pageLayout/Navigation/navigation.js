@@ -22,7 +22,7 @@ function Navigation() {
                             <li><NavLink to='/rasy-kotow-domowych'>RASY KOTÓW DOMOWYCH</NavLink></li>
                             <li><NavLink to='/wyszukiwarka-zdjec'>WYSZUKAJ ZDJĘCIE</NavLink></li>
                             <li><NavLink to='/ulubione-zdjecia'>ULUBIONE ZDJĘCIA</NavLink></li>
-                            <li><NavLink to='/Logowanie'>LOGOWANIE</NavLink></li>
+                            <li><NavLink to='/logowanie'>LOGOWANIE</NavLink></li>
                         </ul>
                     </div>
                 </nav>

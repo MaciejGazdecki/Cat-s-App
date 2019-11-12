@@ -1,31 +1,33 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import Navigation from "../components/Navigation/navigation";
-import BaseSection from "../components/BaseSection/baseSection";
+import Navigation from "../components/pageLayout/Navigation/navigation";
 import Cat from './images/white-4557097_1920.jpg'
-import DomesticCatHistory from "../components/Main Components/DomesticCatHistory/DomesticCatHistory";
-import VideoSection from '../components/Main Components/VideoSection/videoSection'
-import Footer from '../components/Footer/footer'
+import Footer from '../components/pageLayout/Footer/footer';
+import HomePage from '../components/pageLayout/HomePage/homePage';
+import Curiosities from'../components/Main Components/Curosities about Cats/curiositesAboutCats';
+import Breeds from '../components/Main Components/Breeds/breeds';
+import PhotoSearch from '../components/Main Components/PhotoSearch/photoSearch';
+import Favourites from '../components/Main Components/Favourites/favourites';
+import LoginPage from '../components/Main Components/LoginPage/loginPage'
 
-class  App extends Component {
-    render() {
-        const style = {
-            backgroundImage: `url('${Cat}')`
-        };
-        return (
-            <>
-                <Router>
-                    <div className={'backgroundWrapper'} style={style}>
-                        <Navigation/>
-                        <BaseSection/>
-                        <VideoSection/>
-                        <DomesticCatHistory/>
-                        <Footer/>
-                    </div>
-                </Router>
-            </>
-        )
-    }
+function  App () {
+    const style = {
+        backgroundImage: `url('${Cat}')`
+    };
+    return (
+            <Router>
+                <div className={'backgroundWrapper'} style={style}>
+                    <Navigation/>
+                    <Route path="/" exact component={HomePage}/>
+                    <Route path="/ciekawostki-o-kotach" component={Curiosities}/>
+                    <Route path="/rasy-kotow-domowych" component={Breeds}/>
+                    <Route path="/wyszukiwarka-zdjec" component={PhotoSearch}/>
+                    <Route path='/ulubione-zdjecia' component={Favourites}/>
+                    <Route path='/logowanie' component={LoginPage}/>
+                    <Footer/>
+                </div>
+            </Router>
+    )
 }
 
 export default App;

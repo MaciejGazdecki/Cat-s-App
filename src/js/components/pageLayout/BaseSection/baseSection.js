@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import {Route} from 'react-router-dom'
-import Welcome from '../Main Components/Welcome/welcome';
-import DomesticCatHistory from '../Main Components/DomesticCatHistory/DomesticCatHistory';
+import Welcome from '../../Main Components/Welcome/welcome';
 
 function BaseSection() {
     return(
@@ -9,7 +8,6 @@ function BaseSection() {
             <section className={'base-section'}>
                 <div className={"wrapper baseSectionContainer"} >
                     <Route path="/" exact component={Welcome}/>
-                    <Route path='/historia-kota-domowego' component={DomesticCatHistory}/>
                 </div>
             </section>
         </>

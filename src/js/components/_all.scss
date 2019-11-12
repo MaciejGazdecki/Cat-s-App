@@ -1,6 +1,11 @@
-@import "BaseSection/baseSection";
-@import "Navigation/navigation";
+@import "pageLayout/BaseSection/baseSection";
+@import "pageLayout/Navigation/navigation";
+@import "pageLayout/Footer/footer";
 @import "Main Components/Welcome/welcome";
 @import "Main Components/DomesticCatHistory/domesticCatHistory";
 @import "Main Components/VideoSection/videoSection";
-@import "Footer/footer";
+@import "Main Components/Curosities about Cats/curiositesAboutCats";
+@import "Main Components/Breeds/breeds";
+@import "Main Components/PhotoSearch/photoSearch";
+@import "Main Components/Favourites/favourites";
+@import "Main Components/LoginPage/loginPage";
