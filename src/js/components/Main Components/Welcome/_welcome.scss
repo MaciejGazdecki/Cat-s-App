@@ -72,6 +72,10 @@ img.image {
     width: 290px;
     height: 350px;
   }
+  @include media-desktop {
+    width: 240px;
+    height: 200px;
+  }
 }
 .imageContainer {
   position: relative;
@@ -82,6 +86,9 @@ img.image {
     width: 5%;
   }
   @include all-big-screens {
+    width: 21%;
+  }
+  @include media-desktop {
     width: 21%;
   }
 }
@@ -110,12 +117,6 @@ img.image {
     visibility: hidden;
   }
 }
-//.tooltiptext {
-//  display: none;
-//  @include all-big-screens {
-//    display: block;
-//  }
-//}
 .fa-arrows-alt-h {
   font-size: 4rem;
   @include media-tablet {
