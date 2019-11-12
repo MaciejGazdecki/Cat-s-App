@@ -50,11 +50,12 @@ p.welcome-content {
   @include media-tablet {
     height: 400px;
   }
-  //@include all-big-screens {
-  //  flex-flow: row;
-  //  overflow-x: auto;
-  //  height: 100%;
-  //}
+  @include all-big-screens {
+    flex-flow: row;
+    overflow-x: hidden;
+    height: auto;
+    justify-content: space-between;
+  }
 }
 img.image {
   width: 160px;
@@ -67,6 +68,10 @@ img.image {
     width: 360px;
     height: 330px;
   }
+  @include all-big-screens {
+    width: 290px;
+    height: 350px;
+  }
 }
 .imageContainer {
   position: relative;
@@ -75,6 +80,9 @@ img.image {
   height: 100%;
   @include only-mobiles-landscape {
     width: 5%;
+  }
+  @include all-big-screens {
+    width: 21%;
   }
 }
 
@@ -87,7 +95,6 @@ img.image {
   border-radius: 6px;
   padding: 5px 0;
   position: absolute;
-  z-index: 1;
   top:50%;
   left: 50%;
   transform: translate(-50%,-50%);
@@ -96,13 +103,25 @@ img.image {
 .imageContainer:hover .tooltiptext {
   visibility: visible;
   cursor: pointer;
+  @include all-mobiles {
+    visibility: hidden;
+  }
+  @include media-tablet {
+    visibility: hidden;
+  }
 }
-.tooltiptext {
-  display: none;
-}
+//.tooltiptext {
+//  display: none;
+//  @include all-big-screens {
+//    display: block;
+//  }
+//}
 .fa-arrows-alt-h {
   font-size: 4rem;
   @include media-tablet {
     margin-top: 2rem;
+  }
+  @include all-big-screens {
+    display: none;
   }
 }
