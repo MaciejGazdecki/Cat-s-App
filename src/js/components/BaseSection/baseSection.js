@@ -11,7 +11,7 @@ function BaseSection() {
     return(
         <>
             <section className={'base-section'} style={style}>
-                <div className={"wrapper container"} >
+                <div className={"wrapper baseSectionContainer"} >
                     <Route path="/" exact component={Welcome}/>
                     <Route path='/historia-kota-domowego' component={DomesticCatHistory}/>
                 </div>

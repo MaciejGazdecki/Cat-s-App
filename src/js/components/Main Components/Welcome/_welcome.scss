@@ -40,12 +40,22 @@ p.welcome-content {
 .imageWrapper {
   display: flex;
   width: 100%;
- height: 140px;
+  height: 140px;
   flex-flow: column wrap;
   overflow-x: scroll;
   @include orientation-landscape {
     flex-flow: row;
     justify-content: space-between;
+  }
+  @include media-tablet {
+    height: 400px;
+  }
+  @include all-big-screens {
+    flex-flow: row;
+    overflow-x: hidden;
+    height: auto;
+    justify-content: space-between;
+    margin-top: 45px;
   }
 }
 img.image {
@@ -55,6 +65,18 @@ img.image {
   @include only-mobiles-landscape {
     height: 110px;
   }
+  @include media-tablet {
+    width: 360px;
+    height: 330px;
+  }
+  @include all-big-screens {
+    width: 290px;
+    height: 350px;
+  }
+  @include media-desktop {
+    width: 240px;
+    height: 200px;
+  }
 }
 .imageContainer {
   position: relative;
@@ -63,6 +85,12 @@ img.image {
   height: 100%;
   @include only-mobiles-landscape {
     width: 5%;
+  }
+  @include all-big-screens {
+    width: 21%;
+  }
+  @include media-desktop {
+    width: 21%;
   }
 }
 
@@ -75,7 +103,6 @@ img.image {
   border-radius: 6px;
   padding: 5px 0;
   position: absolute;
-  z-index: 1;
   top:50%;
   left: 50%;
   transform: translate(-50%,-50%);
@@ -84,10 +111,19 @@ img.image {
 .imageContainer:hover .tooltiptext {
   visibility: visible;
   cursor: pointer;
-}
-.tooltiptext {
-  display: none;
+  @include all-mobiles {
+    visibility: hidden;
+  }
+  @include media-tablet {
+    visibility: hidden;
+  }
 }
 .fa-arrows-alt-h {
   font-size: 4rem;
+  @include media-tablet {
+    margin-top: 2rem;
+  }
+  @include all-big-screens {
+    display: none;
+  }
 }

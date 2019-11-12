@@ -12,6 +12,7 @@ function welcome() {
         toggler: false,
         slide: 1
     });
+    // const [galeryClosed, setGaleryClosed] = useState(false);
 
     function openLightboxOnSlide(number) {
         setLightboxController({
@@ -19,6 +20,7 @@ function welcome() {
             slide: number
         });
     }
+
     return (
         <>
             <h1 className={'welcome'}>Witaj na stronie o kotach domowych</h1>
