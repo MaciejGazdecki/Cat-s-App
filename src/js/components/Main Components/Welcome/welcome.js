@@ -29,12 +29,13 @@ function welcome() {
             </p>
             <div className={'imageWrapper'}>
                 {cats.map((el,inx) =>
-                    <div className={'tooltip'} key={inx} onClick={() => openLightboxOnSlide(inx+1)}>
+                    <div className={'imageContainer'} key={inx} onClick={() => openLightboxOnSlide(inx+1)}>
                         <img className={'image'} src={el} alt="kot" />
                         <span className={"tooltiptext"}>Kliknij aby powiękrzyć</span>
                     </div>
                 )}
             </div>
+            <div><i className="fas fa-arrows-alt-h"></i></div>
             <FSLightBox
                 toggler={lightboxController.toggler}
                 sources={[ ...cats,
