@@ -1,16 +1,9 @@
 @import "../../../sass/layout/mixins";
 @import "../../../sass/layout/variables";
 
-section.base-section {
+.base-section {
   width: 100%;
   height: 120vh;
-  background-attachment: fixed;
-  background-position-x: 30%;
-  background-position-y: 30%;
-  @include all-big-screens {
-    background-position-x: 0;
-    background-position-y: 0;
-  }
 
   .baseSectionContainer {
     display: flex;
