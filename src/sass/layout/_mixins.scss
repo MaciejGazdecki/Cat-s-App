@@ -69,6 +69,11 @@ $align-items:flex-start) {
     @content
   }
 }
+@mixin only-tablet-landscape {
+  @media screen and (min-width: 768px) and (max-width: 991px) and (orientation: landscape){
+    @content;
+  }
+}
 //all mobiles
 @mixin all-mobiles {
   @media screen and (max-width: 767px) {

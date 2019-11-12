@@ -7,22 +7,15 @@ $navbarHeight: 11%;
   height: $navbarHeight;
   position: fixed;
   width: 100%;
-  .logo {
-    //display: none;
-    img{
-      height: 80%;
-      width: 80%;
-    }
-  }
   @include media-tablet {
-    height: 15%;
+    height: 10%;
   }
   @include orientation-landscape {
     height: 20%;
   }
 
-  @media screen and (min-width: 992px){
-    $navbarHeight: 120px;
+  @include all-big-screens {
+    height: 120px;
   }
   @include all-big-screens {
     background-color: rgba(0,0,0,0.28);;
@@ -39,6 +32,16 @@ $navbarHeight: 11%;
   .nav-wrapper {
     display: flex;
     height: 100%;
+    .logo {
+      img {
+        height: 80%;
+        width: 80%;
+        @include all-big-screens {
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
     .hamburger {
      @include all-big-screens {
        display: none;
@@ -48,6 +51,10 @@ $navbarHeight: 11%;
         margin: 1rem;
         cursor: pointer;
         color: black;
+        @include media-tablet {
+          font-size: 3rem;
+          margin: 1.5rem;
+        }
       }
     }
   }
@@ -63,8 +70,8 @@ $navbarHeight: 11%;
     flex-direction: column;
     justify-content: space-around;
     @include media-tablet {
-      height: 85%;
-      top: 15%;
+      height: 90%;
+      top: 10%;
     }
     @include orientation-landscape {
       height: 80%;
