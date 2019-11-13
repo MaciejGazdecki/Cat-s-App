@@ -17,12 +17,41 @@ function Navigation() {
                             <div className={"logo"}><img  src={logo} alt="kot"/></div>
                         </div>
                         <ul className={navOpen ? "list open" : "list"}>
-                            <li><NavLink to='/'>STRONA DOMOWA</NavLink></li>
-                            <li><NavLink to='/ciekawostki-o-kotach'>CIEKAWOSTKI O KOTACH</NavLink></li>
-                            <li><NavLink to='/rasy-kotow-domowych'>RASY KOTÓW DOMOWYCH</NavLink></li>
-                            <li><NavLink to='/wyszukiwarka-zdjec'>WYSZUKAJ ZDJĘCIE</NavLink></li>
-                            <li><NavLink to='/ulubione-zdjecia'>ULUBIONE ZDJĘCIA</NavLink></li>
-                            <li><NavLink to='/logowanie'>LOGOWANIE</NavLink></li>
+                            <li>
+                                <NavLink to='/'
+                                         onClick={() => setNavOpen(!navOpen)}>
+                                STRONA DOMOWA
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to='/ciekawostki-o-kotach'
+                                         onClick={() => setNavOpen(!navOpen)}>
+                                CIEKAWOSTKI O KOTACH
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to='/rasy-kotow-domowych'
+                                         onClick={() => setNavOpen(!navOpen)}>
+                                RASY KOTÓW DOMOWYCH
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to='/wyszukiwarka-zdjec'
+                                         onClick={() => setNavOpen(!navOpen)}>
+                                WYSZUKAJ ZDJĘCIE
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to='/ulubione-zdjecia'
+                                         onClick={() => setNavOpen(!navOpen)}>
+                                ULUBIONE ZDJĘCIA
+                                </NavLink>
+                            </li>
+                            <li><NavLink to='/logowanie'
+                                         onClick={() => setNavOpen(!navOpen)}>
+                                LOGOWANIE
+                                </NavLink>
+                            </li>
                         </ul>
                     </div>
                 </nav>
