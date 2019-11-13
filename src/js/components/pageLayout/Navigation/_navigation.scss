@@ -123,4 +123,7 @@ ul.list.open {
   @include media-tablet {
     clip-path: circle(1300px at 0% -15%);
   }
+  @include all-big-screens {
+    clip-path: circle(5000px at 0% -15%);
+  }
 }
