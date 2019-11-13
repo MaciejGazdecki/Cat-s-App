@@ -40,10 +40,24 @@ function welcome() {
             <div><i className="fas fa-arrows-alt-h"></i></div>
             <FSLightBox
                 toggler={lightboxController.toggler}
-                sources={[ ...cats,
-                    'https://www.youtube.com/watch?v=opcRx5fn8N8',
-                ]}
+                sources={cats}
                 slide={ lightboxController.slide }
+                showThumbsOnMount={ true }
+                captions={ [
+                    <>
+                        <h2>Kot Syjamski</h2>
+                    </>,
+                    <>
+                        <h2>Kot rasy MainCoon</h2>
+                    </>,
+                    <>
+                        <h2>Śpiący kot rudo-biały</h2>
+                    </>,
+                    <>
+                        <h2>Szary kot pijący wodę</h2>
+                    </>,
+
+                ] }
             />
         </>
     )
