@@ -1,5 +1,21 @@
-.dupa {
+.videoSection {
   width: 100%;
-  height: 30vh;
+  height: 50vh;
   background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .videos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+     div {
+      width: 48%;
+       cursor: pointer;
+      img{
+        width: 100%;
+      }
+    }
+  }
 }
