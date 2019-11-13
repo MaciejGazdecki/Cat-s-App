@@ -18,7 +18,7 @@ function Navigation() {
                         </div>
                         <ul className={navOpen ? "list open" : "list"}>
                             <li>
-                                <NavLink to=''
+                                <NavLink to='/'
                                          onClick={() => setNavOpen(!navOpen)}>
                                 STRONA DOMOWA
                                 </NavLink>
