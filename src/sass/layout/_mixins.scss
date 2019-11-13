@@ -76,7 +76,7 @@ $align-items:flex-start) {
 }
 //all mobiles
 @mixin all-mobiles {
-  @media screen and (max-width: 767px) {
+  @media screen and (min-width: 374px) and (max-width: 767px) {
     @content
   }
 }
