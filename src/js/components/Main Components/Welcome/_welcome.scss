@@ -73,12 +73,8 @@ img.image {
     height: 330px;
   }
   @include all-big-screens {
-    width: 290px;
-    height: 350px;
-  }
-  @include media-desktop {
-    width: 240px;
-    height: 200px;
+    width: 100%;
+    height: 300px;
   }
   @include iPhonexAndPixel2XL {
     width: 170px;
@@ -89,12 +85,11 @@ img.image {
   position: relative;
   display: inline-block;
   width: 52%;
-  height: 100%;
   @include only-mobiles-landscape {
     width: 5%;
   }
   @include all-big-screens {
-    width: 21%;
+    width: 24%;
   }
   @include media-desktop {
     width: 21%;
@@ -103,7 +98,7 @@ img.image {
 
 .imageContainer .tooltiptext {
   visibility: hidden;
-  width: 290px;
+  width: 100%;
   background-color: $navBar-color;
   color: #fff;
   text-align: center;
