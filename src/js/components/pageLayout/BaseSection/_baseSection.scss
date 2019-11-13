@@ -4,12 +4,17 @@
 .base-section {
   width: 100%;
   height: 698px;
-
+  @include media-mobile-S {
+    height:900px;
+  }
   @include only-mobiles-landscape {
     height: 468px;
   }
   @include media-tablet {
     height: 1228px;
+  }
+  @include iPhonexAndPixel2XL {
+    height: 500px;
   }
   @include all-big-screens {
     height: 1120px;
