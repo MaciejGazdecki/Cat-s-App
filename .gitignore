@@ -5,6 +5,7 @@ logs
 npm-debug.log*
 package-lock.json
 node_modules/
+dist/
 ### OSX ###
 .DS_Store
 .AppleDouble
