@@ -1,4 +1,8 @@
+@import "../../../../sass/layout/mixins";
+@import "../../../../sass/layout/variables";
+
 .internalCuriositiesWrapper {
  padding-top: 300px;
   padding-bottom: 300px;
+ margin: $margin-mobile;
 }
