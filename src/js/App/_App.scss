@@ -2,10 +2,7 @@
 
 
 .backgroundWrapper {
-  background-attachment: fixed !important;
-  -webkit-background-attachment: fixed !important;
-  z-index: -1 !important;
-  position: static !important;
+  background-attachment: fixed;
   background-position-x: 30%;
   background-position-y: 30%;
   @include all-big-screens {
