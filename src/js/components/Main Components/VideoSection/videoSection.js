@@ -34,20 +34,6 @@ function videoSection() {
                     <div onClick={() => openLightboxOnSlide(4)}>
                         <img src={Cat2} alt="kot"/>
                     </div>
-                    {/*<iframe*/}
-                    {/*    src="https://www.youtube.com/embed/aWa44qbjoVM?controls=0"*/}
-                    {/*    frameBorder="0"*/}
-                    {/*    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"*/}
-                    {/*    allowFullScreen*/}
-                    {/*    onClick={() => openLightboxOnSlide(1)}>*/}
-                    {/*</iframe>*/}
-                    {/*<iframe*/}
-                    {/*    src="https://www.youtube.com/embed/opcRx5fn8N8?controls=0"*/}
-                    {/*    frameBorder="0"*/}
-                    {/*    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"*/}
-                    {/*    allowFullScreen*/}
-                    {/*    onClick={() => openLightboxOnSlide(2)}>*/}
-                    {/*</iframe>*/}
                 </div>
             </section>
             <FSLightBox
