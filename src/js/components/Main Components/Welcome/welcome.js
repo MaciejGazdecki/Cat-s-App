@@ -6,7 +6,7 @@ import drinkingCat from './images/cat-2604054.jpg';
 import FSLightBox from "fslightbox-react";
 
 
-function welcome() {
+function Welcome() {
     const cats = [siamCat,mainCoon,orangeCat,drinkingCat];
     const [lightboxController, setLightboxController] = useState({
         toggler: false,
@@ -63,4 +63,4 @@ function welcome() {
     )
 }
 
-export default welcome;
+export default Welcome;

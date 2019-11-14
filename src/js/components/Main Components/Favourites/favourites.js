@@ -1,6 +1,6 @@
 import React from 'react';
 
-function favourites() {
+function Favourites() {
     return (
         <div className={'wrapper'}>
             <div className={'internalCuriositiesWrapper'}>
@@ -12,4 +12,4 @@ function favourites() {
 
 }
 
-export default favourites;
+export default Favourites;

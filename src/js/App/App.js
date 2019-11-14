@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Navigation from "../components/pageLayout/Navigation/navigation";
 import Cat from './images/white-4557097_1920.jpg'
 import Footer from '../components/pageLayout/Footer/footer';

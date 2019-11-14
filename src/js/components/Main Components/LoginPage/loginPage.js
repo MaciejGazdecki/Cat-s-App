@@ -1,6 +1,6 @@
 import React from 'react';
 
-function loginPage() {
+function LoginPage() {
     return (
         <div className={'wrapper'}>
             <div className={'internalCuriositiesWrapper'}>
@@ -11,4 +11,4 @@ function loginPage() {
 
 }
 
-export default loginPage;
+export default LoginPage;

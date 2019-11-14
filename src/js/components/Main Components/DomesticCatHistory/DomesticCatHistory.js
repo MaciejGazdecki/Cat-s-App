@@ -1,6 +1,6 @@
 import React from 'react';
 
-function domesticCatHistory() {
+function DomesticCatHistory() {
     return (
         <section>
             <div className={'wrapper catsHistory'}>
@@ -54,4 +54,4 @@ function domesticCatHistory() {
     
 }
 
-export default domesticCatHistory;
+export default DomesticCatHistory;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-function photoSearch() {
+function PhotoSearch() {
     return (
         <div className={'wrapper'}>
             <div className={'internalCuriositiesWrapper'}>
@@ -12,4 +12,4 @@ function photoSearch() {
 
 }
 
-export default photoSearch;
+export default PhotoSearch;

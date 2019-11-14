@@ -1,6 +1,6 @@
 import React from 'react';
 
-function breeds() {
+function Breeds() {
     return (
         <div className={'wrapper'}>
             <div className={'breedsWrapper'}>
@@ -11,4 +11,4 @@ function breeds() {
 )
 }
 
-export default breeds;
+export default Breeds;

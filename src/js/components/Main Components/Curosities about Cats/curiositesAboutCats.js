@@ -1,6 +1,6 @@
 import React from 'react';
 
-function curiositiesAboutCars() {
+function CuriositiesAboutCars() {
     return (
         <div className={'wrapper'}>
             <div className={'internalCuriositiesWrapper'}>
@@ -12,4 +12,4 @@ function curiositiesAboutCars() {
 
 }
 
-export default curiositiesAboutCars;
+export default CuriositiesAboutCars;

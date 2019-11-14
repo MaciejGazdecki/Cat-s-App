@@ -1,8 +1,19 @@
 {
+  "parser": "babel-eslint",
   "extends": ["eslint:recommended", "plugin:react/recommended"],
   "plugins": ["react-hooks"],
   "rules": {
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn"
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true
   }
 }

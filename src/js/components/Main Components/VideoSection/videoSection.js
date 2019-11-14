@@ -4,7 +4,7 @@ import Cat1 from './images/videoYoutube.png';
 import Cat2 from './images/videoYoutube2.png'
 
 
-function videoSection() {
+function VideoSection() {
     const videos = [
         "https://www.youtube.com/embed/EaqDR50fQkA?controls=0",
         "https://www.youtube.com/embed/aWa44qbjoVM?controls=0",
@@ -16,7 +16,6 @@ function videoSection() {
         toggler: false,
         slide: 1
     });
-    // const [galeryClosed, setGaleryClosed] = useState(false);
 
     function openLightboxOnSlide(number) {
         setLightboxController({
@@ -45,4 +44,4 @@ function videoSection() {
     )
 }
 
-export default videoSection;
+export default VideoSection;
