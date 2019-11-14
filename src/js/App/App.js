@@ -14,10 +14,8 @@ function  App () {
     const style = {
         backgroundImage: `url('${Cat}')`
     };
-    const regex = /\?/;
     return (
             <Router>
-                <Switch>
                 <div className={'backgroundWrapper'} style={style}>
                     <Navigation/>
                     <Route path="/" exact component={HomePage}/>
@@ -28,7 +26,6 @@ function  App () {
                     <Route path='/logowanie' component={LoginPage}/>
                     <Footer/>
                 </div>
-                </Switch>
             </Router>
     )
 }

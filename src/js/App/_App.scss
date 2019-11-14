@@ -1,19 +1,13 @@
 @import "../../sass/layout/mixins";
 
 .backgroundWrapper {
-  -webkit-background-size: cover !important;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
   background-attachment: fixed !important;
   position: static !important;
   z-index: -1 !important;
   background-position-x: 30%;
   background-position-y: 30%;
-  height: 100%;
   @include all-big-screens {
     background-position-x: 0;
     background-position-y: 0;
-
   }
 }
