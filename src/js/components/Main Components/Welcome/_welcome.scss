@@ -20,6 +20,7 @@
 p.welcome-content {
   font-size: 1.15rem;
   font-weight: 600;
+  text-indent: 10%;
   @include media-mobile-S {
   font-size: 1.45rem;
   }
