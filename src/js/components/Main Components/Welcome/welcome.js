@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import siamCat from "./images/siam-2766253.jpg";
 import mainCoon from "./images/cat-1508613_1920.jpg";
-import orangeCat from './images/Canva - Orange Tabby Cat.jpg';
+import orangeCat from './images/Canva-OrangeTabbyCat.jpg';
 import drinkingCat from './images/cat-2604054.jpg';
 import FSLightBox from "fslightbox-react";
 

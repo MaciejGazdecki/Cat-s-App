@@ -3,4 +3,47 @@
 
 .catsHistory {
   margin: $margin-mobile;
+  h2 {
+    margin: 3% auto;
+    font-size: $font-sizeSpecial-mobile-tablet;
+    text-align: center;
+    font-family: $special-font;
+    @include all-big-screens {
+      font-size: $font-sizeSpecial-desktop;
+    }
+  }
+  .articleWrapper {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4%;
+    @include media-tablet {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    @include all-big-screens {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    article {
+      font-size: 1.1rem;
+      text-align: justify;
+      font-weight: bolder;
+      margin-bottom: 3%;
+      @include media-tablet {
+        width: 48%;
+        font-size: 1.3rem;
+      }
+      @include all-big-screens {
+        width: 48%;
+        font-size: 1.5rem;
+      }
+      .italic {
+        font-style: italic;
+      }
+      p.source {
+        font-size: 1rem;
+      }
+    }
+  }
+
 }
