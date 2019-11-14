@@ -19,6 +19,8 @@
     "autoprefixer": "^9.6.1",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.2.0",
+    "eslint": "^6.6.0",
+    "eslint-plugin-react-hooks": "^2.2.0",
     "file-loader": "^4.2.0",
     "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.12.0",
@@ -36,6 +38,7 @@
     "fslightbox-react": "file:src/lib/fslightbox-react-pro-1.0.5.tgz",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
+    "react-roughviz": "^0.1.5",
     "react-router-dom": "^5.1.2"
   },
   "browserslist": [
