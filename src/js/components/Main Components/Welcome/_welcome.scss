@@ -2,15 +2,15 @@
 @import "../../../../sass/layout/variables";
 
 .welcome {
-  font-size: 2rem;
+  font-size: $font-sizeSpecial-mobile-tablet;
   text-align: center;
   margin: 2% auto;
   font-family: 'Pacifico', cursive;
   @include media-tablet {
-    font-size: 3rem;
+    font-size: $font-sizeSpecial-desktop;
   }
   @include all-big-screens {
-    font-size: 3rem;
+    font-size: $font-sizeSpecial-desktop;
   }
   @include orientation-landscape {
     font-size: 2rem;
@@ -20,7 +20,6 @@
 p.welcome-content {
   font-size: 1.15rem;
   font-weight: 600;
-  text-indent: 10%;
   @include media-mobile-S {
   font-size: 1.45rem;
   }

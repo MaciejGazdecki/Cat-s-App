@@ -5,10 +5,11 @@
   margin: $margin-mobile;
   h2 {
     margin: 3% auto;
-    font-size: 1.35rem;
+    font-size: $font-sizeSpecial-mobile-tablet;
     text-align: center;
-    @include media-mobile-S {
-      font-size: 1.5rem;
+    font-family: $special-font;
+    @include all-big-screens {
+      font-size: $font-sizeSpecial-desktop;
     }
   }
   .articleWrapper {
@@ -27,16 +28,20 @@
       font-size: 1.1rem;
       text-align: justify;
       font-weight: bolder;
-      text-indent: 10%;
       margin-bottom: 3%;
       @include media-tablet {
         width: 48%;
+        font-size: 1.3rem;
       }
       @include all-big-screens {
         width: 48%;
+        font-size: 1.5rem;
       }
       .italic {
         font-style: italic;
+      }
+      p.source {
+        font-size: 1rem;
       }
     }
   }

@@ -4,7 +4,7 @@ function domesticCatHistory() {
     return (
         <section>
             <div className={'wrapper catsHistory'}>
-                <h2>HISTORIA KOTA DOMOWEGO</h2>
+                <h2>Historia kota domowego</h2>
                 <div className={"articleWrapper"}>
                     <article>
                         <span className={'italic'}>Felis catus</span>, również
@@ -42,7 +42,10 @@ function domesticCatHistory() {
                         (w Polsce są to tzw. koty piwniczne lub dachowce). Koty żyjące na wolności dożywają średnio do 8 lat,
                         natomiast koty trzymane w domu osiągają wiek do 20 lat. Na długość życia wpływa szereg czynników,
                         takich jak: płeć, styl życia czy zwyczaje.
-                        <p><a href="https://pl.wikipedia.org/wiki/Kot_domowy">https://pl.wikipedia.org/wiki/Kot_domowy</a></p>
+                        <p>Źródło:</p>
+                        <p className={'source'}><a href="https://pl.wikipedia.org/wiki/Kot_domowy">
+                            https://pl.wikipedia.org/wiki/Kot_domowy</a>
+                        </p>
                     </article>
                 </div>
             </div>
