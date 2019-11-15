@@ -7,6 +7,7 @@
   justify-content: center;
   align-items: center;
   height: 800px;
+  flex-direction: column;
   @include all-big-screens{
     height: 1080px;
     padding: 10% auto;
@@ -38,4 +39,36 @@
     }
   }
 
+.select-box {
+  margin: 3% auto;
+  width: 75%;
+  @include all-mobiles {
+    width: 80%;
+  }
+  @include all-big-screens {
+    width: 50%;
+  }
+  @include media-desktop {
+    width: 57%;
+  }
+  select {
+    background-color: rgba(246,28,206,.65);
+    color: white;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    font-size: 20px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
+    outline: none;
+    border-radius: 5px;
+
+    @include all-big-screens {
+      font-size: 20px;
+      padding: 12px;
+    }
+    option {
+      padding: 30px;
+      }
+    }
+  }
 }
