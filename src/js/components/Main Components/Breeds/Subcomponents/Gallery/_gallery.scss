@@ -1,0 +1,23 @@
+@import "../../../../../../sass/layout/_mixins.scss";
+@import "../../../../../../sass/layout/_variables.scss";
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  @include all-big-screens {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .breedGallery-wrap {
+    width: 30%;
+    @include media-desktop {
+      width: 33%;
+    }
+    .breedGallery-image {
+      width: 300px;
+      height: 200px;
+    }
+  }
+}
