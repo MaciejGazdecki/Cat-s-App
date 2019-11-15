@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {HashRouter as Router, Route} from 'react-router-dom';
 import Navigation from "../components/pageLayout/Navigation/navigation";
 import Cat from './images/white-4557097_1920.jpg'
 import Footer from '../components/pageLayout/Footer/footer';
@@ -8,7 +8,11 @@ import Curiosities from'../components/Main Components/Curosities about Cats/curi
 import Breeds from '../components/Main Components/Breeds/breeds';
 import PhotoSearch from '../components/Main Components/PhotoSearch/photoSearch';
 import Favourites from '../components/Main Components/Favourites/favourites';
-import LoginPage from '../components/Main Components/LoginPage/loginPage'
+import LoginPage from '../components/Main Components/LoginPage/loginPage';
+import axios from 'axios';
+
+axios.defaults.baseURL = 'https://api.thecatapi.com/v1';
+axios.defaults.headers.common['Authorization'] = '687fe573-b392-44ea-b985-63c162d0f64c';
 
 function  App () {
     const style = {

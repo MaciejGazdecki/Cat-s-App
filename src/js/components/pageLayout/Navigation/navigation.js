@@ -12,7 +12,7 @@ function Navigation() {
                         <div className={"nav-wrapper"}>
                             <div className={"hamburger"}
                                  onClick={() => setNavOpen(!navOpen)}>
-                                <i className="fas fa-bars"></i>
+                                <i className="fas fa-paw"></i>
                             </div>
                             <div className={"logo"}><img  src={logo} alt="kot"/></div>
                         </div>
