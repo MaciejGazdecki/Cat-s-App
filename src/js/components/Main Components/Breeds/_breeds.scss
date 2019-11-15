@@ -1,5 +1,7 @@
 @import "../../../../sass/layout/mixins";
 @import "../../../../sass/layout/variables";
+@import "Subcomponents/Logo/logo";
+@import "Subcomponents/Select/select";
 
 .breedsWrapper {
   margin: $margin-mobile;
@@ -12,62 +14,23 @@
     height: 1080px;
     padding: 10% auto;
   }
-  .logo-section {
-    width: 100%;
+  .gallery {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    width: 100%;
     @include all-big-screens {
       flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
     }
-    img {
-      width: 15%;
-    }
-    h2 {
-      font-size: 1.5rem;
-      text-align: center;
-      font-family: $special-font;
-      @include all-mobiles {
-        font-size: $font-sizeSpecial-mobile-tablet;
+    .breedGallery-wrap {
+        width: 30%;
+      @include media-desktop {
+        width: 33%;
       }
-      @include media-tablet {
-        font-size: 2.5rem;
-      }
-      @include all-big-screens {
-        font-size: $font-sizeSpecial-desktop;
-      }
-    }
-  }
-
-.select-box {
-  margin: 3% auto;
-  width: 75%;
-  @include all-mobiles {
-    width: 80%;
-  }
-  @include all-big-screens {
-    width: 50%;
-  }
-  @include media-desktop {
-    width: 57%;
-  }
-  select {
-    background-color: rgba(246,28,206,.65);
-    color: white;
-    padding: 12px;
-    width: 100%;
-    border: none;
-    font-size: 20px;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
-    outline: none;
-    border-radius: 5px;
-
-    @include all-big-screens {
-      font-size: 20px;
-      padding: 12px;
-    }
-    option {
-      padding: 30px;
+      .breedGallery-image {
+          width: 300px;
+          height: 300px;
       }
     }
   }
