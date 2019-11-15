@@ -12,7 +12,6 @@ function Welcome() {
         toggler: false,
         slide: 1
     });
-    // const [galeryClosed, setGaleryClosed] = useState(false);
 
     function openLightboxOnSlide(number) {
         setLightboxController({

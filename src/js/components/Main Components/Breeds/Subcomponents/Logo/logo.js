@@ -5,7 +5,7 @@ function Logo() {
     return (
         <>
             <div className={'logo-section'}>
-                <img src={logo} alt=""/>
+                <img src={logo} alt="logo-kota"/>
                 <h2>Wybierz rasę kota</h2>
             </div>
         </>
