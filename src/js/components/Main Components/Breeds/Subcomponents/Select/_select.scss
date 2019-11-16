@@ -3,9 +3,12 @@
 
 .select-box {
   margin: 3% auto;
-  width: 75%;
+  width: 100%;
   @include all-mobiles {
-    width: 80%;
+    width: 100%;
+  }
+  @include media-tablet {
+    width: 50%;
   }
   @include all-big-screens {
     width: 50%;

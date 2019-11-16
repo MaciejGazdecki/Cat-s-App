@@ -5,19 +5,107 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  height: 30%;
+  justify-content: space-between;
+  @include only-mobiles-landscape {
+    flex-direction: row;
+    align-items: center;
+  }
+  @include media-tablet {
+    flex-direction: row;
+    align-items: center;
+  }
   @include all-big-screens {
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
   }
   .breedGallery-wrap {
-    width: 30%;
+    width:100%;
+    cursor: pointer;
+    position: relative;
+    align-self: center;
+    &:nth-child(2) {
+      display: none;
+      @include only-mobiles-landscape {
+        display:inline-block;
+      }
+      @include media-tablet {
+        display:inline-block;
+      }
+      @include all-big-screens {
+        display: inline-block;
+      }
+    }
+    &:nth-child(3){
+      display: none;
+      @include all-big-screens {
+        display: inline-block;
+      }
+    }
     @include media-desktop {
       width: 33%;
     }
     .breedGallery-image {
-      width: 300px;
+      width: 100%;
       height: 200px;
+      @include only-mobiles-landscape {
+        width: 97%;
+      }
+      @include media-tablet {
+        width: 96%;
+      }
+      @include all-big-screens {
+        width: 95%;
+      }
     }
+  }
+}
+
+//tooltip
+.breedGallery-wrap .tooltiptext-breeds {
+  visibility: hidden;
+  width: 300px;
+  background-color: $navBar-color;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.breedGallery-wrap:hover .tooltiptext-breeds {
+  visibility: visible;
+  cursor: pointer;
+  @include all-mobiles {
+    visibility: hidden;
+  }
+  @include media-tablet {
+    visibility: hidden;
+  }
+}
+
+//button
+.startGallery {
+  background-color: rgba(246,28,206,.65);
+  color: white;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  font-size: 20px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
+  outline: none;
+  border-radius: 5px;
+  @include media-tablet {
+    width: 50%;
+  }
+  @include all-big-screens {
+    display: none;
+  }
+  @include media-desktop {
+    display: inline-block;
+    width: 57%;
   }
 }
