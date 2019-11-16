@@ -3,12 +3,14 @@ import axios from 'axios';
 import Logo from "./Subcomponents/Logo/logo";
 import Select from "./Subcomponents/Select/select";
 import Gallery from "./Subcomponents/Gallery/gallery";
+import BaseInformation from "./Subcomponents/Information/BaseInformation/baseInformation";
+import DetailedInformation from "./Subcomponents/Information/DetailedInformation/detailedInformation";
 
 function Breeds() {
     const [breeds, fetchBreeds] = useState([]);
-    const [breed, setBreed] = useState('abys');
+    const [breedID, setBreedID] = useState('abys');
     const [gallery, loadGallery] = useState([]);
-    const [toggler, setToggler] = useState(false);
+    const [selectedBreed, setSelectedBreed] = useState({});
 
     useEffect(() => {
          const fetchData = async () => {
@@ -23,21 +25,32 @@ function Breeds() {
 
     useEffect( () => {
         const fetchData = async () => {
-            return await axios.get(`/images/search?breed_ids=${breed}&limit=100`)
+            return await axios.get(`/images/search?breed_ids=${breedID}&limit=100`)
         };
         fetchData()
             .then(response => loadGallery(response.data))
             .catch(err => console.log(err, 'Mamy błąd'))
-    },[breed]);
-    console.log(breed);
-    console.log(gallery);
+    },[breedID]);
+
+    useEffect( () => {
+       const fetchData = async () => {
+           return await axios.get(`/breeds/search?q=${breedID}`)
+       };
+       fetchData()
+            .then(response => setSelectedBreed(response.data[0]))
+            .catch(err => console.log(err, 'Mamy błąd'))
+    },[breedID]);
 
     return (
         <div className={'wrapper'}>
             <div className={'breedsWrapper'}>
                 <Logo/>
-                <Select setBreed={setBreed} breed={breed} breeds={breeds}/>
-                <Gallery gallery={gallery} toggler={toggler} setToggler={setToggler}/>
+                <Select setBreedID={setBreedID} breedID={breedID} breeds={breeds}/>
+                <Gallery gallery={gallery}/>
+                <div className={'information-wrapper'}>
+                    <BaseInformation selectedBreed={selectedBreed}/>
+                    <DetailedInformation selectedBreed={selectedBreed}/>
+                </div>
             </div>
         </div>
     )
