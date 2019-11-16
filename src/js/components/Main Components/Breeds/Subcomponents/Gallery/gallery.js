@@ -17,8 +17,14 @@ function Gallery(props) {
                                 className={'breedGallery-image'}
                                 src={el.url}
                                 alt="kot"/>
+                            <p className={"tooltiptext-breeds"}>Kliknij i otwórz galerię</p>
                         </div>)}
+
             </div>
+            <button className={'startGallery'}
+                    onClick={() => setToggler(!toggler)}>
+                Otwórz Galerię
+            </button>
             <FSLightBox
                 toggler={toggler}
                 sources={arrayUrls}
