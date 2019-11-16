@@ -1,9 +1,10 @@
-import React from 'react';
+import React,{useState} from 'react';
 import PropTypes from 'prop-types';
 import FSLightBox from "fslightbox-react";
 
 function Gallery(props) {
-    const {gallery, toggler, setToggler} = props;
+    const {gallery} = props;
+    const [toggler, setToggler] = useState(false);
     const arrayUrls = gallery.map((el) => el.url);
     return (
         <>
@@ -40,6 +41,4 @@ export default Gallery;
 
 Gallery.propTypes = {
     gallery:PropTypes.array.isRequired,
-    toggler: PropTypes.bool.isRequired,
-    setToggler: PropTypes.func.isRequired
 };
