@@ -21,9 +21,6 @@ function Breeds() {
 
     },[]);
 
-
-    const selectedBreed = breeds.filter(breed => breed.id === breedID)[0];
-
     useEffect( () => {
         const fetchData = async () => {
             return await axios.get(`/images/search?breed_id=${breedID}&limit=100`)
@@ -33,7 +30,10 @@ function Breeds() {
             .catch(err => console.log(err, 'Mamy błąd'))
     },[breedID]);
 
+    const selectedBreed = breeds.filter(breed => breed.id === breedID)[0];
+
     return (
+
         <div className={'wrapper'}>
             <div className={'breedsWrapper'}>
                 <Logo/>

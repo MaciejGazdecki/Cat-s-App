@@ -24,9 +24,8 @@ function Charts(props) {
                     labels: labels.map(lab => lab.replace("_", " ")),
                     values: labels.map((label)=> selectedBreed[label])
                 }}
-                labels='flavor'
-                values='price'
                 title={selectedBreed.name}
+                style={{width:'500px', height: '500px'}}
             />
         </div>
     )

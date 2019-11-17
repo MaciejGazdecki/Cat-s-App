@@ -39,6 +39,7 @@ function VideoSection() {
                 toggler={lightboxController.toggler}
                 sources={videos}
                 slide={ lightboxController.slide }
+                disableLocalStorage={ true }
             />
         </>
     )

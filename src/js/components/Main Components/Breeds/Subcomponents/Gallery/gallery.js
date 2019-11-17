@@ -32,6 +32,7 @@ function Gallery(props) {
                 showThumbsOnMount={ true }
                 key={arrayUrls}
                 type={'image'}
+                disableLocalStorage={ true }
             />
         </>
     )

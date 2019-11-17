@@ -42,6 +42,7 @@ function Welcome() {
                 sources={cats}
                 slide={ lightboxController.slide }
                 showThumbsOnMount={ true }
+                disableLocalStorage={ true }
                 captions={ [
                     <>
                         <h2>Kot Syjamski</h2>
