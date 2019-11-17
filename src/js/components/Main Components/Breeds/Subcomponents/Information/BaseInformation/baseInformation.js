@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 
 function BaseInformation(props) {
     const {selectedBreed} = props;
-    console.log(selectedBreed);
     return selectedBreed ? (
         <div className={'base-information'}>
             <div className={'name'}>
