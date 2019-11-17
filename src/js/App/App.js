@@ -1,7 +1,6 @@
 import React from 'react';
 import {HashRouter as Router, Route} from 'react-router-dom';
 import Navigation from "../components/pageLayout/Navigation/navigation";
-import Cat from './images/white-4557097_1920.jpg'
 import Footer from '../components/pageLayout/Footer/footer';
 import HomePage from '../components/pageLayout/HomePage/homePage';
 import Curiosities from'../components/Main Components/Curosities about Cats/curiositesAboutCats';
@@ -15,12 +14,9 @@ axios.defaults.baseURL = 'https://api.thecatapi.com/v1';
 axios.defaults.headers.common['Authorization'] = '687fe573-b392-44ea-b985-63c162d0f64c';
 
 function  App () {
-    const style = {
-        backgroundImage: `url('${Cat}')`
-    };
     return (
             <Router>
-                <div className={'backgroundWrapper'} style={style}>
+                <div className={'backgroundWrapper'}>
                     <Navigation/>
                     <Route path="/" exact component={HomePage}/>
                     <Route path="/ciekawostki-o-kotach" component={Curiosities}/>

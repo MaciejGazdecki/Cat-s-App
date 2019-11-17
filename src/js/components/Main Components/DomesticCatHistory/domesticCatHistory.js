@@ -43,7 +43,7 @@ function DomesticCatHistory() {
                         natomiast koty trzymane w domu osiągają wiek do 20 lat. Na długość życia wpływa szereg czynników,
                         takich jak: płeć, styl życia czy zwyczaje.
                         <p>Źródło:</p>
-                        <p className={'source'}><a href="https://pl.wikipedia.org/wiki/Kot_domowy">
+                        <p className={'source'}><a target={'_blank'} href="https://pl.wikipedia.org/wiki/Kot_domowy">
                             https://pl.wikipedia.org/wiki/Kot_domowy</a>
                         </p>
                     </article>

@@ -10,7 +10,6 @@ function Breeds() {
     const [breeds, fetchBreeds] = useState([]);
     const [breedID, setBreedID] = useState('abys');
     const [gallery, loadGallery] = useState([]);
-    const [selectedBreed, setSelectedBreed] = useState({});
 
     useEffect(() => {
          const fetchData = async () => {
@@ -23,21 +22,14 @@ function Breeds() {
     },[]);
 
 
+    const selectedBreed = breeds.filter(breed => breed.id === breedID)[0];
+
     useEffect( () => {
         const fetchData = async () => {
-            return await axios.get(`/images/search?breed_ids=${breedID}&limit=100`)
+            return await axios.get(`/images/search?breed_id=${breedID}&limit=100`)
         };
         fetchData()
             .then(response => loadGallery(response.data))
-            .catch(err => console.log(err, 'Mamy błąd'))
-    },[breedID]);
-
-    useEffect( () => {
-       const fetchData = async () => {
-           return await axios.get(`/breeds/search?q=${breedID}`)
-       };
-       fetchData()
-            .then(response => setSelectedBreed(response.data[0]))
             .catch(err => console.log(err, 'Mamy błąd'))
     },[breedID]);
 
