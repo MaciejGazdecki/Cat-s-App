@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 function BaseInformation(props) {
     const {selectedBreed} = props;
     console.log(selectedBreed);
-    return (
+    return selectedBreed ? (
         <div className={'base-information'}>
             <div className={'name'}>
                 <h2>Rasa: {selectedBreed.name}</h2>
@@ -17,7 +17,7 @@ function BaseInformation(props) {
                 </span>
             </div>
         </div>
-    )
+    ) : null;
 }
 
 export default BaseInformation;

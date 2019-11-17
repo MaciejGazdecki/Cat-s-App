@@ -37,10 +37,11 @@ function Breeds() {
            return await axios.get(`/breeds/search?q=${breedID}`)
        };
        fetchData()
-            .then(response => setSelectedBreed(response.data[0]))
+            .then(response => {console.log(response);setSelectedBreed(response.data[0])})
             .catch(err => console.log(err, 'Mamy błąd'))
     },[breedID]);
-
+    console.log(breedID);
+    console.log(gallery);
     return (
         <div className={'wrapper'}>
             <div className={'breedsWrapper'}>
