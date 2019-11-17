@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types'
 import FSLightBox from "fslightbox-react";
+import Charts from "../Charts/charts";
 
 function DetailedInformation (props) {
     const {selectedBreed} = props;
@@ -8,7 +9,7 @@ function DetailedInformation (props) {
     console.log(selectedBreed);
     return  selectedBreed ? (
         <>
-            <div className={'detailed-information'} onClick={()=> setToggler(!toggler)}>
+            <div className={'detailed-information'}>
                 Detailed data. Each characteristic can have from 1 to 5 points:
                 <p>adaptability: {selectedBreed.adaptability}</p>
                 <p>Affection level: {selectedBreed.affection_level}</p>
@@ -22,11 +23,11 @@ function DetailedInformation (props) {
                 <p>Social needs: {selectedBreed.social_needs}</p>
                 <p>Stranger friendly: {selectedBreed.stranger_friendly}</p>
                 <p>Vocalisation: {selectedBreed.vocalisation}</p>
-                <p></p>
+                <button onClick={() => setToggler(!toggler)}>Display charts</button>
             </div>
             <FSLightBox
                 toggler={toggler}
-                customSources={[<div key="123">123</div>]}
+                customSources={[<div key={'0'}><Charts selectedBreed={selectedBreed}/></div>]}
             />
         </>
     ) : null;

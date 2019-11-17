@@ -7,7 +7,8 @@
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
     "start": "webpack-dev-server --mode development --open --hot",
-    "live": "webpack-dev-server --inline --hot"
+    "live": "webpack-dev-server --inline --hot",
+    "test": "eslint \"./src/js/**/*.js\""
   },
   "author": "Maciej Gazdecki",
   "license": "ISC",
