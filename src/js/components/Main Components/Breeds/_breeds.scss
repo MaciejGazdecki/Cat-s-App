@@ -12,8 +12,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 1800px;
+  height: 1850px;
   flex-direction: column;
+  @include iPhonexAndPixel2XL {
+    height: 1900px;
+  }
   @include all-big-screens{
     height: 1600px;
     padding: 10% auto;
