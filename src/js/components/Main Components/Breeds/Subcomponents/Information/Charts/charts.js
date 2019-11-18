@@ -39,8 +39,8 @@ function Charts(props) {
                         values: labels.map((label)=> selectedBreed[label]),
                     }}
                     title={selectedBreed.name}
-                    width={350}
-                    height={350}
+                    width={400}
+                    height={400}
                     axisFontSize={'1rem'}
                     margin={{top: 60, right: 50, bottom: 130, left: 100}}
                 />
