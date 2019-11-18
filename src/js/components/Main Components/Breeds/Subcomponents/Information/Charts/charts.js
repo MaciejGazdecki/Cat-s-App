@@ -19,14 +19,32 @@ function Charts(props) {
         'vocalisation'];
     return (
         <div className={'charts'}>
-            <Bar
-                data={{
-                    labels: labels.map(lab => lab.replace("_", " ")),
-                    values: labels.map((label)=> selectedBreed[label])
-                }}
-                title={selectedBreed.name}
-                style={{width:'500px', height: '500px'}}
-            />
+            <div className={'desktop'}>
+                <Bar
+                    data={{
+                        labels: labels.map(lab => lab.replace("_", " ")),
+                        values: labels.map((label)=> selectedBreed[label]),
+                    }}
+                    title={selectedBreed.name}
+                    width={800}
+                    height={800}
+                    axisFontSize={'1.3rem'}
+                    margin={{top: 60, right: 50, bottom: 130, left: 100}}
+                />
+            </div>
+            <div className={'mobile'}>
+                <Bar
+                    data={{
+                        labels: labels.map(lab => lab.replace("_", " ")),
+                        values: labels.map((label)=> selectedBreed[label]),
+                    }}
+                    title={selectedBreed.name}
+                    width={350}
+                    height={350}
+                    axisFontSize={'1rem'}
+                    margin={{top: 60, right: 50, bottom: 130, left: 100}}
+                />
+            </div>
         </div>
     )
 }

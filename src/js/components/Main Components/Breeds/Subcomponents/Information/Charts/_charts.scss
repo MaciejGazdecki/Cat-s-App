@@ -2,7 +2,34 @@
 @import "../../../../../../../sass/layout/_variables.scss";
 
 .charts {
-  height: 600px;
-  width: 600px;
   background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .desktop {
+    display: none;
+    @include only-mobiles-landscape {
+      display: none;
+    }
+    @include media-tablet {
+      display: inline-block;
+    }
+    @include iPhonexAndPixel2XL {
+      display: none;
+    }
+    @include all-big-screens {
+      display: inline-block;
+    }
+  }
+  .mobile {
+    @include media-tablet {
+      display: none;
+    }
+    @include iPhonexAndPixel2XL {
+      display: inline-block;
+    }
+    @include all-big-screens {
+      display: none;
+    }
+  }
 }

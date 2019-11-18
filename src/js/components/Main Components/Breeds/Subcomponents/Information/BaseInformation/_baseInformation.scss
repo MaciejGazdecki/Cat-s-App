@@ -4,4 +4,18 @@
 .base-information {
   display: flex;
   flex-direction: column;
+  h2 {
+    text-align: center;
+  }
+  .origin {
+    display: flex;
+    justify-content: flex-start;
+    align-items:center;
+    > p {
+      margin-right: 15px;
+    }
+  }
+}
+.bold {
+  font-weight: 700;
 }
