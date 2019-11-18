@@ -6,6 +6,7 @@ function Gallery(props) {
     const {gallery} = props;
     const [toggler, setToggler] = useState(false);
     const arrayUrls = gallery.map((el) => el.url);
+    console.log('rerenderiing');
     return (
         <>
             <div className={'gallery'}>
@@ -18,13 +19,13 @@ function Gallery(props) {
                                 className={'breedGallery-image'}
                                 src={el.url}
                                 alt="kot"/>
-                            <p className={"tooltiptext-breeds"}>Kliknij i otwórz galerię</p>
+                            <p className={"tooltiptext-breeds"}>Click to open on full screen</p>
                         </div>)}
 
             </div>
             <button className={'startGallery'}
                     onClick={() => setToggler(!toggler)}>
-                Otwórz Galerię
+                    Open Gallery
             </button>
             <FSLightBox
                 toggler={toggler}
@@ -32,6 +33,7 @@ function Gallery(props) {
                 showThumbsOnMount={ true }
                 key={arrayUrls}
                 type={'image'}
+                disableLocalStorage={ true }
             />
         </>
     )

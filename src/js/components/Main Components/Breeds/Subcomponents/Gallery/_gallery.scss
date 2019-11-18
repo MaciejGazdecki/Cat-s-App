@@ -23,6 +23,9 @@
     width:100%;
     cursor: pointer;
     position: relative;
+    + div {
+    margin-left: 60px;
+    }
     &:nth-child(2) {
       display: none;
       @include only-mobiles-landscape {
@@ -47,15 +50,6 @@
     .breedGallery-image {
       width: 100%;
       height: 200px;
-      @include only-mobiles-landscape {
-        width: 97%;
-      }
-      @include media-tablet {
-        width: 96%;
-      }
-      @include all-big-screens {
-        width: 92%;
-      }
     }
   }
 }

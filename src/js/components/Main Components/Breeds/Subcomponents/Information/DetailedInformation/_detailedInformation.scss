@@ -1,2 +1,8 @@
 @import "../../../../../../../sass/layout/_mixins.scss";
 @import "../../../../../../../sass/layout/_variables.scss";
+
+.detailed-information {
+  h2 {
+    text-align: center !important;
+  }
+}

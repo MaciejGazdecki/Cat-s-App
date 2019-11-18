@@ -1,32 +1,39 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types'
 import FSLightBox from "fslightbox-react";
+import Charts from "../Charts/charts";
 
+/**
+ * @return {null}
+ */
 function DetailedInformation (props) {
     const {selectedBreed} = props;
     const [toggler, setToggler] = useState(false);
-    console.log(selectedBreed);
+
+    console.log('rerendering');
+
     return  selectedBreed ? (
         <>
-            <div className={'detailed-information'} onClick={()=> setToggler(!toggler)}>
-                Detailed data. Each characteristic can have from 1 to 5 points:
-                <p>adaptability: {selectedBreed.adaptability}</p>
-                <p>Affection level: {selectedBreed.affection_level}</p>
-                <p>Child friendly: {selectedBreed.child_friendly}</p>
-                <p>Dog friendly: {selectedBreed.dog_friendly}</p>
-                <p>Energy level: {selectedBreed.energy_level}</p>
-                <p>Grooming: {selectedBreed.grooming}</p>
-                <p>Health issues: {selectedBreed.health_issues}</p>
-                <p>Intelligence: {selectedBreed.intelligence}</p>
-                <p>Shedding level: {selectedBreed.shedding_level}</p>
-                <p>Social needs: {selectedBreed.social_needs}</p>
-                <p>Stranger friendly: {selectedBreed.stranger_friendly}</p>
-                <p>Vocalisation: {selectedBreed.vocalisation}</p>
-                <p></p>
+            <div className={'detailed-information'}>
+                <h2>Detailed data. Max 5 points:</h2>
+                <p><span className={'bold'}>Adaptability: </span>{selectedBreed.adaptability}</p>
+                <p><span className={'bold'}>Affection level: </span>{selectedBreed.affection_level}</p>
+                <p><span className={'bold'}>Child friendly: </span>{selectedBreed.child_friendly}</p>
+                <p><span className={'bold'}>Dog friendly: </span>{selectedBreed.dog_friendly}</p>
+                <p><span className={'bold'}>Energy level: </span>{selectedBreed.energy_level}</p>
+                <p><span className={'bold'}>Grooming: </span>{selectedBreed.grooming}</p>
+                <p><span className={'bold'}>Health issues: </span>{selectedBreed.health_issues}</p>
+                <p><span className={'bold'}>Intelligence: </span>{selectedBreed.intelligence}</p>
+                <p><span className={'bold'}>Shedding level: </span>{selectedBreed.shedding_level}</p>
+                <p><span className={'bold'}>Social needs: </span>{selectedBreed.social_needs}</p>
+                <p><span className={'bold'}>Stranger friendly: </span>{selectedBreed.stranger_friendly}</p>
+                <p><span className={'bold'}>Vocalisation: </span>{selectedBreed.vocalisation}</p>
+                <button onClick={() => {setToggler(!toggler)}}>Display charts</button>
             </div>
             <FSLightBox
                 toggler={toggler}
-                customSources={[<div key="123">123</div>]}
+                customSources={[<div><Charts selectedBreed={selectedBreed}/></div>]}
+                disableLocalStorage={ true }
             />
         </>
     ) : null;

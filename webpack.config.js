@@ -10,7 +10,7 @@ module.exports = {
     devServer: {
         contentBase: "./dist",
         port:8080,
-        host:"0.0.0.0",
+        host:"192.168.1.65",
     },
     devtool: "source-map",
     plugins: [
@@ -24,9 +24,7 @@ module.exports = {
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                use: ['babel-loader',
-                      'eslint-loader'
-                ],
+                use: ['babel-loader'],
             },
             {
                 test: /\.s[ac]ss$/i,
