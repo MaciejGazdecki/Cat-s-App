@@ -45,10 +45,13 @@ function Breeds() {
                 </div>
             </div>
         </div>
-    //    tu dawalem też FSLightbox z chartem i button zaraz pod DetailedInformation i to samo, zamiast Charts
-        // dawalem link do youtube lub cokolwiek i to samo galeria otwiera sie tylko raz, dawalem key jak pisza w dok i to samo
-        //wyzej juz poleciec nie moge bo komponentem nadrzednym jest APP, ale to chyba nie od tego..zauwazylem ze po kazdym
-    // otwarciu ligtboxa komponent chyba sie renderuje na nowo.. to nie powoduje problemu???
+    )
 }
+
+//    tu przenioslem też FSLightbox z chartem, zaraz pod wrapperem i objalem to fragments i button zaraz pod
+//    DetailedInformation i to samo, a Charts zaimportowalem. Zamiast Charts probowalem dodac cokolwiek
+// dawalem link do youtube lub cokolwiek i to samo galeria otwiera sie tylko raz, dawalem key jak pisza w dok i to samo
+//wyzej juz poleciec nie moge bo komponentem nadrzednym jest APP, ale to chyba nie od tego..zauwazylem ze po kazdym
+// otwarciu ligtboxa komponent chyba sie renderuje na nowo.. to nie powoduje problemu???
 
 export default Breeds;
