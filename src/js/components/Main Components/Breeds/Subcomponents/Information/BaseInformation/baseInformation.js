@@ -20,20 +20,20 @@ function BaseInformation(props) {
                 </p>
             </div>
             <div className={'description'}>
-                <span className={'bold'}>Description: </span>{selectedBreed.description}
+                <p><span className={'bold'}>Description: </span>{selectedBreed.description}</p>
             </div>
             <div className={'temperament'}>
-                <span className={'bold'}>Temperament: </span>{selectedBreed.temperament}
+                <p><span className={'bold'}>Temperament: </span>{selectedBreed.temperament}</p>
             </div>
             <div className={'life-span'}>
-                <span className={'bold'}>Average life span: </span>{selectedBreed.life_span} years
+                <p><span className={'bold'}>Average life span: </span>{selectedBreed.life_span} years</p>
             </div>
             <div className={'weight'}>
                 <p><span className={'bold'}>Weight (kg): </span>{selectedBreed.weight.metric}</p>
                 <p><span className={'bold'}>Weight (lb): </span>{selectedBreed.weight.imperial} </p>
             </div>
             <div className={'more info'}>
-                <span className={'bold'}>More info: </span>
+                <p><span className={'bold'}>More info: </span></p>
                 <p><a href={selectedBreed.wikipedia_url} target={'_blank'}>{selectedBreed.wikipedia_url}</a></p>
                 <p><a href={selectedBreed.vcahospitals_url} target={'_blank'}>{selectedBreed.vcahospitals_url}</a></p>
                 <p><a href={selectedBreed.vetstreet_url} target={'_blank'}>{selectedBreed.vetstreet_url}</a></p>

@@ -4,6 +4,8 @@
 .base-information {
   display: flex;
   flex-direction: column;
+  height: 650px !important;
+  overflow-y: scroll;
   h2 {
     text-align: center;
   }

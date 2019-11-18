@@ -28,7 +28,7 @@ function DetailedInformation (props) {
                 <p><span className={'bold'}>Social needs: </span>{selectedBreed.social_needs}</p>
                 <p><span className={'bold'}>Stranger friendly: </span>{selectedBreed.stranger_friendly}</p>
                 <p><span className={'bold'}>Vocalisation: </span>{selectedBreed.vocalisation}</p>
-                <button onClick={() => {setToggler(!toggler)}}>Display charts</button>
+                <button className={'show-chart'} onClick={() => {setToggler(!toggler)}}>Display chart</button>
             </div>
             <FSLightBox
                 toggler={toggler}
