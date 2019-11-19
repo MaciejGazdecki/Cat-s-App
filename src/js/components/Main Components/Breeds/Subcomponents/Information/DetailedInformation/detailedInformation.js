@@ -34,6 +34,7 @@ function DetailedInformation (props) {
                 toggler={toggler}
                 customSources={[<div><Charts selectedBreed={selectedBreed}/></div>]}
                 disableLocalStorage={ true }
+                key={[<div><Charts selectedBreed={selectedBreed}/></div>]}
             />
         </>
     ) : null;

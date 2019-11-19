@@ -31,7 +31,7 @@ function Breeds() {
     },[breedID]);
 
     const selectedBreed = breeds.filter(breed => breed.id === breedID)[0];
-
+    console.log(gallery);
     return (
 
         <div className={'wrapper'}>
