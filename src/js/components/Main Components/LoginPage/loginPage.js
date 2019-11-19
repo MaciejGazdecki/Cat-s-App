@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 const uniqid = require('uniqid');
 
 function LoginPage() {
@@ -8,7 +8,6 @@ function LoginPage() {
         if (user.trim()) {
             localStorage.setItem('userName', user);
             localStorage.setItem('userID', uniqid());
-            setUser('')
         }
     };
 
@@ -21,7 +20,7 @@ function LoginPage() {
             <form onSubmit={handleSubmit}>
                 <label>
                     Please put your name
-                    <input type="text" id={'login'} value={user} onChange={(event => setUser(event.target.value)) }/>
+                    <input type="text" id={'login'}  onChange={(event => setUser(event.target.value)) }/>
                 </label>
                 <input type="submit" value="Log in" />
             </form>
