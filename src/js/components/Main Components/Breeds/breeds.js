@@ -34,7 +34,7 @@ function Breeds() {
     console.log(gallery);
     return (
 
-        <div className={'wrapper'}>
+        <section className={'wrapper'}>
             <div className={'breedsWrapper'}>
                 <Logo/>
                 <Select setBreedID={setBreedID} breedID={breedID} breeds={breeds}/>
@@ -44,7 +44,7 @@ function Breeds() {
                     <DetailedInformation selectedBreed={selectedBreed}/>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 
