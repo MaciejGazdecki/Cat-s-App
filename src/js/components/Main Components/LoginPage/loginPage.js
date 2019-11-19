@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 const uniqid = require('uniqid');
 
 function LoginPage() {
@@ -8,6 +8,7 @@ function LoginPage() {
         if (user.trim()) {
             localStorage.setItem('userName', user);
             localStorage.setItem('userID', uniqid());
+            setUser('');
         }
     };
 
@@ -15,16 +16,20 @@ function LoginPage() {
     if (localStorage.getItem('userName')) pageUser = localStorage.getItem('userName');
 
     const form =
-        <>
+        <div className={'form-wrapper'}>
             <h1>SIGN IN</h1>
             <form onSubmit={handleSubmit}>
                 <label>
                     Please put your name
-                    <input type="text" id={'login'}  onChange={(event => setUser(event.target.value)) }/>
+                    <input type="text" id={'login'}
+                           placeholder={'Please put your name'}
+                           value={user}
+                           onChange={(event => setUser(event.target.value)) }
+                    />
                 </label>
                 <input type="submit" value="Log in" />
             </form>
-        </>;
+        </div>;
 
     const userOnPage =
         <div className={'userOnPage'}>
