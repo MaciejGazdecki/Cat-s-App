@@ -4,6 +4,8 @@ import {Bar} from 'react-roughviz';
 
 function Charts(props) {
     const {selectedBreed} = props;
+    const breeds = JSON.parse(localStorage.getItem('breeds'));
+    console.log(breeds);
     const labels = [
         'adaptability',
         'affection_level',
