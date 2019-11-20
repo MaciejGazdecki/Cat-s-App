@@ -6,7 +6,6 @@ function Gallery(props) {
     const {gallery} = props;
     const [toggler, setToggler] = useState(false);
     const arrayUrls = gallery.map((el) => el.url);
-    console.log('rerenderiing');
     return (
         <>
             <div className={'gallery'}>

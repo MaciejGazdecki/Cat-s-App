@@ -28,7 +28,7 @@ function DetailedInformation (props) {
                 <p><span className={'bold'}>Social needs: </span>{selectedBreed.social_needs}</p>
                 <p><span className={'bold'}>Stranger friendly: </span>{selectedBreed.stranger_friendly}</p>
                 <p><span className={'bold'}>Vocalisation: </span>{selectedBreed.vocalisation}</p>
-                <button className={'show-chart'} onClick={() => {setToggler(!toggler)}}>Display chart</button>
+                <button className={'show-chart'} onClick={() => setToggler(oldToggler => !oldToggler)}>Display chart</button>
             </div>
             <FSLightBox
                 toggler={toggler}
@@ -41,14 +41,6 @@ function DetailedInformation (props) {
 }
 
 export default DetailedInformation;
-/*tutaj jest problem, dodawalem key zgodnie z dokumentacja FSLightbox, ba przenosilem ja do osobnego
-komponentu,, przenosilem ja do komponentu rodzica i importowalem tam komponent Chart, w komponencie
-rodzica zamiast customsources robilem sources i dawalem jakis tam plik lub film z Youtube, ciagle to
-samo lightbox uruchamia sie tylko raz, nastepny,raz sie wykrzacza, po przeladowaniu strony to samo lightbox
-z chartem mozna uruchomic tylko raz i zamknac, bo potem sa errory ciagle te same, inne instancje FSLightbox
-dzialaja bez zarzutu. problem jest tylko i wylacznie tu. Absolotnie nie wiem jak temu zaradzic i skad blad
-dlaczego akurat tu, w devtolsach reacta ten t component to wlasnie lightbox, a te bledy "noe" is  not a
-function to i na stacku nie ma*/
 
 DetailedInformation.propTypes = {
     selectedBreed: PropTypes.object.isRequired
