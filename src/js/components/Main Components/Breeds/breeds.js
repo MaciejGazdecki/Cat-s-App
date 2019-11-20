@@ -31,10 +31,10 @@ function Breeds() {
     },[breedID]);
 
     const selectedBreed = breeds.filter(breed => breed.id === breedID)[0];
-
+    console.log(gallery);
     return (
 
-        <div className={'wrapper'}>
+        <section className={'wrapper'}>
             <div className={'breedsWrapper'}>
                 <Logo/>
                 <Select setBreedID={setBreedID} breedID={breedID} breeds={breeds}/>
@@ -44,8 +44,14 @@ function Breeds() {
                     <DetailedInformation selectedBreed={selectedBreed}/>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
+
+//    tu przenioslem też FSLightbox z chartem, zaraz pod wrapperem i objalem to fragments i button zaraz pod
+//    DetailedInformation i to samo, a Charts zaimportowalem. Zamiast Charts probowalem dodac cokolwiek
+// dawalem link do youtube lub cokolwiek i to samo galeria otwiera sie tylko raz, dawalem key jak pisza w dok i to samo
+//wyzej juz poleciec nie moge bo komponentem nadrzednym jest APP, ale to chyba nie od tego..zauwazylem ze po kazdym
+// otwarciu ligtboxa komponent chyba sie renderuje na nowo.. to nie powoduje problemu???
 
 export default Breeds;

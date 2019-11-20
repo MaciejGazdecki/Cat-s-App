@@ -4,6 +4,10 @@
 .base-information {
   display: flex;
   flex-direction: column;
+  overflow-y: scroll;
+  @include all-big-screens {
+    overflow-y: hidden;
+  }
   h2 {
     text-align: center;
   }
