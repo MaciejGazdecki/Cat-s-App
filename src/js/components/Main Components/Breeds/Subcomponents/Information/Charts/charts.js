@@ -50,32 +50,6 @@ function Charts() {
                         />
                         </div>
                 </div>) : <div className="noChartToDisplay">Please add any breed to display chart here</div>}
-            {/*<div className={'desktop'}>*/}
-            {/*    <Bar*/}
-            {/*        data={{*/}
-            {/*            labels: labels.map(lab => lab.replace("_", " ")),*/}
-            {/*            values: labels.map((label)=> selectedBreed[label]),*/}
-            {/*        }}*/}
-            {/*        title={selectedBreed.name}*/}
-            {/*        width={800}*/}
-            {/*        height={800}*/}
-            {/*        axisFontSize={'1.3rem'}*/}
-            {/*        margin={{top: 60, right: 50, bottom: 130, left: 100}}*/}
-            {/*    />*/}
-            {/*</div>*/}
-            {/*<div className={'mobile'}>*/}
-            {/*    <Bar*/}
-            {/*        data={{*/}
-            {/*            labels: labels.map(lab => lab.replace("_", " ")),*/}
-            {/*            values: labels.map((label)=> selectedBreed[label]),*/}
-            {/*        }}*/}
-            {/*        title={selectedBreed.name}*/}
-            {/*        width={400}*/}
-            {/*        height={400}*/}
-            {/*        axisFontSize={'1rem'}*/}
-            {/*        margin={{top: 60, right: 50, bottom: 130, left: 100}}*/}
-            {/*    />*/}
-            {/*</div>*/}
         </div>
     )
 }
