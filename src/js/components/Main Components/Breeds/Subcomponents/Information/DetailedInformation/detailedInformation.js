@@ -64,12 +64,16 @@ function DetailedInformation (props) {
                 toggler={toggler}
                 customSources={[<div><Charts /></div>]}
                 disableLocalStorage={ true }
-                key={[<div><Charts selectedBreed={selectedBreed}/></div>]}
+                key={[<div><Charts /></div>]}
             />
         </>
     ) : null;
 }
-
+//Hej Przemek problem jest tylko z tą instancją FSLightbox.. jedna jedyna.. dodanie callbacka do setToggler nic nie pomoglo,
+//inne galerie dzialaja nawet i bez niego.. jak bylo tak j est mimo ze korzysta z poprzedniego state.. otwiera sie tylko raz
+//a potem wykrzacza.. po przeladowaniu strony jest ok..dziala tylko raz i tak wkolko..wykresy raz otwarte w trybie landscape lub
+//horizontal juz tak zostaja i nie da sie tego ostylowac nawet !important.. probowalem z transform ale potem to rozwala inne
+// polozenie narazie zostawiam tego buga.ta galeria tylko mnie denerwuje..
 export default DetailedInformation;
 
 DetailedInformation.propTypes = {
