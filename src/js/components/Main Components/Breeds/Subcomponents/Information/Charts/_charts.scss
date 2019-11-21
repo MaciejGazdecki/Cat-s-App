@@ -6,6 +6,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  @include only-mobiles-landscape {
+    flex-direction: row;
+  }
+  @include all-big-screens {
+    flex-direction: row;
+  }
+  @include iPhonexAndPixel2XL {
+    flex-direction: row;
+  }
   .desktop {
     display: none;
     @include only-mobiles-landscape {

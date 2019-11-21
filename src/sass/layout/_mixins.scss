@@ -1,3 +1,4 @@
+@import "variables";
 //flex
 @mixin flex($direction:row,
 $justify-content:flex-start,
@@ -94,3 +95,19 @@ $align-items:flex-start) {
   }
 }
 
+//buttons
+
+@mixin breeds-buttons {
+  background-color: $button-colors;
+  color: white;
+  padding: 12px;
+  border: none;
+  font-size: 20px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
+  outline: none;
+  border-radius: 5px;
+  &:hover {
+    background-color: $button-colors-hover;
+  }
+  @content
+}
