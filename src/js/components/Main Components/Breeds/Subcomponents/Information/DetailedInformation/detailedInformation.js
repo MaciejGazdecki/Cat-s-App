@@ -14,8 +14,13 @@ function DetailedInformation (props) {
         let breedsArray = [];
         if(localStorage.getItem('breeds') !== null) {
             breedsArray = JSON.parse(localStorage.getItem('breeds'));
-            breedsArray.push(selectedBreed);
-            localStorage.setItem('breeds',JSON.stringify(breedsArray))
+            if (breedsArray.length < 2) {
+                breedsArray.push(selectedBreed);
+                localStorage.setItem('breeds',JSON.stringify(breedsArray))
+            } else {
+                alert('You can add only two breeds to charts, please remove one or clear all!!')
+            }
+
         } else {
             breedsArray.push(selectedBreed);
             localStorage.setItem('breeds', JSON.stringify(breedsArray))
@@ -28,8 +33,10 @@ function DetailedInformation (props) {
             localStorage.setItem('breeds', JSON.stringify(newArray))
         }
     };
-    const breeds = JSON.parse(localStorage.getItem('breeds'));
-    console.log(breeds);
+    const clearStorage = () => {
+        localStorage.removeItem('breeds')
+    };
+
     return  selectedBreed ? (
         <>
             <div className={'detailed-information'}>
@@ -46,9 +53,12 @@ function DetailedInformation (props) {
                 <p><span className="bold">Social needs: </span>{selectedBreed.social_needs}</p>
                 <p><span className='bold'>Stranger friendly: </span>{selectedBreed.stranger_friendly}</p>
                 <p><span className="bold">Vocalisation: </span>{selectedBreed.vocalisation}</p>
-                <button className="charts-btn" onClick={addStorageHandler}>Add to charts</button>
-                <button className="charts-btn" onClick={removeStorageHandler}>Remove from charts</button>
-                <button className="show-chart" onClick={() => setToggler(oldToggler => !oldToggler)}>Display charts</button>
+                <div className="buttons">
+                    <button className="charts-btn" onClick={addStorageHandler}>Add to charts</button>
+                    <button className="charts-btn" onClick={removeStorageHandler}>Remove from charts</button>
+                    <button className='charts-btn' onClick={clearStorage}>Clear all charts</button>
+                    <button className="charts-btn" onClick={() => setToggler(oldToggler => !oldToggler)}>Display charts</button>
+                </div>
             </div>
             <FSLightBox
                 toggler={toggler}
