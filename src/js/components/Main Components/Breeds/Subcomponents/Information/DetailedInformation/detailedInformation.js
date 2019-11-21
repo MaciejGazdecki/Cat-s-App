@@ -62,7 +62,7 @@ function DetailedInformation (props) {
             </div>
             <FSLightBox
                 toggler={toggler}
-                customSources={[<div><Charts selectedBreed={selectedBreed}/></div>]}
+                customSources={[<div><Charts /></div>]}
                 disableLocalStorage={ true }
                 key={[<div><Charts selectedBreed={selectedBreed}/></div>]}
             />

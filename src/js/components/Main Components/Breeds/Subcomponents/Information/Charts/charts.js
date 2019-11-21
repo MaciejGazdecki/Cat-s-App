@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import {Bar} from 'react-roughviz';
 
 function Charts() {
-    // const {selectedBreed} = props;
     const breeds = JSON.parse(localStorage.getItem('breeds'));
     console.log(breeds);
     const labels = [
@@ -55,7 +54,3 @@ function Charts() {
 }
 
 export default Charts;
-
-Charts.propTypes= {
-    selectedBreed: PropTypes.object.isRequired
-};
