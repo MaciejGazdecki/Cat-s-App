@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {NavLink} from 'react-router-dom'
-import logo from './assets/clipart-10-9-18-34-33.png';
+import logo from '../../../../../images/output-onlinepngtools.png';
 
 function Navigation() {
     const [navOpen, setNavOpen] = useState(false);
