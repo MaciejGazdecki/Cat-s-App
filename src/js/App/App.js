@@ -3,7 +3,7 @@ import {HashRouter as Router, Route} from 'react-router-dom';
 import Navigation from "../components/Main Components/Navigation/navigation";
 import Footer from '../components/pageLayout/Footer/footer';
 import HomePage from '../components/pageLayout/HomePage/homePage';
-import Curiosities from '../components/Main Components/Curosities about Cats/adoptACat';
+import AdoptACat from '../components/Main Components/Adoption/adoptACat';
 import Breeds from '../components/Main Components/Breeds/breeds';
 import PhotoSearch from '../components/Main Components/PhotoSearch/photoSearch';
 import Favourites from '../components/Main Components/Favourites/favourites';
@@ -18,11 +18,11 @@ function  App () {
             <Router>
                 <Navigation/>
                     <Route path="/" exact component={HomePage}/>
-                    <Route path="/ciekawostki-o-kotach" component={Curiosities}/>
-                    <Route path="/rasy-kotow-domowych" component={Breeds}/>
-                    <Route path="/wyszukiwarka-zdjec" component={PhotoSearch}/>
-                    <Route path='/ulubione-zdjecia' component={Favourites}/>
-                    <Route path='/logowanie' component={LoginPage}/>
+                    <Route path="/adopt-a-Cat" component={AdoptACat}/>
+                    <Route path="/breeds" component={Breeds}/>
+                    <Route path="/search-photo" component={PhotoSearch}/>
+                    <Route path='/favourites' component={Favourites}/>
+                    <Route path='/login' component={LoginPage}/>
                 <Footer/>
             </Router>
     )

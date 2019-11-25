@@ -1,6 +1,6 @@
 import React from 'react';
 
-function CuriositiesAboutCars() {
+function AdoptACat() {
     return (
         <div className='wrapper'>
             <div className='adoptACatWrapper'>
@@ -12,4 +12,4 @@ function CuriositiesAboutCars() {
 
 }
 
-export default CuriositiesAboutCars;
+export default AdoptACat;

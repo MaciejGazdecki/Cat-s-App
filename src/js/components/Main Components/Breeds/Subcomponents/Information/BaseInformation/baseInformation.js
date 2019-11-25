@@ -32,7 +32,7 @@ function BaseInformation(props) {
                 <p><span className={'bold'}>Weight (kg): </span>{selectedBreed.weight.metric}</p>
                 <p><span className={'bold'}>Weight (lb): </span>{selectedBreed.weight.imperial} </p>
             </div>
-            <div className={'more info'}>
+            <div className={'more-info'}>
                 <p><span className={'bold'}>More info: </span></p>
                 <p><a href={selectedBreed.wikipedia_url} target={'_blank'}>{selectedBreed.wikipedia_url}</a></p>
                 <p><a href={selectedBreed.vcahospitals_url} target={'_blank'}>{selectedBreed.vcahospitals_url}</a></p>

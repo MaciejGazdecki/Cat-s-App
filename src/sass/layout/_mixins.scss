@@ -111,3 +111,10 @@ $align-items:flex-start) {
   }
   @content
 }
+
+//gradient
+
+@mixin main-gradient-grey {
+  background: #403B4A;
+  background: linear-gradient(to right, #E7E9BB, #403B4A);
+}
