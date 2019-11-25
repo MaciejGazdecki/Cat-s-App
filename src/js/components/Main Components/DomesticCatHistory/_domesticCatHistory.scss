@@ -3,8 +3,8 @@
 
 .catsHistory {
   margin: $margin-mobile;
+  padding: 40px 0;
   h2 {
-    margin: 3% auto;
     font-size: $font-sizeSpecial-mobile-tablet;
     text-align: center;
     font-family: $special-font;
@@ -15,7 +15,6 @@
   .articleWrapper {
     display: flex;
     flex-direction: column;
-    margin-bottom: 4%;
     @include media-tablet {
       flex-direction: row;
       justify-content: space-between;
@@ -45,5 +44,49 @@
       }
     }
   }
-
+}
+.catHistorySection {
+  background-color: #DDDDDD;
+}
+.catLogo {
+  display: none;
+  @include media-desktop-big {
+    display: block;
+    position: absolute;
+    top: 160%;
+    left: -19%;
+    &:hover {
+      animation: jump 1.7s ease-out;
+    }
+  }
+}
+@keyframes jump {
+  0% {
+    transform: rotate(0deg);
+    left:-19%
+  }
+  15%{
+    transform: rotate(15deg);
+    left: -18%;
+  }
+  25% {
+    transform: rotate(25deg);
+    left: -17%;
+  }
+  50% {
+    transform: rotate(30deg);
+    left: -16%;
+  }
+  75%{
+    transform: rotate(25deg);
+    left: -17deg;
+  }
+  85% {
+    transform: rotate(15deg);
+    left: -18%;
+  }
+  100% {
+    transform: rotate(0deg);
+    left:-19%
+  }
 }

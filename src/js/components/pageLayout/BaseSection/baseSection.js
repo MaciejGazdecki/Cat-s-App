@@ -5,9 +5,11 @@ import Welcome from '../../Main Components/Welcome/welcome';
 function BaseSection() {
     return(
 
-            <section className={'base-section'}>
-                <div className={"wrapper baseSectionContainer"} >
-                    <Route path="/" exact component={Welcome}/>
+            <section className='base-section backgroundWrapper'>
+                <div className="blackLayer">
+                    <div className="wrapper baseSectionContainer " >
+                        <Route path="/" exact component={Welcome}/>
+                    </div>
                 </div>
             </section>
     )

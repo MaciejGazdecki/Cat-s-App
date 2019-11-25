@@ -5,6 +5,7 @@
   font-size: $font-sizeSpecial-mobile-tablet;
   text-align: center;
   margin: 2% auto;
+  color: $main-font-color;
   font-family: 'Pacifico', cursive;
   @include media-tablet {
     font-size: $font-sizeSpecial-desktop;
@@ -20,6 +21,7 @@
 p.welcome-content {
   font-size: 1.15rem;
   font-weight: 600;
+  color: $main-font-color;
   @include media-mobile-S {
   font-size: 1.45rem;
   }

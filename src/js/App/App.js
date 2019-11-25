@@ -1,9 +1,9 @@
 import React from 'react';
 import {HashRouter as Router, Route} from 'react-router-dom';
-import Navigation from "../components/pageLayout/Navigation/navigation";
+import Navigation from "../components/Main Components/Navigation/navigation";
 import Footer from '../components/pageLayout/Footer/footer';
 import HomePage from '../components/pageLayout/HomePage/homePage';
-import Curiosities from'../components/Main Components/Curosities about Cats/curiositesAboutCats';
+import Curiosities from '../components/Main Components/Curosities about Cats/adoptACat';
 import Breeds from '../components/Main Components/Breeds/breeds';
 import PhotoSearch from '../components/Main Components/PhotoSearch/photoSearch';
 import Favourites from '../components/Main Components/Favourites/favourites';
@@ -16,16 +16,14 @@ axios.defaults.headers.common['Authorization'] = '687fe573-b392-44ea-b985-63c162
 function  App () {
     return (
             <Router>
-                <div className={'backgroundWrapper'}>
-                    <Navigation/>
+                <Navigation/>
                     <Route path="/" exact component={HomePage}/>
                     <Route path="/ciekawostki-o-kotach" component={Curiosities}/>
                     <Route path="/rasy-kotow-domowych" component={Breeds}/>
                     <Route path="/wyszukiwarka-zdjec" component={PhotoSearch}/>
                     <Route path='/ulubione-zdjecia' component={Favourites}/>
                     <Route path='/logowanie' component={LoginPage}/>
-                    <Footer/>
-                </div>
+                <Footer/>
             </Router>
     )
 }

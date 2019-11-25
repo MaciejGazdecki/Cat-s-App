@@ -1,0 +1,12 @@
+@import "../../../../sass/layout/mixins";
+@import "../../../../sass/layout/variables";
+
+.favouritesWrapper {
+  padding-top: 300px;
+  padding-bottom: 300px;
+  margin: $margin-mobile;
+  width: 100%;
+  @include all-big-screens {
+    margin-left: 0;
+  }
+}

@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {NavLink} from 'react-router-dom'
-import logo from './assets/clipart-10-9-18-34-33.png';
+import logo from '../../../../../images/output-onlinepngtools.png';
 
 function Navigation() {
     const [navOpen, setNavOpen] = useState(false);
@@ -27,12 +27,6 @@ function Navigation() {
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink to='/ciekawostki-o-kotach'
-                                         onClick={() => setNavOpen(!navOpen)}>
-                                ABOUT DOMESTIC CAT
-                                </NavLink>
-                            </li>
-                            <li>
                                 <NavLink to='/rasy-kotow-domowych'
                                          onClick={() => setNavOpen(!navOpen)}>
                                 CAT'S BREEDS
@@ -41,7 +35,7 @@ function Navigation() {
                             <li>
                                 <NavLink to='/wyszukiwarka-zdjec'
                                          onClick={() => setNavOpen(!navOpen)}>
-                                FIND PHOTO
+                                PHOTO SEARCH
                                 </NavLink>
                             </li>
                             <li>
@@ -50,7 +44,14 @@ function Navigation() {
                                 FAVOURITES PHOTOS
                                 </NavLink>
                             </li>
-                            <li><NavLink to='/logowanie'
+                            <li>
+                                <NavLink to='/ciekawostki-o-kotach'
+                                         onClick={() => setNavOpen(!navOpen)}>
+                                    ADOPT A CAT
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to='/logowanie'
                                          onClick={() => setNavOpen(!navOpen)}>
                                 { user ? `SIGNED AS ${user.toUpperCase()}` : 'SIGN IN'}
                                 </NavLink>
