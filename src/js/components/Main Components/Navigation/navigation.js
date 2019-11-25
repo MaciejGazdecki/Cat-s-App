@@ -27,31 +27,31 @@ function Navigation() {
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink to='/rasy-kotow-domowych'
+                                <NavLink to='/breeds'
                                          onClick={() => setNavOpen(!navOpen)}>
                                 CAT'S BREEDS
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink to='/wyszukiwarka-zdjec'
+                                <NavLink to='/search-photo'
                                          onClick={() => setNavOpen(!navOpen)}>
                                 PHOTO SEARCH
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink to='/ulubione-zdjecia'
+                                <NavLink to='/favourites'
                                          onClick={() => setNavOpen(!navOpen)}>
                                 FAVOURITES PHOTOS
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink to='/ciekawostki-o-kotach'
+                                <NavLink to='/adopt-a-Cat'
                                          onClick={() => setNavOpen(!navOpen)}>
                                     ADOPT A CAT
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink to='/logowanie'
+                                <NavLink to='/login'
                                          onClick={() => setNavOpen(!navOpen)}>
                                 { user ? `SIGNED AS ${user.toUpperCase()}` : 'SIGN IN'}
                                 </NavLink>

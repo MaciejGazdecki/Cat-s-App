@@ -46,7 +46,7 @@
   }
 }
 .catHistorySection {
-  background-color: #DDDDDD;
+  @include main-gradient-grey;
 }
 .catLogo {
   display: none;
