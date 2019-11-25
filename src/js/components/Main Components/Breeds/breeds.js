@@ -34,12 +34,12 @@ function Breeds() {
 
     return (
 
-        <section className={'wrapper'}>
-            <div className={'breedsWrapper'}>
+        <section className='breedsSection'>
+            <div className='breedsWrapper wrapper'>
                 <Logo/>
                 <Select setBreedID={setBreedID} breedID={breedID} breeds={breeds}/>
                 <Gallery gallery={gallery}/>
-                <div className={'information-wrapper'}>
+                <div className='information-wrapper'>
                     <BaseInformation selectedBreed={selectedBreed}/>
                     <DetailedInformation selectedBreed={selectedBreed}/>
                 </div>
