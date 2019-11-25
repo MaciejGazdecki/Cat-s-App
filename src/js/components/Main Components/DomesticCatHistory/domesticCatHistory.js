@@ -1,15 +1,19 @@
 import React from 'react';
+import cat from '../../../../../images/contactbg1.png'
 
 function DomesticCatHistory() {
     return (
-        <section>
-            <div className={'wrapper catsHistory'}>
+        <section className='catHistorySection'>
+            <div className='wrapper catsHistory'>
+                <div className='catLogo'>
+                    <img src={cat} alt=""/>
+                </div>
                 <h2>Historia kota domowego</h2>
-                <div className={"articleWrapper"}>
+                <div className="articleWrapper">
                     <article>
-                        <span className={'italic'}>Felis catus</span>, również
-                        <span className={'italic'}> Felis silvestris catus</span>
-                         lub lub <span className={'italic'}>Felis (silvestris) domesticus) </span>
+                        <span className='italic'>Felis catus</span>, również
+                        <span className='italic'> Felis silvestris catus</span>
+                         lub lub <span className='italic'>Felis (silvestris) domesticus) </span>
                         – udomowiony gatunek ssaka z rzędu drapieżnych z rodziny kotowatych. Koty
                         zostały udomowione około 9500 lat temu i są obecnie najpopularniejszymi zwierzętami
                         domowymi na świecie. Gatunek prawdopodobnie pochodzi od
@@ -43,7 +47,7 @@ function DomesticCatHistory() {
                         natomiast koty trzymane w domu osiągają wiek do 20 lat. Na długość życia wpływa szereg czynników,
                         takich jak: płeć, styl życia czy zwyczaje.
                         <p>Źródło:</p>
-                        <p className={'source'}><a target={'_blank'} href="https://pl.wikipedia.org/wiki/Kot_domowy">
+                        <p className='source'><a target='_blank' href="https://pl.wikipedia.org/wiki/Kot_domowy">
                             https://pl.wikipedia.org/wiki/Kot_domowy</a>
                         </p>
                     </article>

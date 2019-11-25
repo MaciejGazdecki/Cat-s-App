@@ -40,6 +40,12 @@ $navbarHeight: 11%;
           width: 100%;
         }
       }
+      @include media-tablet {
+        display: none;
+      }
+      @include all-mobiles {
+        display: none;
+      }
     }
     .hamburger {
      @include all-big-screens {

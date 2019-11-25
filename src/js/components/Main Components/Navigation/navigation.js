@@ -27,12 +27,6 @@ function Navigation() {
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink to='/ciekawostki-o-kotach'
-                                         onClick={() => setNavOpen(!navOpen)}>
-                                ABOUT DOMESTIC CAT
-                                </NavLink>
-                            </li>
-                            <li>
                                 <NavLink to='/rasy-kotow-domowych'
                                          onClick={() => setNavOpen(!navOpen)}>
                                 CAT'S BREEDS
@@ -50,7 +44,14 @@ function Navigation() {
                                 FAVOURITES PHOTOS
                                 </NavLink>
                             </li>
-                            <li><NavLink to='/logowanie'
+                            <li>
+                                <NavLink to='/ciekawostki-o-kotach'
+                                         onClick={() => setNavOpen(!navOpen)}>
+                                    ADOPT A CAT
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to='/logowanie'
                                          onClick={() => setNavOpen(!navOpen)}>
                                 { user ? `SIGNED AS ${user.toUpperCase()}` : 'SIGN IN'}
                                 </NavLink>
