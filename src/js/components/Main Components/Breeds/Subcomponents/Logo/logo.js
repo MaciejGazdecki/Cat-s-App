@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from "../../images/cat icon.png";
+import logo from "../../../../../../../images/cat icon.png";
 
 function Logo() {
     return (

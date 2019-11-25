@@ -3,7 +3,7 @@ import {HashRouter as Router, Route} from 'react-router-dom';
 import Navigation from "../components/Main Components/Navigation/navigation";
 import Footer from '../components/pageLayout/Footer/footer';
 import HomePage from '../components/pageLayout/HomePage/homePage';
-import Curiosities from'../components/Main Components/Curosities about Cats/curiositesAboutCats';
+import Curiosities from '../components/Main Components/Curosities about Cats/adoptACat';
 import Breeds from '../components/Main Components/Breeds/breeds';
 import PhotoSearch from '../components/Main Components/PhotoSearch/photoSearch';
 import Favourites from '../components/Main Components/Favourites/favourites';

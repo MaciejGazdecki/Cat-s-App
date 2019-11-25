@@ -35,7 +35,7 @@ function Navigation() {
                             <li>
                                 <NavLink to='/wyszukiwarka-zdjec'
                                          onClick={() => setNavOpen(!navOpen)}>
-                                FIND PHOTO
+                                PHOTO SEARCH
                                 </NavLink>
                             </li>
                             <li>

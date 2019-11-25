@@ -1,13 +1,57 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import axios from "axios";
 
 function PhotoSearch() {
+    const [categories, setCategories] = useState([]);
+    const [category, setCategory] = useState('');
+    const [type, setType] = useState('');
+    const [breeds, setBreeds] = useState([]);
+    const [breedID, setBreedID] = useState('');
+
+    useEffect(()=>{
+        const fetchData = async () => {
+            return await axios.get('/categories')
+        };
+        fetchData()
+            .then(res => setCategories(res.data))
+            .catch(err => console.log(err, 'Mamy błąd'))
+    });
+
+    useEffect(() => {
+        const fetchData = async () => {
+            return await axios.get('/breeds');
+        };
+        fetchData()
+            .then(response => setBreeds(response.data))
+            .catch(err => console.log(err, 'Mamy błąd'));
+
+    },[]);
     return (
-        <div className={'wrapper'}>
-            <div className={'internalCuriositiesWrapper'}>
-                <h2>Wyszukiwarka zdjęć</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum cupiditate eligendi, facilis harum itaque magnam minima molestiae, necessitatibus nulla, numquam perspiciatis quibusdam quo vel. A architecto, atque consectetur delectus dicta harum incidunt minima nobis numquam perferendis, praesentium repellendus. Alias, assumenda deleniti, dolor doloremque ducimus est eo quaerat vel voluptate? Amet eligendi ipsam porro possimus quasi quisquam quo, repellat saepe veniam veritatis! A assumenda dignissimos enim harum nihil quisquam, reiciendis tempora. A accusamus fuga id molestias nostrum, odio, quidem quisquam recusandae saepe sapiente ullam voluptas! A, adipisci consectetur consequatur culpa distinctio explicabo inventore iste laboriosam libero magni mollitia nulla omnis perferendis quae quam quasi quisquam quos sequi ut voluptas! Asperiores corporis cum et facere incidunt. Aliquid architecto aspernatur dicta dolore dolorum est excepturi fugit ipsam ipsum libero magnam natus numquam perferendis quae, qui quis reiciendis sed tenetur vero voluptas voluptate voluptatibus voluptatum. Aliquam animi architecto cupiditate debitis dolore eius eligendi esse ipsum itaque iusto labore magnam molestiae necessitatibus nostrum obcaecati, omnis praesentium quae quasi quibusdam quod reiciendis repudiandae sed sequi sit soluta tempore ullam? Autem cupiditate doloribus fuga hic id illo ipsum itaque, iusto molestiae neque officiis, omnis optio perspiciatis quae qui reiciendis sapiente! Aliquid dolore hic ipsam mollitia tempora. Accusantium aliquid dolore, eligendi fugit incidunt nihil praesentium recusandae velit voluptas voluptatibus? Adipisci aliquid amet atque, delectus dignissimos explicabo necessitatibus tempore temporibus voluptate! Architecto asperiores consequuntur, cum deleniti deserunt dolores, eaque eius eos explicabo hic inventore ipsa iure magnam minima minus praesentium quae reprehenderit saepe vel vero. Assumenda dicta dolorem dolores enim explicabo, fugiat in ipsa ipsam iure magni minima, pariatur placeat quod sequi tempora tenetur, vel voluptatem. Amet beatae consequuntur dolore dolorum earum expedita hic impedit ipsum magni minima, officia perferendis quod recusandae reiciendis saepe sint veritatis voluptatum? Accusamus alias aliquam architecto asperiores deserunt distinctio dolores est eum modi necessitatibus nostrum obcaecati odio, omnis placeat, quam quas quos rem velit. Animi error excepturi iure iusto laudantium quisquam veritatis. A ab accusantium alias animi, aperiam aspernatur cum debitis deserunt dolores xercitationem facere harum illo in iusto laborum libero magnam magni modi molestias mollitia nam neque nihil nisi numquam odio porro possimus provident quae quia quisquam quod recusandae rem sapiente sunt, tempora tempore veritatis voluptate! Consequuntur, eius expedita labore maxime nisi possimus quidem quisquam repellendus. Ab ad eveniet fugiat, in officia quibusdam temporibus. natus obcaecati officiis, possimus quos velit voluptate. Accusamus adipisci aliquid cumque error est eveniet, ex fugit harum impedit in ipsam iste iusto laboriosam laborum laudantium maiores modi molestiae mollitia neque nesciunt nostrum, quam quisquam. Animi commodi enim fugit iure molestiae nesciunt numquam sapiente unde voluptatum! At illo minima numquam quae sed. Ad consectetur ducimus fugiat officia porro quia soluta? Ab aspernatur assumenda beatae consequuntur, culpa, debitis eaque et eveniet fugit hic impedit minima nemo non numquam optio perferendis perspiciatis possimus quibusdam quisquam ratione rem sequi similique unde ut vero! Adipisci ea est iure nesciunt placeat quidem ut velit voluptas voluptate. Aliquam animi asperiores beatae commodi dolores esse et eveniet fugit laudantium magni molestiae natus obcaecati optio placeat provident quis quod reiciendis similique suscipit, vel. Assumenda cumque dolorem earum eligendi explicabo, harum mollitia natus officia quam qui sunt voluptas voluptate. Ad aliquam aperiam blanditiis consectetur consequuntur dolore eveniet inventore, labore laboriosam modi nostrum quo tempora. A ab, aperiam asperiores at corporis cumque deserunt ducimus earum, eligendi error eum eveniet ex exercitationem fugit illo impedit maiores, mollitia necessitatibus nostrum odio odit officiis porro quidem quis repellat sed similique! Adipisci asperiores blanditiis eaque eos in incidunt nihil omnis recusandae rem reprehenderit, saepe unde vitae voluptatibus! Ab dicta dolores, enim eos exercitationem nam quae reiciendis sed! Dolores necessitatibus nulla odio sed totam. Adipisci animi facere nostrum ullam? Blanditiis consequatur deleniti dolor error esse ex fugiat id laboriosam quae sapiente! Asperiores aut commodi consequatur dicta dolores doloribus eaque quam recusandae repellat repudiandae saepe tempore temporibus totam unde velit vitae voluptatum! Ad animi asperiores atque culpa delectus deleniti dicta est et eum harum ipsam labore, minima minus mollitia nobis officiis quaerat quasi quia quibusdam sint totam veritatis voluptatem. Quisquam, vel voluptatibus? Iste laboriosam necessitatibus sapiente suscipit. Aliquam aspernatur at corporis excepturi explicabo fugit iusto laudantium, nobis, odio provident quidem, sequi tempora voluptate. Aperiam earum est laborum sapiente sequi? Ex illo necessitatibus nemo. Eius hic nobis ratione recusandae vel vero? Ab asperiores atque cumque dolor eaque eum exercitationem fuga, id magnam nam non officiis perferendis quod, soluta sunt voluptate voluptates! A accusamus adipisci aliquam aliquid autem, beatae consequatur dolore eos explicabo modi molestias nulla officiis pariatur perferendis porro provident qui saepe sunt, suscipit tempora. Asperod ratione repudiandae sit vitae voluptatibus. Accusantium assumenda natus qui reprehenderit sint unde? Asperiores atque commodi deleniti dicta, dolor ducimus est excepturi facilis fugiat illum in, laborum maxime mollitia nam nesciunt placeat possimus provident quisquam reiciendis reprehenderit sequi soluta veritatis. Amet consectetur, distinctio?</p>
+        <section className='photoSearchSection'>
+            <div className='wrapper photoSearchWrapper'>
+                <h2>PHOTO SEARCH</h2>
+                <div className="form">
+                    <div className='selectWrapper'>
+                        <select
+                            name="category"
+                            id="category"
+                            value={category}
+                            onChange={(event => setCategory(event.target.value))}>
+                            <option value={''}>none</option>
+                            {categories.map(el => <option key={el.id} value={el.name}>{el.name}</option>)}
+                        </select>
+                        <select name="type" id="type" value={type}></select>
+                        <select name="breeds"
+                                id="breeds"
+                                value={breedID}
+                                onChange={event => setBreedID(event.target.value)}>
+                            <option value={''}>none</option>
+                            {breeds.map(breed => <option key={breed.id} value={breed.id}>{breed.name}</option>)}
+                        </select>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
     )
 
 }
