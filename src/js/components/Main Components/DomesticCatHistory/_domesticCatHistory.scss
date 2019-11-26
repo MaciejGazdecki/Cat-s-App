@@ -41,6 +41,13 @@
       }
       p.source {
         font-size: 1rem;
+        a {
+          color: white;
+          text-decoration: none;
+          &:hover {
+            color: $button-colors-hover;
+          }
+        }
       }
     }
   }

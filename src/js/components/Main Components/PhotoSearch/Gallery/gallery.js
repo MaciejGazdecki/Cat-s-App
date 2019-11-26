@@ -20,7 +20,7 @@ function Gallery(props) {
             return await axios.get(`/images/search`, {params})
         };
         fetchData()
-            .then(res => console.log(res.data))
+            .then(res => {console.log(res.data); setGallery(res.data)})
             .catch(err => console.log(err))
     }, [breedID,category,type]);
 
