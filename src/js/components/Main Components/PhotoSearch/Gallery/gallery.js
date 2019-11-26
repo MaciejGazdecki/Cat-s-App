@@ -17,7 +17,7 @@ function Gallery(props) {
 
         };
         const fetchData = async () => {
-            return await axios.get(`/images/search?&mime_types=${type}&category_ids=${category}&breed_ids=${breedID}&limit=100&order=DESC&page=1`)
+            return await axios.get(`/images/search`, {params})
         };
         fetchData()
             .then(res => console.log(res.data))
