@@ -7,8 +7,17 @@ function Gallery(props) {
     const [gallery, setGallery] = useState([]);
 
     useEffect(() =>{
+        const params = {
+            mime_types: type,
+            category_ids: category,
+            breed_ids: breedID,
+            limit:100,
+            page:1,
+            order: 'DESC'
+
+        };
         const fetchData = async () => {
-            return await axios.get(`/images/search?breed_id=${breedID}&mime_types=${type}&category_ids=${category}`)
+            return await axios.get(`/images/search?&mime_types=${type}&category_ids=${category}&breed_ids=${breedID}&limit=100&order=DESC&page=1`)
         };
         fetchData()
             .then(res => console.log(res.data))
@@ -26,7 +35,7 @@ function Gallery(props) {
 export default Gallery;
 
 Gallery.propTypes = {
-  category: PropTypes.number.isRequired,
+  category: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   breedID: PropTypes.string.isRequired
 };

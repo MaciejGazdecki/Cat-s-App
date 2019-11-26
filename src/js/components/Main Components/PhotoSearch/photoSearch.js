@@ -8,6 +8,7 @@ function PhotoSearch() {
     const [type, setType] = useState('gif,jpg,png');
     const [breeds, setBreeds] = useState([]);
     const [breedID, setBreedID] = useState('');
+    console.log(breedID);
 
     useEffect(()=>{
         const fetchData = async () => {
