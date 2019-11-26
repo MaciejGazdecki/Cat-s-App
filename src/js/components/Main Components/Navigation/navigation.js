@@ -29,7 +29,7 @@ function Navigation() {
                             <li>
                                 <NavLink to='/breeds'
                                          onClick={() => setNavOpen(!navOpen)}>
-                                CAT'S BREEDS
+                                CAT&apos;S BREEDS
                                 </NavLink>
                             </li>
                             <li>

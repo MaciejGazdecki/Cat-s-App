@@ -17,8 +17,11 @@ function DomesticCatHistory() {
                         – udomowiony gatunek ssaka z rzędu drapieżnych z rodziny kotowatych. Koty
                         zostały udomowione około 9500 lat temu i są obecnie najpopularniejszymi zwierzętami
                         domowymi na świecie. Gatunek prawdopodobnie pochodzi od
-                        <a href="https://pl.wikipedia.org/wiki/Kot_nubijski"> kota nubijskiego</a>, przy czym
-                        w Europie krzyżował się ze <a href="https://pl.wikipedia.org/wiki/%C5%BBbik_europejski">żbikiem. </a>
+                        <a href="https://pl.wikipedia.org/wiki/Kot_nubijski"
+                           target="_blank" rel="noopener noreferrer"> kota nubijskiego</a>, przy czym
+                        w Europie krzyżował się ze <a href="https://pl.wikipedia.org/wiki/%C5%BBbik_europejski"
+                                                      target="_blank"
+                                                      rel="noopener noreferrer">żbikiem. </a>
                         Jest uznawany za gatunek inwazyjny. Przodkiem kota domowego jest kot nubijski –
                         według poglądów większości współczesnych naukowców różnice pomiędzy kotem domowym i
                         nubijskim są tak niewielkie, że należą one do tego samego podgatunku. Istnieją rozbieżności w
@@ -47,7 +50,8 @@ function DomesticCatHistory() {
                         natomiast koty trzymane w domu osiągają wiek do 20 lat. Na długość życia wpływa szereg czynników,
                         takich jak: płeć, styl życia czy zwyczaje.
                         <p>Źródło:</p>
-                        <p className='source'><a target='_blank' href="https://pl.wikipedia.org/wiki/Kot_domowy">
+                        <p className='source'><a target='_blank'  rel="noopener noreferrer"
+                                                 href="https://pl.wikipedia.org/wiki/Kot_domowy">
                             https://pl.wikipedia.org/wiki/Kot_domowy</a>
                         </p>
                     </article>
