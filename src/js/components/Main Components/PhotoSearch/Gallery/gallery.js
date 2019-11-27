@@ -23,7 +23,6 @@ function Gallery(props) {
             .then(res => {console.log(res.data); setGallery(res.data)})
             .catch(err => console.log(err))
     }, [breedID,category,type]);
-
     return (
         <div className="galleryWrapper">
 
