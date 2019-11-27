@@ -27,15 +27,6 @@ function Gallery(props) {
             .catch(err => console.log(err))
     }, [breedID,category,type]);
 
-    let images =
-        <>
-            {gallery.slice(page*perPage - perPage, page*perPage).map(el =>
-                <div key={el.id}
-                     style={{backgroundImage: `url(${el.url})`}}
-                     className='galleryImage'>
-                </div>)};
-        </>;
-
     function onClickNextHandler() {
        setPage(prevState => prevState +1)
     }
@@ -45,13 +36,25 @@ function Gallery(props) {
     }
     console.log(gallery);
     console.log(page);
+
+    const images =
+        <>
+            {gallery.slice(page*perPage - perPage, page*perPage).map(el =>
+                    <div key={el.id}
+                         style={{backgroundImage: `url(${el.url})`}}
+                         className='galleryImage'>
+                    </div>)}
+            <div className="galleryButtons">
+                <button onClick={onClickPreviousHandler}>Previous page</button>
+                <button onClick={onClickNextHandler}>Next page</button>
+            </div>
+        </>;
+    const noMatchesFound = <div className='noMatches'>No matches found</div>;
     return (
         <div className="galleryWrapper">
             <div className='photos'>
-                {images}
+                {gallery.length > 0 ? images : noMatchesFound}
             </div>
-            <button onClick={onClickPreviousHandler}>Previous page</button>
-            <button onClick={onClickNextHandler}>Next page</button>
         </div>
     )
 
