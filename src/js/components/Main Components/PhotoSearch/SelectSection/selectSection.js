@@ -44,7 +44,6 @@ SelectSection.propTypes = {
   category: PropTypes.string.isRequired,
   setCategory: PropTypes.func.isRequired,
   categories:PropTypes.array.isRequired,
-  setCategories: PropTypes.func.isRequired,
   type: PropTypes.string.isRequired,
   breedID: PropTypes.string.isRequired,
   setBreedID: PropTypes.func.isRequired,
