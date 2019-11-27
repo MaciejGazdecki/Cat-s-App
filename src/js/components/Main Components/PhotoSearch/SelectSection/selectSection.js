@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import PropTypes from 'prop-types';
 
 function SelectSection(props) {
     const {
@@ -38,3 +39,14 @@ function SelectSection(props) {
 }
 
 export default SelectSection;
+
+SelectSection.propTypes = {
+  category: PropTypes.string.isRequired,
+  setCategory: PropTypes.func.isRequired,
+  categories:PropTypes.array.isRequired,
+  setCategories: PropTypes.func.isRequired,
+  type: PropTypes.string.isRequired,
+  breedID: PropTypes.string.isRequired,
+  setBreedID: PropTypes.func.isRequired,
+  breeds: PropTypes.array.isRequired
+};
