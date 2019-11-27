@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 function Gallery(props) {
     const {category,type,breedID} = props;
     const [gallery, setGallery] = useState([]);
-    let page = 1;
+    const [page, setPage] = useState(1);
     const perPage = 5;
 
     let params = {
@@ -29,7 +29,7 @@ function Gallery(props) {
 
     let images =
         <>
-            {gallery.slice(page*perPage -perPage, page*perPage).map(el =>
+            {gallery.slice(page*perPage - perPage, page*perPage).map(el =>
                 <div key={el.id}
                      style={{backgroundImage: `url(${el.url})`}}
                      className='galleryImage'>
@@ -37,16 +37,14 @@ function Gallery(props) {
         </>;
 
     function onClickNextHandler() {
-        page++;
+       setPage(prevState => prevState +1)
     }
 
     function onClickPreviousHandler() {
-        if(page> 1) page--;
+        if(page> 1) setPage(prevState => prevState -1);
     }
     console.log(gallery);
     console.log(page);
-    //hej Przemek, dlaczego mi nie zwiekszaja lub zmiejszaja handlery page :)?? probowalem w onClick callbacka dac i to samo :(,
-    //nie moge zrobic pagination :(
     return (
         <div className="galleryWrapper">
             <div className='photos'>
