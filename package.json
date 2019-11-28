@@ -43,6 +43,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
+    "react-paginate": "^6.3.2",
     "react-roughviz": "^0.1.5",
     "react-router-dom": "^5.1.2",
     "uniqid": "^5.1.0"

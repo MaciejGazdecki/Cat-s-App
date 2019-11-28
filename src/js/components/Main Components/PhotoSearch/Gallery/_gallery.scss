@@ -1,2 +1,18 @@
 @import "../../../../../sass/layout/mixins";
 @import "../../../../../sass/layout/variables";
+
+.galleryWrapper {
+  width: 100%;
+  height: 100%;
+}
+.photos {
+  display: flex;
+  flex-wrap: wrap;
+  .galleryImage {
+    width: 270px;
+    height: 270px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+}
