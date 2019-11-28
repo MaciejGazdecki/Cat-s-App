@@ -3,12 +3,21 @@ import axios from "axios";
 import PropTypes from 'prop-types';
 import Pagination from "./Pagination/pagination";
 
+const axiosInstanceAddToFavourites = axios.create({
+    baseURL: 'https://api.thecatapi.com/v1',
+    headers : {
+        'x-api-key': '687fe573-b392-44ea-b985-63c162d0f64c'
+    }
+});
+
 function Gallery(props) {
     const {category,type,breedID} = props;
     const [gallery, setGallery] = useState([]);
     const [page, setPage] = useState(1);
     const [paramsPage, setParamsPage] = useState(1);
     const perPage = 5;
+
+    const userName = localStorage.getItem('userName');
 
     let params = {
         mime_types: type,
@@ -34,12 +43,25 @@ function Gallery(props) {
         downloadData();
     }, [breedID,category,type]);
 
+    const addToFavourites  = async (id) => {
+        await axiosInstanceAddToFavourites.post('/favourites',{
+            image_id: id,
+            sub_id: userName
+        })
+            .then(res => console.log(res, alert('Photo Added to Favourites')))
+            .catch(err => console.log(err));
+    };
+
     const images =
         <>
             {gallery.slice(page*perPage - perPage, page*perPage).map(el =>
                     <div key={el.id}
                          style={{backgroundImage: `url(${el.url})`}}
                          className='galleryImage'>
+                        <button className='favBtn'
+                                onClick={ () => addToFavourites(el.id)}>
+                            <i className="fas fa-heart"></i>
+                        </button>
                     </div>)}
         </>;
 
