@@ -21,7 +21,7 @@ function Favourites() {
             return await axiosInstanceHandleFavourites.get('favourites', {params})
         };
         fetchData()
-            .then(res => {console.log(res.data); setFavourites(res.data)})
+            .then(res => setFavourites(res.data))
             .catch(err => console.log(err))
     };
     useEffect(() => {
@@ -30,7 +30,7 @@ function Favourites() {
 
     const unlikePhoto = async (id) => {
         await axiosInstanceHandleFavourites.delete(`favourites/${id}`)
-            .then(res => {console.log(res); alert('Photo unliked')})
+            .then(res => alert('Photo unliked'))
             .catch(err => console.log(err));
         downloadFavourites();
     };

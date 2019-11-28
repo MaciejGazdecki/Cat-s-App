@@ -48,7 +48,7 @@ function Gallery(props) {
             image_id: id,
             sub_id: userName
         })
-            .then(res => console.log(res, alert('Photo Added to Favourites')))
+            .then(res => alert('Photo Added to Favourites'))
             .catch(err => console.log(err));
     };
 
