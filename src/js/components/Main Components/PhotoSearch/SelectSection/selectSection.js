@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 function SelectSection(props) {
@@ -41,11 +41,12 @@ function SelectSection(props) {
 export default SelectSection;
 
 SelectSection.propTypes = {
-  category: PropTypes.string.isRequired,
-  setCategory: PropTypes.func.isRequired,
-  categories:PropTypes.array.isRequired,
-  type: PropTypes.string.isRequired,
-  breedID: PropTypes.string.isRequired,
-  setBreedID: PropTypes.func.isRequired,
-  breeds: PropTypes.array.isRequired
+    category: PropTypes.string.isRequired,
+    setCategory: PropTypes.func.isRequired,
+    categories:PropTypes.array.isRequired,
+    type: PropTypes.string.isRequired,
+    setType: PropTypes.func.isRequired,
+    breedID: PropTypes.string.isRequired,
+    setBreedID: PropTypes.func.isRequired,
+    breeds: PropTypes.array.isRequired,
 };

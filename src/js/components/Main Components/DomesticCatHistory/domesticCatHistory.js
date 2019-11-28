@@ -23,7 +23,7 @@ function DomesticCatHistory() {
                         purring, trilling, hissing, growling and grunting as well as cat-specific body language. It
                         is a solitary hunter, but a social species. It can hear sounds too faint or too high in 
                         frequency for human ears, such as those made by mice and other small mammals. It is a 
-                        predator that is most active at dawn and dusk.It secretes and perceives pheromones.
+                        predator that is most active at dawn and dusk. It secretes and perceives pheromones.
                     </article>
                     <article>
                         Female domestic cats can have kittens from spring to late autumn, with litter sizes ranging
