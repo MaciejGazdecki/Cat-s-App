@@ -10,6 +10,8 @@ const axiosInstanceHandleFavourites = axios.create({
 
 function Favourites() {
     const [favourites, setFavourites] = useState([]);
+    const [page,setPage] = useState(1);
+    const perPage = 5;
 
     const userName = localStorage.getItem('userName');
 
@@ -24,6 +26,7 @@ function Favourites() {
             .then(res => setFavourites(res.data))
             .catch(err => console.log(err))
     };
+
     useEffect(() => {
         downloadFavourites()
     },[]);
@@ -35,21 +38,45 @@ function Favourites() {
         downloadFavourites();
     };
 
+    const  onClickNextHandler = () => {
+        if (favourites.slice(page*perPage - perPage, page*perPage).length < perPage) {
+            setPage(prevState => prevState);
+        } else {
+            setPage(prevState => prevState +1);
+        }
+    };
+
+    const onClickPreviousHandler = () => {
+        if(page > 1) setPage(prevState => prevState -1);
+    };
+    console.log(favourites);
+    const buttons =
+        <div className='paginationBtns'>
+            <button onClick={onClickPreviousHandler}>Previous Page</button>
+            <button onClick={onClickNextHandler}>Next Page</button>
+        </div>;
+
+    const favGallery =
+        <div className="favGallery">
+            {favourites.slice(page*perPage - perPage, page*perPage).map(el =>
+                <div key={el.id}
+                     style={{backgroundImage: `url(${el.image.url})`}}
+                     className='favGalleryImage'>
+                    <button className='favBtn'
+                            onClick={() => unlikePhoto(el.id)}>
+                        <i className="fas fa-heart-broken"></i>
+                    </button>
+                </div>)}
+        </div>;
+
+    const noPhotos = <div>There are no favourites</div>;
+
     return (
         <section className='favouritesSection'>
             <div className='wrapper favouritesWrapper'>
                 <h2>Favourites Photos</h2>
-                <div className="favGallery">
-                    {favourites.map(el =>
-                    <div key={el.id}
-                         style={{backgroundImage: `url(${el.image.url})`}}
-                         className='favGalleryImage'>
-                        <button className='favBtn'
-                        onClick={() => unlikePhoto(el.id)}>
-                            <i className="fas fa-heart-broken"></i>
-                        </button>
-                    </div>)}
-                </div>
+                {favourites.length > 0 ? favGallery : noPhotos}
+                {favourites.length> 0 ? buttons: null}
             </div>
         </section>
     )
