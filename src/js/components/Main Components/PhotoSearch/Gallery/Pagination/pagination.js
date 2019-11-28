@@ -49,7 +49,7 @@ Pagination.propTypes = {
     gallery: PropTypes.array.isRequired,
     page: PropTypes.number.isRequired,
     setPage: PropTypes.func.isRequired,
-    perPage: PropTypes.func.isRequired,
+    perPage: PropTypes.number.isRequired,
     downloadData: PropTypes.func.isRequired,
     setParamsPage: PropTypes.func.isRequired,
     params: PropTypes.object.isRequired
