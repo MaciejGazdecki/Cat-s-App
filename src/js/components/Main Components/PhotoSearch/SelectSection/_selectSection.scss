@@ -1,2 +1,22 @@
 @import "../../../../../sass/layout/mixins";
 @import "../../../../../sass/layout/variables";
+
+.selectWrapper {
+  select {
+    background-color: $button-colors;
+    color: black;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    font-size: 20px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
+    outline: none;
+    border-radius: 5px;
+    &:nth-child(3) {
+      margin-bottom: 30px;
+    }
+  }
+  > select {
+    margin-top: 10px;
+  }
+}

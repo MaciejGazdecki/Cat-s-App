@@ -1,2 +1,24 @@
 @import "../../../../../../sass/layout/mixins";
 @import "../../../../../../sass/layout/variables";
+
+.galleryButtons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  button {
+    background-color: $button-colors;
+    color: black;
+    padding: 12px;
+    width: 48%;
+    border: none;
+    font-size: 20px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
+    outline: none;
+    border-radius: 5px;
+  }
+  button.loadMore {
+    margin-top: 10px;
+    width: 100%;
+  }
+}
