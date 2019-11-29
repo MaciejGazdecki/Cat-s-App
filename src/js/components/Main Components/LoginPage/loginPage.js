@@ -1,30 +1,39 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 const uniqid = require('uniqid');
 
 function LoginPage() {
-    const [user, setUser] = useState('');
+    const [userName, setUserName] = useState('');
+    const [appUser, setAppUser] = useState('');
 
     const handleSubmit = () => {
-        if (user.trim()) {
-            localStorage.setItem('userName', user);
+        if (userName.trim()) {
+            localStorage.setItem('userName', userName);
             localStorage.setItem('userID', uniqid());
-            setUser('');
+            setUserName('');
+            setAppUser(localStorage.getItem('userName'));
         }
     };
 
-    let pageUser = '';
-    if (localStorage.getItem('userName')) pageUser = localStorage.getItem('userName');
+    useEffect(() => {
+        if (localStorage.getItem('userName')) setAppUser(localStorage.getItem('userName'));
+    },[appUser]);
+
+    const logout = () => {
+        localStorage.removeItem('userName');
+        localStorage.removeItem('userID');
+        setAppUser('')
+    };
 
     const form =
-        <div className={'form-wrapper'}>
+        <div className='form-wrapper'>
             <h1>SIGN IN</h1>
             <form onSubmit={handleSubmit}>
                 <label>
                     Please put your name
-                    <input type="text" id={'login'}
-                           placeholder={'Please put your name'}
-                           value={user}
-                           onChange={(event => setUser(event.target.value)) }
+                    <input type="text" id='login'
+                           placeholder='Please put your name'
+                           value={userName}
+                           onChange={(event => setUserName(event.target.value)) }
                     />
                 </label>
                 <input type="submit" value="Log in" />
@@ -32,16 +41,17 @@ function LoginPage() {
         </div>;
 
     const userOnPage =
-        <div className={'userOnPage'}>
-            <p>{`YOU ARE CURRENTLY LOGGED AS ${pageUser.toUpperCase()}`}</p>
+        <div className='userOnPage'>
+            <p>{`YOU ARE CURRENTLY LOGGED AS ${appUser.toUpperCase()}`}</p>
+            <button className='logOut' onClick={logout}>LOG OUT</button>
         </div>;
 
     return (
-        <div className={'wrapper'}>
-            <div className={'loginPage'}>
-                {pageUser ? userOnPage : form}
+        <section className='loginSection'>
+            <div className='wrapper loginPage'>
+                {appUser ? userOnPage : form}
             </div>
-        </div>
+        </section>
     )
 
 }

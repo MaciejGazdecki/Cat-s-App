@@ -1,8 +1,25 @@
+@import "../../../../sass/layout/mixins";
+@import "../../../../sass/layout/variables";
+
 footer {
-  height: 10vh;
+  height: 140px;
   width: 100%;
   background-color: black;
-}
-footer div {
-  color: white;
+  .footerWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 3%;
+    .footerLogo {
+      height: 128px;
+      width: 128px;
+    }
+    .sign {
+      color: $main-font-color;
+    }
+    @include all-big-screens {
+      padding: 0;
+    }
+  }
 }
