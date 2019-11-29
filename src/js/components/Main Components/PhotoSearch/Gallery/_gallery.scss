@@ -48,8 +48,11 @@
   background-color: transparent;
   position: absolute;
   top: 3%;
-  left: 89%;
+  left: 84%;
   cursor: pointer;
+  @include media-desktop-big {
+    left: 89%;
+  }
 }
 .fa-heart {
   color: red;
