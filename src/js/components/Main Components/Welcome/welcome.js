@@ -22,17 +22,17 @@ function Welcome() {
 
     return (
         <>
-            <h1 className='welcome'>Witaj na stronie o kotach domowych</h1>
-            <p className='welcome-content'>Jest to strona poświęcona miłośnikom kota domowego. Pozwala ona wyszukiwać informację
-                o rasach kotów oraz zdjęcia. Po zalogowaniu użytkownik ma opcję wgrywania własnych zdjęć
-                zawierających koty (inne zdjęcia są automatycznie blokowane) oraz ich usuwania. Po zalogowaniu
-                istnieje również opcja dodawania zdjęć do ulubionych.
+            <h1 className='welcome'>Welcome on the website for Cat lovers</h1>
+            <p className='welcome-content'>
+                Just  log in and start to like and save your favorites photos! Go to the breeds section and learn
+                more about each breed and discover amazing photos in full HD. Compare behavior of each breed with
+                another one using wonderful charts. Discover adoption options or add your announcement.
             </p>
             <div className='imageWrapper'>
                 {cats.map((el,inx) =>
                     <div className='imageContainer' key={inx} onClick={() => openLightboxOnSlide(inx+1)}>
                         <img className='image' src={el} alt="kot" />
-                        <span className="tooltiptext">Kliknij aby powiękrzyć</span>
+                        <span className="tooltiptext">Click to display on full screen</span>
                     </div>
                 )}
             </div>
@@ -45,16 +45,16 @@ function Welcome() {
                 disableLocalStorage={ true }
                 captions={ [
                     <>
-                        <h2>Kot Syjamski</h2>
+                        <h2>Siam Cat</h2>
                     </>,
                     <>
-                        <h2>Kot rasy MainCoon</h2>
+                        <h2>MainCoon</h2>
                     </>,
                     <>
-                        <h2>Śpiący kot rudo-biały</h2>
+                        <h2>Domestic no-breed cat</h2>
                     </>,
                     <>
-                        <h2>Szary kot pijący wodę</h2>
+                        <h2>Domestic no-breed cat</h2>
                     </>,
 
                 ] }
