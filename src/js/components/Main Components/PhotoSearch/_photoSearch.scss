@@ -22,11 +22,21 @@
   @include only-mobiles-landscape {
     padding-top: 15%;
     padding-bottom: 15%;
+
   }
-  @include iPhonexAndPixel2XL {
+  @include media-tablet {
     padding-top: 15%;
     padding-bottom: 15%;
   }
+  @include media-desktop {
+    padding-top: 12.5%;
+    padding-bottom: 12.5%;
+  }
+  @include media-desktop-1680px {
+    padding-top: 11%;
+    padding-bottom: 11%;
+  }
+
   @include all-big-screens {
     margin-left: 0;
   }

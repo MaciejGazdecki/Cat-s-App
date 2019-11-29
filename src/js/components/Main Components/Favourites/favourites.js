@@ -49,7 +49,6 @@ function Favourites() {
     const onClickPreviousHandler = () => {
         if(page > 1) setPage(prevState => prevState -1);
     };
-    console.log(favourites);
     const buttons =
         <div className='paginationBtns'>
             <button onClick={onClickPreviousHandler}>Previous Page</button>
