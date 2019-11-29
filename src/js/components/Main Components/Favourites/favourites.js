@@ -78,6 +78,8 @@ function Favourites() {
             <div className='wrapper favouritesWrapper'>
                 <h2>Favourites Photos</h2>
                 {favourites.length > 0 ? favGallery : noPhotos}
+            </div>
+            <div className='paginationBtns'>
                 {favourites.length> 0 ? buttons: null}
             </div>
         </section>
