@@ -74,3 +74,23 @@ input[type=submit]:hover {
 input[placeholder] {
   font-size: 1.2rem;
 }
+.logOut {
+  background-color: $button-colors;
+  color: black;
+  padding: 12px;
+  width: 48%;
+  border: none;
+  font-size: 20px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
+  outline: none;
+  border-radius: 5px;
+  @include media-desktop-1680px {
+    width: 32.5%;
+  }
+  @include media-desktop-big {
+    width: 32.5%;
+  }
+  &:hover {
+    background-color: $button-colors-hover;
+  }
+}
