@@ -1,0 +1,70 @@
+@import "../../../../../sass/layout/mixins";
+@import "../../../../../sass/layout/variables";
+
+.galleryWrapper {
+  width: 100%;
+  height: 100%;
+}
+.photos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  @include media-desktop {
+    margin-bottom: 30px;
+  }
+  .galleryImage {
+    width: 100%;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    margin-bottom: 10px;
+    @include only-mobiles-landscape {
+      width: 49%;
+    }
+    @include media-tablet {
+      width: 49%;
+    }
+    @include iPhonexAndPixel2XL {
+      width: 49%;
+    }
+    @include media-desktop {
+      width: 32.5%;
+    }
+    @include media-desktop-1680px {
+      width: 32.5%;
+      height: 390px;
+    }
+    @include media-desktop-big {
+      width: 32.5%;
+      height: 420px;
+    }
+  }
+  .noMatches {
+    margin: 0 auto;
+    font-size: 2rem;
+    @include media-tablet{
+      font-size: 3rem;
+    }
+    @include all-big-screens {
+      font-size: 3rem;
+    }
+  }
+}
+
+.favBtn {
+  background-color: transparent;
+  position: absolute;
+  top: 3%;
+  left: 84%;
+  cursor: pointer;
+  @include media-desktop-big {
+    left: 89%;
+  }
+}
+.fa-heart {
+  color: red;
+  font-size: 2rem;
+}

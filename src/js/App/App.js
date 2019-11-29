@@ -6,7 +6,7 @@ import HomePage from '../components/pageLayout/HomePage/homePage';
 import AdoptACat from '../components/Main Components/Adoption/adoptACat';
 import Breeds from '../components/Main Components/Breeds/breeds';
 import PhotoSearch from '../components/Main Components/PhotoSearch/photoSearch';
-import Favourites from '../components/Main Components/Favourites/favourites';
+import Favorites from '../components/Main Components/Favorites/favorites';
 import LoginPage from '../components/Main Components/LoginPage/loginPage';
 import axios from 'axios';
 
@@ -21,7 +21,7 @@ function  App () {
                     <Route path="/adopt-a-Cat" component={AdoptACat}/>
                     <Route path="/breeds" component={Breeds}/>
                     <Route path="/search-photo" component={PhotoSearch}/>
-                    <Route path='/favourites' component={Favourites}/>
+                    <Route path='/favorites' component={Favorites}/>
                     <Route path='/login' component={LoginPage}/>
                 <Footer/>
             </Router>

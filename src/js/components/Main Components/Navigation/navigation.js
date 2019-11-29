@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {NavLink} from 'react-router-dom'
-import logo from '../../../../../images/output-onlinepngtools.png';
+import logo from '../../../../../images/cat-3-128.png';
 
 function Navigation() {
     const [navOpen, setNavOpen] = useState(false);
@@ -29,7 +29,7 @@ function Navigation() {
                             <li>
                                 <NavLink to='/breeds'
                                          onClick={() => setNavOpen(!navOpen)}>
-                                CAT'S BREEDS
+                                CAT&apos;S BREEDS
                                 </NavLink>
                             </li>
                             <li>
@@ -39,9 +39,9 @@ function Navigation() {
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink to='/favourites'
+                                <NavLink to='/favorites'
                                          onClick={() => setNavOpen(!navOpen)}>
-                                FAVOURITES PHOTOS
+                                FAVORITES PHOTOS
                                 </NavLink>
                             </li>
                             <li>

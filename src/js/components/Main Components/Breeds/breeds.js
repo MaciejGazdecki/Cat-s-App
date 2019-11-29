@@ -22,8 +22,12 @@ function Breeds() {
     },[]);
 
     useEffect( () => {
+        const params = {
+            breed_id: breedID,
+            limit:100
+        };
         const fetchData = async () => {
-            return await axios.get(`/images/search?breed_id=${breedID}&limit=100`)
+            return await axios.get('/images/search', {params})
         };
         fetchData()
             .then(response => loadGallery(response.data))

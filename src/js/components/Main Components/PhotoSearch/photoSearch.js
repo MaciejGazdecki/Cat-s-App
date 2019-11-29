@@ -1,10 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import axios from "axios";
+import SelectSection from "./SelectSection/selectSection";
+import Gallery from "./Gallery/gallery";
 
 function PhotoSearch() {
     const [categories, setCategories] = useState([]);
     const [category, setCategory] = useState('');
-    const [type, setType] = useState('');
+    const [type, setType] = useState('gif,jpg,png');
     const [breeds, setBreeds] = useState([]);
     const [breedID, setBreedID] = useState('');
 
@@ -15,13 +17,14 @@ function PhotoSearch() {
         fetchData()
             .then(res => setCategories(res.data))
             .catch(err => console.log(err, 'Mamy błąd'))
-    });
+
+    },[]);
 
     useEffect(() => {
-        const fetchData = async () => {
+        const fetchData1 = async () => {
             return await axios.get('/breeds');
         };
-        fetchData()
+        fetchData1()
             .then(response => setBreeds(response.data))
             .catch(err => console.log(err, 'Mamy błąd'));
 
@@ -29,27 +32,22 @@ function PhotoSearch() {
     return (
         <section className='photoSearchSection'>
             <div className='wrapper photoSearchWrapper'>
-                <h2>PHOTO SEARCH</h2>
-                <div className="form">
-                    <div className='selectWrapper'>
-                        <select
-                            name="category"
-                            id="category"
-                            value={category}
-                            onChange={(event => setCategory(event.target.value))}>
-                            <option value={''}>none</option>
-                            {categories.map(el => <option key={el.id} value={el.name}>{el.name}</option>)}
-                        </select>
-                        <select name="type" id="type" value={type}></select>
-                        <select name="breeds"
-                                id="breeds"
-                                value={breedID}
-                                onChange={event => setBreedID(event.target.value)}>
-                            <option value={''}>none</option>
-                            {breeds.map(breed => <option key={breed.id} value={breed.id}>{breed.name}</option>)}
-                        </select>
-                    </div>
-                </div>
+                <h2>Photo Search</h2>
+                <SelectSection
+                    category={category}
+                    setCategory={setCategory}
+                    categories={categories}
+                    type={type}
+                    setType={setType}
+                    breedID={breedID}
+                    setBreedID={setBreedID}
+                    breeds={breeds}
+                />
+                <Gallery
+                    category={category}
+                    type={type}
+                    breedID={breedID}
+                />
             </div>
         </section>
     )
