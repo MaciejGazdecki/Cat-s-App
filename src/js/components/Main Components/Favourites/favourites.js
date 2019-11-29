@@ -11,7 +11,7 @@ const axiosInstanceHandleFavourites = axios.create({
 function Favourites() {
     const [favourites, setFavourites] = useState([]);
     const [page,setPage] = useState(1);
-    const perPage = 5;
+    const perPage = 6;
 
     const userName = localStorage.getItem('userName');
 
