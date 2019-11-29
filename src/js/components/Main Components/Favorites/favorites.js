@@ -8,7 +8,7 @@ const axiosInstanceHandleFavourites = axios.create({
     }
 });
 
-function Favourites() {
+function Favorites() {
     const [favourites, setFavourites] = useState([]);
     const [page,setPage] = useState(1);
     const perPage = 6;
@@ -52,8 +52,8 @@ function Favourites() {
 
     const buttons =
         <div className='paginationBtns'>
-            <button onClick={onClickPreviousHandler}>Previous Page</button>
-            <button onClick={onClickNextHandler}>Next Page</button>
+            <button onClick={onClickPreviousHandler}>Previous</button>
+            <button onClick={onClickNextHandler}>Next</button>
         </div>
     ;
 
@@ -63,7 +63,7 @@ function Favourites() {
                 <div key={el.id}
                      style={{backgroundImage: `url(${el.image.url})`}}
                      className='favGalleryImage'>
-                    <button className='favBtn'
+                    <button className='unfavBtn'
                             onClick={() => unlikePhoto(el.id)}>
                         <i className="fas fa-heart-broken"></i>
                     </button>
@@ -71,12 +71,12 @@ function Favourites() {
         </div>
     ;
 
-    const noPhotos = <div className="noFav">There are no favourites</div>;
+    const noPhotos = <div className="noFav">There are no favorites</div>;
 
     return (
         <section className='favouritesSection'>
             <div className='wrapper favouritesWrapper'>
-                <h2>Favourites Photos</h2>
+                <h2>Favorites Photos</h2>
                 {favourites.length > 0 ? favGallery : noPhotos}
                 {favourites.length> 0 ? buttons: null}
             </div>
@@ -85,4 +85,4 @@ function Favourites() {
 
 }
 
-export default Favourites;
+export default Favorites;

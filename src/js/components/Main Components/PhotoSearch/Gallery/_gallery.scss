@@ -42,6 +42,16 @@
       height: 420px;
     }
   }
+  .noMatches {
+    margin: 0 auto;
+    font-size: 2rem;
+    @include media-tablet{
+      font-size: 3rem;
+    }
+    @include all-big-screens {
+      font-size: 3rem;
+    }
+  }
 }
 
 .favBtn {
