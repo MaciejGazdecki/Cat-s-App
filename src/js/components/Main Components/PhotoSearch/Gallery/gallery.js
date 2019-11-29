@@ -15,7 +15,7 @@ function Gallery(props) {
     const [gallery, setGallery] = useState([]);
     const [page, setPage] = useState(1);
     const [paramsPage, setParamsPage] = useState(1);
-    const perPage = 5;
+    const perPage = 6;
 
     const userName = localStorage.getItem('userName');
 
@@ -23,7 +23,7 @@ function Gallery(props) {
         mime_types: type,
         category_ids: category,
         breed_ids: breedID,
-        limit:100,
+        limit:96,
         page:paramsPage,
         order: 'DESC'
 

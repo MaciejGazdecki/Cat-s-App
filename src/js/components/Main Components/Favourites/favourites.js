@@ -11,7 +11,7 @@ const axiosInstanceHandleFavourites = axios.create({
 function Favourites() {
     const [favourites, setFavourites] = useState([]);
     const [page,setPage] = useState(1);
-    const perPage = 5;
+    const perPage = 6;
 
     const userName = localStorage.getItem('userName');
 
@@ -49,12 +49,13 @@ function Favourites() {
     const onClickPreviousHandler = () => {
         if(page > 1) setPage(prevState => prevState -1);
     };
-    console.log(favourites);
+
     const buttons =
         <div className='paginationBtns'>
             <button onClick={onClickPreviousHandler}>Previous Page</button>
             <button onClick={onClickNextHandler}>Next Page</button>
-        </div>;
+        </div>
+    ;
 
     const favGallery =
         <div className="favGallery">
@@ -67,9 +68,10 @@ function Favourites() {
                         <i className="fas fa-heart-broken"></i>
                     </button>
                 </div>)}
-        </div>;
+        </div>
+    ;
 
-    const noPhotos = <div>There are no favourites</div>;
+    const noPhotos = <div className="noFav">There are no favourites</div>;
 
     return (
         <section className='favouritesSection'>

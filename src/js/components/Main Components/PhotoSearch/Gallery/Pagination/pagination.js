@@ -30,14 +30,14 @@ function Pagination(props) {
         downloadData();
     };
 
-    const btnLoadMore = <button onClick={onClickLoadMoreHandler}>Download more photos</button>;
+    const btnLoadMore = <button className='loadMore' onClick={onClickLoadMoreHandler}>Download more photos</button>;
 
     return (
         <div className="galleryButtons">
             {gallery.length > 0 ?
                 <>
-                    <button onClick={onClickPreviousHandler}>Previous page</button>
-                    <button onClick={onClickNextHandler}>Next page</button>
+                    <button onClick={onClickPreviousHandler}>Previous</button>
+                    <button onClick={onClickNextHandler}>Next</button>
                     {page === params.limit / perPage ? btnLoadMore : null}
                 </> : null }
         </div>

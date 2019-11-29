@@ -32,7 +32,7 @@ function PhotoSearch() {
     return (
         <section className='photoSearchSection'>
             <div className='wrapper photoSearchWrapper'>
-                <h2>PHOTO SEARCH</h2>
+                <h2>Photo Search</h2>
                 <SelectSection
                     category={category}
                     setCategory={setCategory}
