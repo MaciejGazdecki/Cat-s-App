@@ -39,9 +39,9 @@ function Navigation() {
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink to='/favourites'
+                                <NavLink to='/favorites'
                                          onClick={() => setNavOpen(!navOpen)}>
-                                FAVOURITES PHOTOS
+                                FAVORITES PHOTOS
                                 </NavLink>
                             </li>
                             <li>

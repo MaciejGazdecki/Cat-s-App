@@ -8,7 +8,7 @@ const axiosInstanceHandleFavourites = axios.create({
     }
 });
 
-function Favourites() {
+function Favorites() {
     const [favourites, setFavourites] = useState([]);
     const [page,setPage] = useState(1);
     const perPage = 6;
@@ -71,12 +71,12 @@ function Favourites() {
         </div>
     ;
 
-    const noPhotos = <div className="noFav">There are no favourites</div>;
+    const noPhotos = <div className="noFav">There are no favorites</div>;
 
     return (
         <section className='favouritesSection'>
             <div className='wrapper favouritesWrapper'>
-                <h2>Favourites Photos</h2>
+                <h2>Favorites Photos</h2>
                 {favourites.length > 0 ? favGallery : noPhotos}
                 {favourites.length> 0 ? buttons: null}
             </div>
@@ -85,4 +85,4 @@ function Favourites() {
 
 }
 
-export default Favourites;
+export default Favorites;
