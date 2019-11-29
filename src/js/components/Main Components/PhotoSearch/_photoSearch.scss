@@ -2,7 +2,7 @@
 @import "../../../../sass/layout/variables";
 
 
-.photoSearchSection {
+.photoSearchSection, {
   @include main-gradient-grey;
   width: 100%;
   min-height: 100vh;
@@ -18,6 +18,8 @@
   height: 100%;
   h2 {
     font-family: 'Pacifico', cursive;
+    font-size: 3rem;
+    text-align: center;
   }
   @include only-mobiles-landscape {
     padding-top: 15%;
@@ -40,14 +42,10 @@
   @include all-big-screens {
     margin-left: 0;
   }
-  .headerContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-  h2 {
-    font-size: 3rem;
-    text-align: center;
-  }
+  //.headerContainer {
+  //  display: flex;
+  //  align-items: center;
+  //  justify-content: center;
+  //  flex-direction: column;
+  //}
 }
