@@ -42,6 +42,16 @@
   @include all-big-screens {
     margin-left: 0;
   }
+  .noFav {
+    margin: 0 auto;
+    font-size: 2rem;
+    @include media-tablet{
+      font-size: 3rem;
+    }
+    @include all-big-screens {
+      font-size: 3rem;
+    }
+  }
 }
 .favGallery {
   display: flex;
