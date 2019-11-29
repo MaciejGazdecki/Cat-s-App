@@ -19,6 +19,14 @@
   h2 {
     font-family: 'Pacifico', cursive;
   }
+  @include only-mobiles-landscape {
+    padding-top: 15%;
+    padding-bottom: 15%;
+  }
+  @include iPhonexAndPixel2XL {
+    padding-top: 15%;
+    padding-bottom: 15%;
+  }
   @include all-big-screens {
     margin-left: 0;
   }
