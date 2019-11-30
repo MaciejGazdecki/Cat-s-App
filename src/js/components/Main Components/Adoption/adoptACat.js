@@ -1,6 +1,7 @@
 import React, {useState, useEffect,useReducer} from 'react';
 import axios from 'axios';
 const uniqid = require('uniqid');
+import Form from "./Subcomponents/Form/form";
 
 const axiosAdoption = axios.create({
    baseURL:'https://cats-app-d2f04.firebaseio.com/'
@@ -61,9 +62,9 @@ function AdoptACat() {
                 <div className="blackLayerAdoption">
                     <div className="carouselWrapper wrapper">
                         <div className='adoptHeader'>
-                            <h2>Adoption</h2>
-                            <h3>FIND YOUR FRIEND</h3>
-                            <p>Adoption is an act of love</p>
+                            <h2>ADOPTION</h2>
+                            <h3>-FIND YOUR FRIEND-</h3>
+                            <p>Adoption is an act of <span>love</span></p>
                         </div>
                         <div className="annoucements">
                             <h2>Actual Announcements</h2>
@@ -81,103 +82,11 @@ function AdoptACat() {
                 </div>
             </div>
             <div className='wrapper adoptACatWrapper'>
-                <div className='addAnnouncement'>
-                    <form  className='announcement' onSubmit={submitHandler}>
-                        <label>
-                            Title:
-                            <input
-                                type="text"
-                                placeholder="Please put tittle of your announcement"
-                                name="title"
-                                value={state.title}
-                                onChange={onChangeHandler}
-                            />
-                        </label>
-                        <label>
-                            Your name:
-                            <input
-                                type="text"
-                                placeholder='Please put your name'
-                                name="name"
-                                value={state.name}
-                                onChange={onChangeHandler}
-                            />
-                        </label>
-                        <label>
-                            Your email:
-                            <input
-                                type="email"
-                                placeholder="Please put your email"
-                                name="email"
-                                value={state.email}
-                                onChange={onChangeHandler}
-                            />
-                        </label>
-                        <label>
-                           Cat name:
-                            <input
-                                type="text"
-                                placeholder="Please put cat name"
-                                name="title"
-                                value={state.catName}
-                                onChange={onChangeHandler}
-                            />
-                        </label>
-                        <label>
-                            Cat Age:
-                            <input
-                                type="text"
-                                placeholder="Please put cat age"
-                                name="title"
-                                value={state.catAge}
-                                onChange={onChangeHandler}
-                            />
-                        </label>
-                        <label>
-                            Cat gender:
-                            <input
-                                type="text"
-                                placeholder="Please put cat gender"
-                                name="title"
-                                value={state.gender}
-                                onChange={onChangeHandler}
-                            />
-                        </label>
-                        <label>
-                            Your Zip Code
-                            <input
-                                type="text"
-                                placeholder='Please put your Zip Code'
-                                name="zipCode"
-                                value={state.zipCode}
-                                onChange={onChangeHandler}
-                            />
-                        </label>
-                        <label>
-                            Your City
-                            <input
-                                type="text"
-                                placeholder="Please put your City"
-                                name="city"
-                                value={state.city}
-                                onChange={onChangeHandler}
-                            />
-                        </label>
-                        <label>
-                            Your message
-                            <textarea
-                                name="content"
-                                id="announcement"
-                                cols="80" rows="10"
-                                value={state.content}
-                                onChange={onChangeHandler}
-                                placeholder="Please put your message here"
-                            >
-                            </textarea>
-                        </label>
-                        <input type="submit" value="Place announcement"/>
-                    </form>
-                </div>
+                <Form
+                    state={state}
+                    submitHandler={submitHandler}
+                    onChangeHandler={onChangeHandler}
+                />
             </div>
         </section>
     )
