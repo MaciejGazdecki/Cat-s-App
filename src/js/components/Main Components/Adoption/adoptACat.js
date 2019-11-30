@@ -1,55 +1,90 @@
-import React, {useState} from 'react';
-import axios from 'axios'
+import React, {useState, useEffect,useReducer} from 'react';
+import axios from 'axios';
+const uniqid = require('uniqid');
 
 const axiosAdoption = axios.create({
    baseURL:'https://cats-app-d2f04.firebaseio.com/'
 });
 
 function AdoptACat() {
-    const [name, setName] = useState('');
-    const [surname,setSurname] = useState('');
-    const [email, setEmail] = useState('');
-    const [zipCode, setZipCode] = useState('');
-    const [city, setCity] = useState('');
-    const [localization, setLocalization] = useState('');
-    const [content, setContent] = useState('');
+    const initialState = {
+        title: '',
+        name: localStorage.getItem('userName'),
+        surname:'',
+        email:'',
+        city:'',
+        zipCode:'',
+        localization:'',
+        content:''
+    };
+
+    const reducer = (state, action) => {
+        if (action.type === "CLEAR") {
+            return initialState
+        }
+        if (action.type === "SET_VALUE") {
+            return {
+                ...state,
+                [action.name]: action.value
+            }
+        }
+    };
+
+    const [state, dispatch] = useReducer(reducer, initialState);
+    const [announcements, setAnnouncements] = useState([]);
+
+    useEffect(() => {
+       const fetchData = async () => {
+           return axiosAdoption.get('/adoption.json')
+       };
+       fetchData()
+           .then(res => setAnnouncements(Object.values(res.data)))
+           .catch(err => console.log(err))
+    });
+
+    const onChangeHandler = (e) => {
+        dispatch({type:"SET_VALUE", name: e.target.name, value: e.target.value});
+    };
 
     const submitHandler = async () => {
         event.preventDefault();
-        await axiosAdoption.post('/adoption.json', {
-            name: name,
-            surname:surname,
-            email:email,
-            zipCode: zipCode,
-            city: city,
-            localization: localization,
-            content: content
-        })
+        await axiosAdoption.post('/adoption.json', {...state, id: uniqid()})
             .then(res => console.log(res, alert("announcement placed")))
             .catch(err => console.log(err));
-        setName('');
-        setSurname('');
-        setEmail('');
-        setZipCode('');
-        setCity('');
-        setLocalization('');
-        setContent('')
+        dispatch({type:"CLEAR"})
     };
 
     return (
         <section className='adoptionSection'>
             <div className='wrapper adoptACatWrapper'>
                 <h2>Adoption</h2>
+                <div className="annoucements">
+                    {/*{announcements.map(el =>*/}
+                    {/*<div className="announcement" key={el.id}>*/}
+                    {/*    <p>{el.title}</p>*/}
+                    {/*</div>*/}
+                    {/*)}*/}
+                </div>
                 <div className='addAnnouncement'>
                     <form onSubmit={submitHandler}>
+                        <label>
+                            Title
+                            <input
+                                type="text"
+                                placeholder="Please put tittle of your announcement"
+                                name="title"
+                                value={state.title}
+                                onChange={onChangeHandler}
+                            />
+                        </label>
                         <label>
                             Please put your name
                             <input
                                 type="text"
                                 placeholder='Please put your name'
                                 name="name"
-                                value={name}
-                                onChange={event => setName(event.target.value)}
+                                value={state.name}
+                                onChange={onChangeHandler}
                             />
                         </label>
                         <label>
@@ -58,8 +93,8 @@ function AdoptACat() {
                                 type="text"
                                 placeholder="Please put your name"
                                 name="surname"
-                                value={surname}
-                                onChange={event => setSurname(event.target.value)}
+                                value={state.surname}
+                                onChange={onChangeHandler}
                             />
                         </label>
                         <label>
@@ -68,8 +103,8 @@ function AdoptACat() {
                                 type="email"
                                 placeholder="Please put your email"
                                 name="email"
-                                value={email}
-                                onChange={event => setEmail(event.target.value)}
+                                value={state.email}
+                                onChange={onChangeHandler}
                             />
                         </label>
                         <label>
@@ -77,9 +112,9 @@ function AdoptACat() {
                             <input
                                 type="text"
                                 placeholder='Please put your Zip Code'
-                                name="ZipCode"
-                                value={zipCode}
-                                onChange={event => setZipCode(event.target.value)}
+                                name="zipCode"
+                                value={state.zipCode}
+                                onChange={onChangeHandler}
                             />
                         </label>
                         <label>
@@ -88,8 +123,8 @@ function AdoptACat() {
                                 type="text"
                                 placeholder="Please put your City"
                                 name="city"
-                                value={city}
-                                onChange={event => setCity(event.target.value)}
+                                value={state.city}
+                                onChange={onChangeHandler}
                             />
                         </label>
                         <label>
@@ -98,8 +133,8 @@ function AdoptACat() {
                                 type="text"
                                 placeholder="Please put your localization"
                                 name="localization"
-                                value={localization}
-                                onChange={event => setLocalization(event.target.value)}
+                                value={state.localization}
+                                onChange={onChangeHandler}
                             />
                         </label>
                         <label>
@@ -108,8 +143,8 @@ function AdoptACat() {
                                 name="content"
                                 id="announcement"
                                 cols="80" rows="10"
-                                value={content}
-                                onChange={event => setContent(event.target.value)}
+                                value={state.content}
+                                onChange={onChangeHandler}
                             >
                             </textarea>
                         </label>
