@@ -2,6 +2,7 @@ import React, {useState, useEffect,useReducer} from 'react';
 import axios from 'axios';
 const uniqid = require('uniqid');
 import Form from "./Subcomponents/Form/form";
+import Announcement from "./Subcomponents/Announcement/announcement";
 
 const axiosAdoption = axios.create({
    baseURL:'https://cats-app-d2f04.firebaseio.com/'
@@ -69,13 +70,18 @@ function AdoptACat() {
                         <div className="annoucements">
                             <h2>Actual Announcements</h2>
                             {announcements.map(el =>
-                                <div className="announcement" key={el.id}>
-                                    <p>{el.title}</p>
-                                    <p>{el.content}</p>
-                                    <p>Contact name: {el.name}</p>
-                                    <p>Contact email: {el.email}</p>
-                                    <p>Localization: {el.zipCode} {el.city}</p>
-                                </div>
+                                <Announcement
+                                    id={el.id}
+                                    title={el.title}
+                                    content={el.content}
+                                    name={el.name}
+                                    email={el.email}
+                                    zipCode={el.zipCode}
+                                    city={el.city}
+                                    gender={el.gender}
+                                    catAge={el.catAge}
+                                    catName={el.catName}
+                                />
                             )}
                         </div>
                     </div>
