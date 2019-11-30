@@ -14,7 +14,7 @@ function Announcement(props) {
         catName
     } = props;
     return (
-        <div className="announcement" key={id}>
+        <div className="announcement">
             <p>{title}</p>
             <p>{content}</p>
             <p>Contact name: {name}</p>

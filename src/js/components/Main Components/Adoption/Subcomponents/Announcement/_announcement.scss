@@ -1,2 +1,12 @@
 @import "../../../../../../sass/layout/mixins";
 @import "../../../../../../sass/layout/variables";
+
+.annoucements {
+  @include all-big-screens {
+    margin-top: 30px;
+  }
+  .announcement {
+    background-color: white;
+    color: black;
+  }
+}

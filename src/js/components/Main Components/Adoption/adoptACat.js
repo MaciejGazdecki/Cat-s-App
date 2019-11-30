@@ -59,7 +59,7 @@ function AdoptACat() {
 
     return (
         <section className='adoptionSection'>
-            <div className="carousel">
+            <section className="carousel">
                 <div className="blackLayerAdoption">
                     <div className="carouselWrapper wrapper">
                         <div className='adoptHeader'>
@@ -68,10 +68,9 @@ function AdoptACat() {
                             <p>Adoption is an act of <span>love</span></p>
                         </div>
                         <div className="annoucements">
-                            <h2>Actual Announcements</h2>
                             {announcements.map(el =>
                                 <Announcement
-                                    id={el.id}
+                                    key={el.id}
                                     title={el.title}
                                     content={el.content}
                                     name={el.name}
@@ -86,14 +85,14 @@ function AdoptACat() {
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className='wrapper adoptACatWrapper'>
+            </section>
+            <section className='wrapper adoptACatWrapper'>
                 <Form
                     state={state}
                     submitHandler={submitHandler}
                     onChangeHandler={onChangeHandler}
                 />
-            </div>
+            </section>
         </section>
     )
 
