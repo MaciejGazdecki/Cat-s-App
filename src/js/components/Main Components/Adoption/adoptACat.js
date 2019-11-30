@@ -10,12 +10,13 @@ function AdoptACat() {
     const initialState = {
         title: '',
         name: localStorage.getItem('userName'),
-        surname:'',
         email:'',
         city:'',
         zipCode:'',
-        localization:'',
-        content:''
+        content:'',
+        gender:'',
+        catAge:'',
+        catName:''
     };
 
     const reducer = (state, action) => {
@@ -56,19 +57,34 @@ function AdoptACat() {
 
     return (
         <section className='adoptionSection'>
-            <div className='wrapper adoptACatWrapper'>
-                <h2>Adoption</h2>
-                <div className="annoucements">
-                    {/*{announcements.map(el =>*/}
-                    {/*<div className="announcement" key={el.id}>*/}
-                    {/*    <p>{el.title}</p>*/}
-                    {/*</div>*/}
-                    {/*)}*/}
+            <div className="carousel">
+                <div className="blackLayerAdoption">
+                    <div className="carouselWrapper wrapper">
+                        <div className='adoptHeader'>
+                            <h2>Adoption</h2>
+                            <h3>FIND YOUR FRIEND</h3>
+                            <p>Adoption is an act of love</p>
+                        </div>
+                        <div className="annoucements">
+                            <h2>Actual Announcements</h2>
+                            {announcements.map(el =>
+                                <div className="announcement" key={el.id}>
+                                    <p>{el.title}</p>
+                                    <p>{el.content}</p>
+                                    <p>Contact name: {el.name}</p>
+                                    <p>Contact email: {el.email}</p>
+                                    <p>Localization: {el.zipCode} {el.city}</p>
+                                </div>
+                            )}
+                        </div>
+                    </div>
                 </div>
+            </div>
+            <div className='wrapper adoptACatWrapper'>
                 <div className='addAnnouncement'>
-                    <form onSubmit={submitHandler}>
+                    <form  className='announcement' onSubmit={submitHandler}>
                         <label>
-                            Title
+                            Title:
                             <input
                                 type="text"
                                 placeholder="Please put tittle of your announcement"
@@ -78,7 +94,7 @@ function AdoptACat() {
                             />
                         </label>
                         <label>
-                            Please put your name
+                            Your name:
                             <input
                                 type="text"
                                 placeholder='Please put your name'
@@ -88,17 +104,7 @@ function AdoptACat() {
                             />
                         </label>
                         <label>
-                            Please put your surname
-                            <input
-                                type="text"
-                                placeholder="Please put your name"
-                                name="surname"
-                                value={state.surname}
-                                onChange={onChangeHandler}
-                            />
-                        </label>
-                        <label>
-                            Please put your email
+                            Your email:
                             <input
                                 type="email"
                                 placeholder="Please put your email"
@@ -108,7 +114,37 @@ function AdoptACat() {
                             />
                         </label>
                         <label>
-                            Please put your Zip Code
+                           Cat name:
+                            <input
+                                type="text"
+                                placeholder="Please put cat name"
+                                name="title"
+                                value={state.catName}
+                                onChange={onChangeHandler}
+                            />
+                        </label>
+                        <label>
+                            Cat Age:
+                            <input
+                                type="text"
+                                placeholder="Please put cat age"
+                                name="title"
+                                value={state.catAge}
+                                onChange={onChangeHandler}
+                            />
+                        </label>
+                        <label>
+                            Cat gender:
+                            <input
+                                type="text"
+                                placeholder="Please put cat gender"
+                                name="title"
+                                value={state.gender}
+                                onChange={onChangeHandler}
+                            />
+                        </label>
+                        <label>
+                            Your Zip Code
                             <input
                                 type="text"
                                 placeholder='Please put your Zip Code'
@@ -118,7 +154,7 @@ function AdoptACat() {
                             />
                         </label>
                         <label>
-                            Please put your City
+                            Your City
                             <input
                                 type="text"
                                 placeholder="Please put your City"
@@ -128,27 +164,18 @@ function AdoptACat() {
                             />
                         </label>
                         <label>
-                            Please put your localization
-                            <input
-                                type="text"
-                                placeholder="Please put your localization"
-                                name="localization"
-                                value={state.localization}
-                                onChange={onChangeHandler}
-                            />
-                        </label>
-                        <label>
-                            Please put your message
+                            Your message
                             <textarea
                                 name="content"
                                 id="announcement"
                                 cols="80" rows="10"
                                 value={state.content}
                                 onChange={onChangeHandler}
+                                placeholder="Please put your message here"
                             >
                             </textarea>
                         </label>
-                        <input type="submit" value="Send announcement"/>
+                        <input type="submit" value="Place announcement"/>
                     </form>
                 </div>
             </div>
