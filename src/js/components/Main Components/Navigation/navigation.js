@@ -1,11 +1,10 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {NavLink} from 'react-router-dom'
 import logo from '../../../../../images/cat-3-128.png';
 
-function Navigation() {
+function Navigation(props) {
     const [navOpen, setNavOpen] = useState(false);
-    let user = '';
-    if (localStorage.getItem('userName')) user = localStorage.getItem('userName');
+    const {appUser} = props;
 
     return (
         <>
@@ -53,7 +52,7 @@ function Navigation() {
                             <li>
                                 <NavLink to='/login'
                                          onClick={() => setNavOpen(!navOpen)}>
-                                { user ? `SIGNED AS ${user.toUpperCase()}` : 'SIGN IN'}
+                                { appUser ? `SIGNED AS ${appUser.toUpperCase()}` : 'SIGN IN'}
                                 </NavLink>
                             </li>
                         </ul>

@@ -40,7 +40,7 @@ function Welcome() {
             <FSLightBox
                 toggler={lightboxController.toggler}
                 sources={cats}
-                slide={ lightboxController.slide }
+                slide={lightboxController.slide}
                 showThumbsOnMount={ true }
                 disableLocalStorage={ true }
                 captions={ [

@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
 const uniqid = require('uniqid');
 
-function LoginPage() {
+function LoginPage(props) {
     const [userName, setUserName] = useState('');
-    const [appUser, setAppUser] = useState('');
+    const {appUser, setAppUser} = props;
 
     const handleSubmit = () => {
         if (userName.trim()) {
