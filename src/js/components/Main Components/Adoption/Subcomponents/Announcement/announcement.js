@@ -17,6 +17,9 @@ function Announcement(props) {
         <div className="announcement">
             <p>{title}</p>
             <p>{content}</p>
+            <p>Name of cat: {catName}</p>
+            <p>Age: {catAge}</p>
+            <p>Gender: {gender}</p>
             <p>Contact name: {name}</p>
             <p>Contact email: {email}</p>
             <p>Localization: {zipCode} {city}</p>

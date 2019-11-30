@@ -40,7 +40,7 @@ function Form(props) {
                     <input
                         type="text"
                         placeholder="Please put cat name"
-                        name="title"
+                        name="catName"
                         value={state.catName}
                         onChange={onChangeHandler}
                     />
@@ -50,7 +50,7 @@ function Form(props) {
                     <input
                         type="text"
                         placeholder="Please put cat age"
-                        name="title"
+                        name="catAge"
                         value={state.catAge}
                         onChange={onChangeHandler}
                     />
@@ -60,7 +60,7 @@ function Form(props) {
                     <input
                         type="text"
                         placeholder="Please put cat gender"
-                        name="title"
+                        name="gender"
                         value={state.gender}
                         onChange={onChangeHandler}
                     />
