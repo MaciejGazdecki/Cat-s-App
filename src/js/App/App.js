@@ -28,9 +28,9 @@ function  App () {
                     <Route path="/breeds" component={Breeds}/>
                     <Route path="/search-photo" component={PhotoSearch}/>
                     <Route path='/favorites' component={Favorites}/>
-                <Route path='/login'>
-                    <LoginPage appUser={appUser} setAppUser={setAppUser}/>
-                </Route>
+                    <Route path='/login'>
+                        <LoginPage appUser={appUser} setAppUser={setAppUser}/>
+                    </Route>
                 <Footer/>
             </Router>
     )

@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 const uniqid = require('uniqid');
+import PropTypes from 'prop-types';
 
 function LoginPage(props) {
     const [userName, setUserName] = useState('');
@@ -57,3 +58,8 @@ function LoginPage(props) {
 }
 
 export default LoginPage;
+
+LoginPage.propTypes = {
+    appUser: PropTypes.string.isRequired,
+    setAppUser: PropTypes.func.isRequired
+};

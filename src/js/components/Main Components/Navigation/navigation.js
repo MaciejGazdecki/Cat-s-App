@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {NavLink} from 'react-router-dom'
+import PropTypes from 'prop-types';
 import logo from '../../../../../images/cat-3-128.png';
 
 function Navigation(props) {
@@ -64,3 +65,7 @@ function Navigation(props) {
 }
 
 export default Navigation;
+
+Navigation.propTypes = {
+  appUser: PropTypes.string.isRequired
+};
