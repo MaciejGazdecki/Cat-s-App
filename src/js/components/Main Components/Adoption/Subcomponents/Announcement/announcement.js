@@ -16,15 +16,24 @@ function Announcement(props) {
     } = props;
     return (
         <div className="announcement">
-            <img className='iconAdoption' src={CatLogo} alt="cat"/>
-            <p>{title}</p>
-            <p>{content}</p>
-            <p>Name of cat: {catName}</p>
-            <p>Age of cat: {catAge}</p>
-            <p>Gender: {gender}</p>
-            <p>Contact name: {name}</p>
-            <p>Contact email: {email}</p>
-            <p>Localization: {zipCode} {city}</p>
+            <div className="announcementImgContainer">
+                <img className='iconAdoption' src={CatLogo} alt="cat"/>
+                <div className="catDetails">
+                    <p className="announcementTitle">{title}</p>
+                    <p><span>Name of cat: </span>{catName}</p>
+                    <p><span>Age of cat:</span> {catAge}</p>
+                    <p><span>Gender:</span> {gender}</p>
+                </div>
+            </div>
+            <div className="announcementSubsection">
+                <div className='announcementDetails'>
+                    <p><span>Contact name:</span> {name}</p>
+                    <p><span>Contact email:</span> {email}</p>
+                    <p><span>Localization:</span> {zipCode} {city}</p>
+                    <p>{content}</p>
+                </div>
+                <button className='sendMessage'>Send Message</button>
+            </div>
         </div>
     )
 }

@@ -58,7 +58,7 @@ function AdoptACat() {
             .catch(err => console.log(err));
         dispatch({type:"CLEAR"})
     };
-    const  onClickNextHandler = () => {
+    const onClickNextHandler = () => {
         if (announcements.slice(page*perPage - perPage, page*perPage).length < perPage) {
             setPage(prevState => prevState);
         } else {
@@ -80,7 +80,7 @@ function AdoptACat() {
                             <h3>-FIND YOUR FRIEND-</h3>
                             <p>Adoption is an act of <span>love</span></p>
                         </div>
-                        <div className="annoucements">
+                        <section className="annoucements">
                             <p onClick={onClickPreviousHandler}><i className="fas fa-chevron-left"></i></p>
                             {announcements.slice(page*perPage - perPage, page*perPage).map(el =>
                                 <Announcement
@@ -97,7 +97,7 @@ function AdoptACat() {
                                 />
                             )}
                             <p onClick={onClickNextHandler}><i className="fas fa-chevron-right"></i></p>
-                        </div>
+                        </section>
                     </div>
                 </div>
             </section>
