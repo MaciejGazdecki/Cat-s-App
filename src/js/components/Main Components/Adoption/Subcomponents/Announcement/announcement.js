@@ -1,4 +1,5 @@
 import React from 'react';
+import CatLogo from "../../../../../../../images/adoption3.jpg"
 
 function Announcement(props) {
     const {
@@ -15,10 +16,11 @@ function Announcement(props) {
     } = props;
     return (
         <div className="announcement">
+            <img className='iconAdoption' src={CatLogo} alt="cat"/>
             <p>{title}</p>
             <p>{content}</p>
             <p>Name of cat: {catName}</p>
-            <p>Age: {catAge}</p>
+            <p>Age of cat: {catAge}</p>
             <p>Gender: {gender}</p>
             <p>Contact name: {name}</p>
             <p>Contact email: {email}</p>

@@ -35,6 +35,8 @@ function AdoptACat() {
 
     const [state, dispatch] = useReducer(reducer, initialState);
     const [announcements, setAnnouncements] = useState([]);
+    const [page, setPage] = useState(1);
+    const perPage = 2;
 
     useEffect(() => {
        const fetchData = async () => {
@@ -56,6 +58,17 @@ function AdoptACat() {
             .catch(err => console.log(err));
         dispatch({type:"CLEAR"})
     };
+    const  onClickNextHandler = () => {
+        if (announcements.slice(page*perPage - perPage, page*perPage).length < perPage) {
+            setPage(prevState => prevState);
+        } else {
+            setPage(prevState => prevState +1);
+        }
+    };
+
+    const onClickPreviousHandler = () => {
+        if(page > 1) setPage(prevState => prevState -1);
+    };
 
     return (
         <section className='adoptionSection'>
@@ -68,7 +81,8 @@ function AdoptACat() {
                             <p>Adoption is an act of <span>love</span></p>
                         </div>
                         <div className="annoucements">
-                            {announcements.map(el =>
+                            <p onClick={onClickPreviousHandler}><i className="fas fa-chevron-left"></i></p>
+                            {announcements.slice(page*perPage - perPage, page*perPage).map(el =>
                                 <Announcement
                                     key={el.id}
                                     title={el.title}
@@ -82,6 +96,7 @@ function AdoptACat() {
                                     catName={el.catName}
                                 />
                             )}
+                            <p onClick={onClickNextHandler}><i className="fas fa-chevron-right"></i></p>
                         </div>
                     </div>
                 </div>
