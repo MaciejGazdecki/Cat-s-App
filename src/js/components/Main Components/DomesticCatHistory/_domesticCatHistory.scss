@@ -8,6 +8,10 @@
     font-size: $font-sizeSpecial-mobile-tablet;
     text-align: center;
     font-family: $special-font;
+    span {
+      color: red;
+      font-family: $special-font;
+    }
     @include all-big-screens {
       font-size: $font-sizeSpecial-desktop;
     }
