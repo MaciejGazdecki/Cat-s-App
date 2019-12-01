@@ -34,14 +34,12 @@
    height: 750px;
   }
  }
-  .adoptACatWrapper {
-   padding-top: 100px;
-   padding-bottom: 100px;
-   margin: $margin-mobile;
+  .formWrapper {
+   padding-top: 50px;
+   padding-bottom: 50px;
    width: 100%;
-   @include all-big-screens {
-    margin-left: 0;
-   }
+   position: relative;
+   z-index: 0;
   }
  .carouselWrapper {
   padding-top: 300px;
@@ -91,4 +89,16 @@
  }
 }
 
-
+.catForm {
+ position: absolute;
+ left: -7%;
+ z-index:1;
+ display: none;
+ @include all-big-screens {
+  display: block;
+ }
+ img {
+  height: (899*0.75) *1px;
+  width: (700*0.75) *1px;
+ }
+}

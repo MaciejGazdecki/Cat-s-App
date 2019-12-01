@@ -28,7 +28,7 @@ function LoginPage(props) {
     const form =
         <div className='form-wrapper'>
             <h1>SIGN IN</h1>
-            <form onSubmit={handleSubmit}>
+            <form className="login" onSubmit={handleSubmit}>
                 <label>
                     Please put your name
                     <input type="text" id='login'

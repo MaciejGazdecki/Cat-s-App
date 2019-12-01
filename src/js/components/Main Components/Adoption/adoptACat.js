@@ -3,6 +3,7 @@ import axios from 'axios';
 const uniqid = require('uniqid');
 import Form from "./Subcomponents/Form/form";
 import Announcement from "./Subcomponents/Announcement/announcement";
+import Cat from "../../../../../images/contactbg1.png";
 
 const axiosAdoption = axios.create({
    baseURL:'https://cats-app-d2f04.firebaseio.com/'
@@ -101,7 +102,10 @@ function AdoptACat() {
                     </div>
                 </div>
             </section>
-            <section className='wrapper adoptACatWrapper'>
+            <section className='wrapper formWrapper'>
+                <div className="catForm">
+                    <img  src={Cat} alt=""/>
+                </div>
                 <Form
                     state={state}
                     submitHandler={submitHandler}
