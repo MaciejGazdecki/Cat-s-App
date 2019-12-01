@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from 'react';
 const uniqid = require('uniqid');
+import PropTypes from 'prop-types';
 
-function LoginPage() {
+function LoginPage(props) {
     const [userName, setUserName] = useState('');
-    const [appUser, setAppUser] = useState('');
+    const {appUser, setAppUser} = props;
 
     const handleSubmit = () => {
         if (userName.trim()) {
@@ -27,7 +28,7 @@ function LoginPage() {
     const form =
         <div className='form-wrapper'>
             <h1>SIGN IN</h1>
-            <form onSubmit={handleSubmit}>
+            <form className="login" onSubmit={handleSubmit}>
                 <label>
                     Please put your name
                     <input type="text" id='login'
@@ -57,3 +58,8 @@ function LoginPage() {
 }
 
 export default LoginPage;
+
+LoginPage.propTypes = {
+    appUser: PropTypes.string.isRequired,
+    setAppUser: PropTypes.func.isRequired
+};
