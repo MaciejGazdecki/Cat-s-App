@@ -9,7 +9,7 @@ function Form(props) {
                         Title:
                         <input
                             type="text"
-                            placeholder="Please put tittle of your announcement"
+                            placeholder="Please put tittle here"
                             name="title"
                             value={state.title}
                             onChange={onChangeHandler}
