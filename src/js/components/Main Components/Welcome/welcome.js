@@ -22,7 +22,7 @@ function Welcome() {
 
     return (
         <>
-            <h1 className='welcome'>Welcome on the website for Cat <span>lovers</span></h1>
+            <h1 className='welcome'>Welcome on the website for Cat lovers</h1>
             <p className='welcome-content'>
                 Just  log in and start to like and save your favorites photos! Go to the breeds section and learn
                 more about each breed and discover amazing photos in full HD. Compare behavior of each breed with
@@ -40,7 +40,7 @@ function Welcome() {
             <FSLightBox
                 toggler={lightboxController.toggler}
                 sources={cats}
-                slide={lightboxController.slide}
+                slide={ lightboxController.slide }
                 showThumbsOnMount={ true }
                 disableLocalStorage={ true }
                 captions={ [

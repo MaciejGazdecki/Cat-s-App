@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {NavLink} from 'react-router-dom'
-import PropTypes from 'prop-types';
 import logo from '../../../../../images/cat-3-128.png';
 
-function Navigation(props) {
+function Navigation() {
     const [navOpen, setNavOpen] = useState(false);
-    const {appUser} = props;
+    let user = '';
+    if (localStorage.getItem('userName')) user = localStorage.getItem('userName');
 
     return (
         <>
@@ -53,7 +53,7 @@ function Navigation(props) {
                             <li>
                                 <NavLink to='/login'
                                          onClick={() => setNavOpen(!navOpen)}>
-                                { appUser ? `SIGNED AS ${appUser.toUpperCase()}` : 'SIGN IN'}
+                                { user ? `SIGNED AS ${user.toUpperCase()}` : 'SIGN IN'}
                                 </NavLink>
                             </li>
                         </ul>
@@ -65,7 +65,3 @@ function Navigation(props) {
 }
 
 export default Navigation;
-
-Navigation.propTypes = {
-  appUser: PropTypes.string.isRequired
-};

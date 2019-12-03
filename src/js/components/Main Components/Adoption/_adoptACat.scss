@@ -1,104 +1,12 @@
 @import "../../../../sass/layout/mixins";
 @import "../../../../sass/layout/variables";
 
-.adoptionSection {
- @include main-gradient-grey;
+.adoptACatWrapper {
+ padding-top: 300px;
+  padding-bottom: 300px;
+ margin: $margin-mobile;
  width: 100%;
- min-height: 100vh;
- .carousel {
-  background-image: url("../../../images/animals-2739386_1920.jpg");
-  background-repeat: no-repeat;
-  background-position-y: 55px;
-  background-position-x: -200px;
-  height: 690px;
-  color: $main-font-color;
-  @include all-mobiles {
-   background-position-y: 70px;
-   background-position-x: -160px;
-  }
-  @include media-tablet {
-   background-position-y: 100px;
-   background-position-x: 0;
-   height: 720px;
-  }
-  @include orientation-landscape {
-   background-position-y: 55px;
-  }
-  @include iPhonexAndPixel2XL {
-   background-position-y: 75px;
-   height: 680px;
-  }
-  @include all-big-screens {
-   background-position-y:120px;
-   background-position-x: 0;
-   height: 750px;
-  }
- }
-  .formWrapper {
-   padding-top: 50px;
-   padding-bottom: 50px;
-   width: 100%;
-   position: relative;
-   z-index: 0;
-  }
- .carouselWrapper {
-  padding-top: 300px;
-  margin: $margin-mobile;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  @include all-big-screens {
-   margin-left: 0;
-   padding-top: 150px;
-  }
-  .adoptHeader {
-   text-align: center;
-   @include all-big-screens {
-    h2 {
-     font-size: 4rem;
-     font-weight: 700;
-    }
-    h3 {
-     font-size: 2rem;
-    }
-    p {
-     font-size: 3rem;
-     span {
-      color: red;
-      font-weight: 700;
-     }
-    }
-   }
-  }
- }
-}
-.blackLayerAdoption {
- background-color: rgba(0,0,0,.45);
- width: 100%;
- height: 100%;
-}
-.fa-chevron-left, .fa-chevron-right {
-  @include all-big-screens {
-   font-size: 3rem;
-   color: rgba(255,255,255, .3);
-  }
- &:hover {
-  color: white;
- }
-}
-
-.catForm {
- position: absolute;
- left: -7%;
- z-index:1;
- display: none;
  @include all-big-screens {
-  display: block;
- }
- img {
-  height: (899*0.75) *1px;
-  width: (700*0.75) *1px;
- }
+  margin-left: 0;
+  }
 }
