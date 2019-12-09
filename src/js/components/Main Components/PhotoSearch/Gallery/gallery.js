@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import axios from "axios";
 import PropTypes from 'prop-types';
 import Pagination from "./Pagination/pagination";
@@ -11,13 +11,12 @@ const axiosInstanceAddToFavourites = axios.create({
 });
 
 function Gallery(props) {
-    const {category,type,breedID} = props;
+    const {category,type,breedID,appUser} = props;
     const [gallery, setGallery] = useState([]);
     const [page, setPage] = useState(1);
     const [paramsPage, setParamsPage] = useState(1);
     const perPage = 6;
-
-    const userName = localStorage.getItem('userName');
+    const userName = appUser;
 
     let params = {
         mime_types: type,

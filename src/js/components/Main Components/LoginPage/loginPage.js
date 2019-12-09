@@ -1,56 +1,47 @@
 import React, {useState, useEffect} from 'react';
-const uniqid = require('uniqid');
 import PropTypes from 'prop-types';
+import firebase from "firebase";
+import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
+
+const config = {
+    apiKey: 'AIzaSyB3lIjiRCGgT3KNdaRRXOmnTLQvRlYtPX8',
+    authDomain: 'cats-app-d2f04.firebaseapp.com',
+};
+firebase.initializeApp(config);
 
 function LoginPage(props) {
-    const [userName, setUserName] = useState('');
     const {appUser, setAppUser} = props;
+    const [isLoggedIn, setLoggedIn] = useState(false);
 
-    const handleSubmit = () => {
-        if (userName.trim()) {
-            localStorage.setItem('userName', userName);
-            localStorage.setItem('userID', uniqid());
-            setUserName('');
-            setAppUser(localStorage.getItem('userName'));
+    const uiConfig = {
+        signInFlow: 'popup',
+        signInOptions: [
+            firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+            firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+            firebase.auth.EmailAuthProvider.PROVIDER_ID
+        ],
+        callbacks: {
+            signInSuccessWithAuthResult: () => false
         }
     };
 
     useEffect(() => {
-        if (localStorage.getItem('userName')) setAppUser(localStorage.getItem('userName'));
-    },[appUser]);
-
-    const logout = () => {
-        localStorage.removeItem('userName');
-        localStorage.removeItem('userID');
-        setAppUser('')
-    };
-
-    const form =
-        <div className='form-wrapper'>
-            <h1>SIGN IN</h1>
-            <form className="login" onSubmit={handleSubmit}>
-                <label>
-                    Please put your name
-                    <input type="text" id='login'
-                           placeholder='Please put your name'
-                           value={userName}
-                           onChange={(event => setUserName(event.target.value)) }
-                    />
-                </label>
-                <input type="submit" value="Log in" />
-            </form>
-        </div>;
+        const unregisterAuthObserver = firebase.auth().onAuthStateChanged (
+            (user) => {setLoggedIn(!!user); if (user.displayName !== null) setAppUser(user.displayName)}
+        );
+        return setAppUser('')
+    });
 
     const userOnPage =
         <div className='userOnPage'>
             <p>{`YOU ARE CURRENTLY LOGGED AS ${appUser.toUpperCase()}`}</p>
-            <button className='logOut' onClick={logout}>LOG OUT</button>
+            <button className='logOut' onClick={() => firebase.auth().signOut()}>LOG OUT</button>
         </div>;
 
     return (
         <section className='loginSection'>
             <div className='wrapper loginPage'>
-                {appUser ? userOnPage : form}
+                {isLoggedIn ? userOnPage : <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()}/>}
             </div>
         </section>
     )
