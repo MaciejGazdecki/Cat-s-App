@@ -17,7 +17,6 @@ http://cat-lovers.cba.pl/
 
 Things that has to be done:
 
-- enable logging in via Google and Facebook, now you can log in only via localstorage for test;
 - code RWD for adoption section (the rest of RWD is done);
 - make form validation;
 - fix the carousel bug;
