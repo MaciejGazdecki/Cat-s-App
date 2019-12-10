@@ -13,11 +13,10 @@ function Favorites(props) {
     const [page,setPage] = useState(1);
     const perPage = 6;
     const {appUser} = props;
-    const userName = appUser;
 
     const downloadFavourites = () => {
         const params = {
-            sub_id: userName
+            sub_id: appUser
         };
         const fetchData = async () => {
             return await axiosInstanceHandleFavourites.get('favourites', {params})

@@ -3,13 +3,12 @@ import axios from "axios";
 import SelectSection from "./SelectSection/selectSection";
 import Gallery from "./Gallery/gallery";
 
-function PhotoSearch(props) {
+function PhotoSearch() {
     const [categories, setCategories] = useState([]);
     const [category, setCategory] = useState('');
     const [type, setType] = useState('gif,jpg,png');
     const [breeds, setBreeds] = useState([]);
     const [breedID, setBreedID] = useState('');
-    const {appUser} = props;
 
     useEffect(()=>{
         const fetchData = async () => {
@@ -48,7 +47,6 @@ function PhotoSearch(props) {
                     category={category}
                     type={type}
                     breedID={breedID}
-                    appUser={appUser}
                 />
             </div>
         </section>
