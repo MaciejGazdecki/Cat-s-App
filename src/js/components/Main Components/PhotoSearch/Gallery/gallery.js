@@ -1,7 +1,8 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import axios from "axios";
 import PropTypes from 'prop-types';
 import Pagination from "./Pagination/pagination";
+import {AppUserContext} from "../../../../App/appUserContext";
 
 const axiosInstanceAddToFavourites = axios.create({
     baseURL: 'https://api.thecatapi.com/v1',
@@ -16,8 +17,7 @@ function Gallery(props) {
     const [page, setPage] = useState(1);
     const [paramsPage, setParamsPage] = useState(1);
     const perPage = 6;
-
-    const userName = localStorage.getItem('userName');
+    const userName = useContext(AppUserContext);
 
     let params = {
         mime_types: type,

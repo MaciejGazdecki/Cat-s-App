@@ -1,11 +1,11 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState,useContext} from 'react';
 import {NavLink} from 'react-router-dom'
 import logo from '../../../../../images/cat-3-128.png';
+import {AppUserContext} from "../../../App/appUserContext";
 
 function Navigation() {
     const [navOpen, setNavOpen] = useState(false);
-    let user = '';
-    if (localStorage.getItem('userName')) user = localStorage.getItem('userName');
+    const appUser = useContext(AppUserContext);
 
     return (
         <>
@@ -53,7 +53,7 @@ function Navigation() {
                             <li>
                                 <NavLink to='/login'
                                          onClick={() => setNavOpen(!navOpen)}>
-                                { user ? `SIGNED AS ${user.toUpperCase()}` : 'SIGN IN'}
+                                { appUser ? `SIGNED AS ${appUser.toUpperCase()}` : 'SIGN IN'}
                                 </NavLink>
                             </li>
                         </ul>
