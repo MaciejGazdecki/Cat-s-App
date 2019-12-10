@@ -12,7 +12,7 @@ const axiosAdoption = axios.create({
 function AdoptACat() {
     const initialState = {
         title: '',
-        name: localStorage.getItem('userName'),
+        name: '',
         email:'',
         city:'',
         zipCode:'',
