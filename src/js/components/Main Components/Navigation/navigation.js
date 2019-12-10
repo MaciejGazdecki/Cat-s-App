@@ -65,3 +65,7 @@ function Navigation() {
 }
 
 export default Navigation;
+
+Navigation.propTypes = {
+  appUser: PropTypes.string.isRequired
+};

@@ -6,11 +6,7 @@
   text-align: center;
   margin: 2% auto;
   color: $main-font-color;
-  font-family: $special-font;
-  span {
-    color: red;
-    font-family: $special-font;
-  }
+  font-family: 'Pacifico', cursive;
   @include media-tablet {
     font-size: $font-sizeSpecial-desktop;
   }

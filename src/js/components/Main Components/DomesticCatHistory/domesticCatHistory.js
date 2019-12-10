@@ -8,7 +8,7 @@ function DomesticCatHistory() {
                 <div className='catLogo'>
                     <img src={cat} alt=""/>
                 </div>
-                <h2>History of <span>Cat</span></h2>
+                <h2>History of Cat</h2>
                 <div className="articleWrapper">
                     <article>
                         The cat <span className="italic">(Felis catus) </span>
