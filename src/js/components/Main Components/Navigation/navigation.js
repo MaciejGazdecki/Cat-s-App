@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
+import React, {useState,useContext} from 'react';
 import {NavLink} from 'react-router-dom'
-import PropTypes from 'prop-types';
 import logo from '../../../../../images/cat-3-128.png';
+import {AppUserContext} from "../../../App/appUserContext";
 
-function Navigation(props) {
+function Navigation() {
     const [navOpen, setNavOpen] = useState(false);
-    const {appUser} = props;
+    const appUser = useContext(AppUserContext);
 
     return (
         <>
@@ -65,7 +65,3 @@ function Navigation(props) {
 }
 
 export default Navigation;
-
-Navigation.propTypes = {
-  appUser: PropTypes.string.isRequired
-};
