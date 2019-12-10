@@ -14,28 +14,25 @@ import axios from 'axios';
 axios.defaults.baseURL = 'https://api.thecatapi.com/v1';
 axios.defaults.headers.common['Authorization'] = '687fe573-b392-44ea-b985-63c162d0f64c';
 
+
 function  App () {
 
     const [appUser, setAppUser] = useState('');
 
     return (
             <Router>
-                <Navigation appUser={appUser}/>
-                <Route path="/" exact component={HomePage}/>
-                <Route path="/adopt-a-Cat" component={AdoptACat}/>
-                <Route path="/breeds" component={Breeds}/>
                 <AppUserContext.Provider value={appUser}>
-                    <Route path="/search-photo">
-                        <PhotoSearch/>
+                    <Navigation/>
+                    <Route path="/" exact component={HomePage}/>
+                    <Route path="/adopt-a-Cat" component={AdoptACat}/>
+                    <Route path="/breeds" component={Breeds}/>
+                    <Route path="/search-photo" component={PhotoSearch}/>
+                    <Route path='/favorites' component={Favorites}/>
+                    <Route path='/login'>
+                        <LoginPage appUser={appUser} setAppUser={setAppUser}/>
                     </Route>
+                    <Footer/>
                 </AppUserContext.Provider>
-                <Route path='/favorites'>
-                    <Favorites appUser={appUser}/>
-                </Route>
-                <Route path='/login'>
-                    <LoginPage appUser={appUser} setAppUser={setAppUser}/>
-                </Route>
-                <Footer/>
             </Router>
     )
 }

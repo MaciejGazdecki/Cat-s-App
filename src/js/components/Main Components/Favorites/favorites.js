@@ -1,5 +1,6 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import axios from "axios";
+import {AppUserContext} from "../../../App/appUserContext";
 
 const axiosInstanceHandleFavourites = axios.create({
     baseURL: 'https://api.thecatapi.com/v1',
@@ -8,11 +9,11 @@ const axiosInstanceHandleFavourites = axios.create({
     }
 });
 
-function Favorites(props) {
+function Favorites() {
     const [favourites, setFavourites] = useState([]);
     const [page,setPage] = useState(1);
     const perPage = 6;
-    const {appUser} = props;
+    const appUser = useContext(AppUserContext);
 
     const downloadFavourites = () => {
         const params = {

@@ -18,7 +18,6 @@ function Gallery(props) {
     const [paramsPage, setParamsPage] = useState(1);
     const perPage = 6;
     const userName = useContext(AppUserContext);
-    console.log(userName);
 
     let params = {
         mime_types: type,
