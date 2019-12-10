@@ -27,7 +27,8 @@ function LoginPage(props) {
 
     useEffect(() => {
         const unregisterAuthObserver = firebase.auth().onAuthStateChanged (
-            (user) => {setLoggedIn(!!user); if (user.displayName !== null) setAppUser(user.displayName)}
+            (user) => {setLoggedIn(!!user);
+            if (user.displayName !== null) setAppUser(user.displayName)}
         );
         return setAppUser('')
     });
