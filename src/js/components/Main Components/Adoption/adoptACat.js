@@ -37,7 +37,7 @@ function AdoptACat() {
     const [state, dispatch] = useReducer(reducer, initialState);
     const [announcements, setAnnouncements] = useState([]);
     const [page, setPage] = useState(1);
-    const perPage = 2;
+    const perPage = 1;
 
     useEffect(() => {
        const fetchData = async () => {
@@ -45,7 +45,7 @@ function AdoptACat() {
        };
        fetchData()
            .then(res => setAnnouncements(Object.values(res.data)))
-           .catch(err => console.log(err))
+           .catch(err => console.log(err));
     });
 
     const onChangeHandler = (e) => {
@@ -60,7 +60,7 @@ function AdoptACat() {
         dispatch({type:"CLEAR"})
     };
     const onClickNextHandler = () => {
-        if (announcements.slice(page*perPage - perPage, page*perPage).length < perPage) {
+        if (announcements.length === page) {
             setPage(prevState => prevState);
         } else {
             setPage(prevState => prevState +1);

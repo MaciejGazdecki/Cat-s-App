@@ -9,28 +9,30 @@ const config = {
 };
 firebase.initializeApp(config);
 
+const uiConfig = {
+    signInFlow: 'popup',
+    signInOptions: [
+        firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+        firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+        firebase.auth.EmailAuthProvider.PROVIDER_ID
+    ],
+    callbacks: {
+        signInSuccessWithAuthResult: () => false
+    }
+};
+
 function LoginPage(props) {
     const {appUser, setAppUser} = props;
     const [isLoggedIn, setLoggedIn] = useState(false);
 
-    const uiConfig = {
-        signInFlow: 'popup',
-        signInOptions: [
-            firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-            firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-            firebase.auth.EmailAuthProvider.PROVIDER_ID
-        ],
-        callbacks: {
-            signInSuccessWithAuthResult: () => false
-        }
-    };
+
 
     useEffect(() => {
         const unregisterAuthObserver = firebase.auth().onAuthStateChanged (
             (user) => {setLoggedIn(!!user);
             if (user.displayName !== null) setAppUser(user.displayName)}
         );
-        return setAppUser('')
+        return setAppUser(''); unregisterAuthObserver()
     });
 
     const userOnPage =
