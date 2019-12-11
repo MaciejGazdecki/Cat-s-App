@@ -3,7 +3,6 @@ import CatLogo from "../../../../../../../images/adoption3.jpg"
 
 function Announcement(props) {
     const {
-        id,
         title,
         content,
         name,
