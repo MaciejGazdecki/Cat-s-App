@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from "prop-types"
 
 function Form(props) {
     const {state, onChangeHandler,submitHandler} = props;
@@ -106,3 +107,9 @@ function Form(props) {
 }
 
 export default Form;
+
+Form.propTypes = {
+    state: PropTypes.object.isRequired,
+    onChangeHandler: PropTypes.func.isRequired,
+    submitHandler: PropTypes.func.isRequired
+};
