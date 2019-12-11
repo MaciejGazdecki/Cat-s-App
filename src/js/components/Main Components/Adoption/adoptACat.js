@@ -1,15 +1,18 @@
-import React, {useState, useEffect,useReducer} from 'react';
+import React, {useState, useEffect,useReducer, useContext} from 'react';
 import axios from 'axios';
 const uniqid = require('uniqid');
 import Form from "./Subcomponents/Form/form";
 import Announcement from "./Subcomponents/Announcement/announcement";
 import Cat from "../../../../../images/contactbg1.png";
+import {AppUserContext} from "../../../App/appUserContext";
 
 const axiosAdoption = axios.create({
    baseURL:'https://cats-app-d2f04.firebaseio.com/'
 });
 
 function AdoptACat() {
+    const appUser = useContext(AppUserContext);
+
     const initialState = {
         title: '',
         name: '',
@@ -37,7 +40,7 @@ function AdoptACat() {
     const [state, dispatch] = useReducer(reducer, initialState);
     const [announcements, setAnnouncements] = useState([]);
     const [page, setPage] = useState(1);
-    const perPage = 2;
+    const perPage = 1;
 
     useEffect(() => {
        const fetchData = async () => {
@@ -45,7 +48,7 @@ function AdoptACat() {
        };
        fetchData()
            .then(res => setAnnouncements(Object.values(res.data)))
-           .catch(err => console.log(err))
+           .catch(err => console.log(err));
     });
 
     const onChangeHandler = (e) => {
@@ -53,14 +56,18 @@ function AdoptACat() {
     };
 
     const submitHandler = async () => {
-        event.preventDefault();
-        await axiosAdoption.post('/adoption.json', {...state, id: uniqid()})
-            .then(res => console.log(res, alert("announcement placed")))
-            .catch(err => console.log(err));
-        dispatch({type:"CLEAR"})
+        if (appUser) {
+            event.preventDefault();
+            await axiosAdoption.post('/adoption.json', {...state, id: uniqid()})
+                .then(res => console.log(res, alert("announcement placed")))
+                .catch(err => console.log(err));
+            dispatch({type:"CLEAR"})
+        } else {
+            alert('You can only add announcement when logged in')
+        }
     };
     const onClickNextHandler = () => {
-        if (announcements.slice(page*perPage - perPage, page*perPage).length < perPage) {
+        if (announcements.length === page) {
             setPage(prevState => prevState);
         } else {
             setPage(prevState => prevState +1);

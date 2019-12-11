@@ -29,13 +29,17 @@ function Favorites() {
 
     useEffect(() => {
         downloadFavourites()
-    },[]);
+    },[favourites]);
 
     const unlikePhoto = async (id) => {
-        await axiosInstanceHandleFavourites.delete(`favourites/${id}`)
-            .then(res => alert('Photo unliked'))
-            .catch(err => console.log(err));
-        downloadFavourites();
+        if (appUser) {
+            await axiosInstanceHandleFavourites.delete(`favourites/${id}`)
+                .then(res => alert('Photo unliked'))
+                .catch(err => console.log(err));
+            downloadFavourites();
+        } else {
+            alert('Please log in first')
+        }
     };
 
     const  onClickNextHandler = () => {
