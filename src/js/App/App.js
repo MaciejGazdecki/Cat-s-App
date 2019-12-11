@@ -30,6 +30,7 @@ function  App () {
                     <Route path='/favorites' component={Favorites}/>
                     <Route path='/login'>
                         <LoginPage appUser={appUser} setAppUser={setAppUser}/>
+                        {/*{nie mogę tego przepchac kontextem nawet z pomoca useMemo.. zawiecha Chrome}*/}
                     </Route>
                     <Footer/>
                 </AppUserContext.Provider>
