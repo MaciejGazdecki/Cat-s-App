@@ -53,7 +53,7 @@ function Navigation() {
                             <li>
                                 <NavLink to='/login'
                                          onClick={() => setNavOpen(!navOpen)}>
-                                { appUser ? `SIGNED AS ${appUser.toUpperCase()}` : 'SIGN IN'}
+                                { appUser ? appUser.toUpperCase() : 'SIGN IN'}
                                 </NavLink>
                             </li>
                         </ul>

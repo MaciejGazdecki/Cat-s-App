@@ -1,15 +1,18 @@
-import React, {useState, useEffect,useReducer} from 'react';
+import React, {useState, useEffect,useReducer, useContext} from 'react';
 import axios from 'axios';
 const uniqid = require('uniqid');
 import Form from "./Subcomponents/Form/form";
 import Announcement from "./Subcomponents/Announcement/announcement";
 import Cat from "../../../../../images/contactbg1.png";
+import {AppUserContext} from "../../../App/appUserContext";
 
 const axiosAdoption = axios.create({
    baseURL:'https://cats-app-d2f04.firebaseio.com/'
 });
 
 function AdoptACat() {
+    const appUser = useContext(AppUserContext);
+
     const initialState = {
         title: '',
         name: '',
@@ -53,11 +56,15 @@ function AdoptACat() {
     };
 
     const submitHandler = async () => {
-        event.preventDefault();
-        await axiosAdoption.post('/adoption.json', {...state, id: uniqid()})
-            .then(res => console.log(res, alert("announcement placed")))
-            .catch(err => console.log(err));
-        dispatch({type:"CLEAR"})
+        if (appUser) {
+            event.preventDefault();
+            await axiosAdoption.post('/adoption.json', {...state, id: uniqid()})
+                .then(res => console.log(res, alert("announcement placed")))
+                .catch(err => console.log(err));
+            dispatch({type:"CLEAR"})
+        } else {
+            alert('You can only add announcement when logged in')
+        }
     };
     const onClickNextHandler = () => {
         if (announcements.length === page) {

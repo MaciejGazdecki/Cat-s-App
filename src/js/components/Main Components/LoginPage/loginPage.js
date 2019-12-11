@@ -1,31 +1,15 @@
 import React, {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import firebase from "firebase";
-import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
+import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
+import {config} from "./firebaseConfig";
+import {uiConfig} from "./firebaseConfig";
 
-const config = {
-    apiKey: 'AIzaSyB3lIjiRCGgT3KNdaRRXOmnTLQvRlYtPX8',
-    authDomain: 'cats-app-d2f04.firebaseapp.com',
-};
 firebase.initializeApp(config);
-
-const uiConfig = {
-    signInFlow: 'popup',
-    signInOptions: [
-        firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-        firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-        firebase.auth.EmailAuthProvider.PROVIDER_ID
-    ],
-    callbacks: {
-        signInSuccessWithAuthResult: () => false
-    }
-};
 
 function LoginPage(props) {
     const {appUser, setAppUser} = props;
     const [isLoggedIn, setLoggedIn] = useState(false);
-
-
 
     useEffect(() => {
         const unregisterAuthObserver = firebase.auth().onAuthStateChanged (
