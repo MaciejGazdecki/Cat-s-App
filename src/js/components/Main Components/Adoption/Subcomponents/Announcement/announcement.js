@@ -1,5 +1,6 @@
 import React from 'react';
-import CatLogo from "../../../../../../../images/adoption3.jpg"
+import CatLogo from "../../../../../../../images/adoption3.jpg";
+import PropTypes from "prop-types"
 
 function Announcement(props) {
     const {
@@ -38,3 +39,15 @@ function Announcement(props) {
 }
 
 export default Announcement;
+
+Announcement.propTypes = {
+    title : PropTypes.string.isRequired,
+    content : PropTypes.string.isRequired,
+    name : PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    zipCode: PropTypes.string.isRequired,
+    city: PropTypes.string.isRequired,
+    gender: PropTypes.string.isRequired,
+    catAge: PropTypes.string.isRequired,
+    catName: PropTypes.string.isRequired,
+};

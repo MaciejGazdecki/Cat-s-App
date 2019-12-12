@@ -44,12 +44,16 @@ function Gallery(props) {
     }, [breedID,category,type]);
 
     const addToFavourites  = async (id) => {
-        await axiosInstanceAddToFavourites.post('/favourites',{
-            image_id: id,
-            sub_id: userName
-        })
-            .then(res => alert('Photo Added to Favorites'))
-            .catch(err => console.log(err));
+        if (userName) {
+            await axiosInstanceAddToFavourites.post('/favourites', {
+                image_id: id,
+                sub_id: userName
+            })
+                .then(res => alert('Photo Added to Favorites'))
+                .catch(err => console.log(err));
+        } else {
+            alert('Please log in first')
+        }
     };
 
     const images =

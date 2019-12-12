@@ -1,18 +1,19 @@
+
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import Form from "./Subcomponents/Form/form";
 import Announcement from "./Subcomponents/Announcement/announcement";
 import Cat from "../../../../../images/contactbg1.png";
+import {AppUserContext} from "../../../App/appUserContext";
 
 const axiosAdoption = axios.create({
    baseURL:'https://cats-app-d2f04.firebaseio.com/'
 });
 
 function AdoptACat() {
-
     const [announcements, setAnnouncements] = useState([]);
     const [page, setPage] = useState(1);
-    const perPage = 2;
+    const perPage = 1;
 
     useEffect(() => {
        const fetchData = async () => {
@@ -20,11 +21,11 @@ function AdoptACat() {
        };
        fetchData()
            .then(res => setAnnouncements(Object.values(res.data)))
-           .catch(err => console.log(err))
+           .catch(err => console.log(err));
     });
 
     const onClickNextHandler = () => {
-        if (announcements.slice(page*perPage - perPage, page*perPage).length < perPage) {
+        if (announcements.length === page) {
             setPage(prevState => prevState);
         } else {
             setPage(prevState => prevState +1);

@@ -2,6 +2,8 @@ import React from 'react';
 import useForm from 'react-hook-form';
 import axios from "axios";
 import uniqid from "uniqid"
+import PropTypes from "prop-types"
+
 
 const axiosAdoption = axios.create({
     baseURL:'https://cats-app-d2f04.firebaseio.com/'
@@ -174,3 +176,9 @@ function Form() {
 }
 
 export default Form;
+
+Form.propTypes = {
+    state: PropTypes.object.isRequired,
+    onChangeHandler: PropTypes.func.isRequired,
+    submitHandler: PropTypes.func.isRequired
+};
