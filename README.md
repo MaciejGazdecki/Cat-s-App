@@ -18,7 +18,6 @@ http://cat-lovers.cba.pl/
 Things that has to be done:
 
 - code RWD for adoption section (the rest of RWD is done);
-- make form validation;
 - fix the charts bug;
 - enable the option to upload photos of cats;
 - enable the option to upload photos to announcement;
