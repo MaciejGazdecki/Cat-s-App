@@ -1,5 +1,5 @@
 import React from 'react';
-import useForm from 'react-hook-form';
+import useForm from 'react-hook-form'
 import axios from "axios";
 import uniqid from "uniqid"
 import PropTypes from "prop-types"
@@ -44,10 +44,10 @@ function Form() {
                             name="name"
                             ref={register({required:true, minLength: 3})}
                         />
-                        {errors.title && errors.title.type === 'required' && (
+                        {errors.name && errors.name.type === 'required' && (
                             <p>This field is required</p>
                         )}
-                        {errors.title && errors.title.type === 'minLength' && (
+                        {errors.name && errors.name.type === 'minLength' && (
                             <p>Minimum length is 3 characters</p>
                         )}
                     </label>
@@ -59,10 +59,10 @@ function Form() {
                             name="email"
                             ref={register({required:true, pattern: /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/})}
                         />
-                        {errors.title && errors.title.type === 'required' && (
+                        {errors.email && errors.email.type === 'required' && (
                             <p>This field is required</p>
                         )}
-                        {errors.title && errors.title.type === 'pattern' && (
+                        {errors.email && errors.email.type === 'pattern' && (
                             <p>Email format incorrect</p>
                         )}
                     </label>
@@ -74,10 +74,10 @@ function Form() {
                             name="catName"
                             ref={register({required:true, minLength: 3})}
                         />
-                        {errors.title && errors.title.type === 'required' && (
+                        {errors.catName && errors.catName.type === 'required' && (
                             <p>This field is required</p>
                         )}
-                        {errors.title && errors.title.type === 'minLength' && (
+                        {errors.catName && errors.catName.type === 'minLength' && (
                             <p>Minimum length is 3 characters</p>
                         )}
                     </label>
@@ -89,13 +89,13 @@ function Form() {
                             name="catAge"
                             ref={register({required:true, minLength: 3, maxLength: 10})}
                         />
-                        {errors.title && errors.title.type === 'required' && (
+                        {errors.catAge && errors.catAge.type === 'required' && (
                             <p>This field is required</p>
                         )}
-                        {errors.title && errors.title.type === 'minLength' && (
+                        {errors.catAge && errors.catAge.type === 'minLength' && (
                             <p>Minimum length is 3 characters</p>
                         )}
-                        {errors.title && errors.title.type === 'maxLength' && (
+                        {errors.catAge && errors.catAge.type === 'maxLength' && (
                             <p>Maximum length is 10 characters</p>
                         )}
                     </label>
@@ -107,13 +107,13 @@ function Form() {
                             name="gender"
                             ref={register({required:true, minLength: 3, maxLength: 10})}
                         />
-                        {errors.title && errors.title.type === 'required' && (
+                        {errors.gender && errors.gender.type === 'required' && (
                             <p>This field is required</p>
                         )}
-                        {errors.title && errors.title.type === 'minLength' && (
+                        {errors.gender && errors.gender.type === 'minLength' && (
                             <p>Minimum length is 3 characters</p>
                         )}
-                        {errors.title && errors.title.type === 'maxLength' && (
+                        {errors.gender && errors.gender.type === 'maxLength' && (
                             <p>Maximum length is 10 characters</p>
                         )}
                     </label>
@@ -127,10 +127,10 @@ function Form() {
                             name="zipCode"
                             ref={register({required:true, pattern: /[0-9]{5}/ || /[0-9]{2}-[0-9]{3}/ })}
                         />
-                        {errors.title && errors.title.type === 'required' && (
+                        {errors.zipCode && errors.zipCode.type === 'required' && (
                             <p>This field is required</p>
                         )}
-                        {errors.title && errors.title.type === 'pattern' && (
+                        {errors.zipCode && errors.zipCode.type === 'pattern' && (
                             <p>Invalid postcode format, please put eg. 12345 or 12-345</p>
                         )}
                     </label>
@@ -142,10 +142,10 @@ function Form() {
                             name="city"
                             ref={register({required:true, minLength: 3})}
                         />
-                        {errors.title && errors.title.type === 'required' && (
+                        {errors.city && errors.city.type === 'required' && (
                             <p>This field is required</p>
                         )}
-                        {errors.title && errors.title.type === 'minLength' && (
+                        {errors.city && errors.city.type === 'minLength' && (
                             <p>Minimum length is 3 characters</p>
                         )}
                     </label>
@@ -159,13 +159,13 @@ function Form() {
                             ref={register({required:true, minLength: 3, maxLength: 300})}
                         >
                         </textarea>
-                        {errors.title && errors.title.type === 'required' && (
+                        {errors.content && errors.content.type === 'required' && (
                             <p>This field is required</p>
                         )}
-                        {errors.title && errors.title.type === 'minLength' && (
+                        {errors.content && errors.content.type === 'minLength' && (
                             <p>Minimum length is 3 characters</p>
                         )}
-                        {errors.title && errors.title.type === 'maxLength' && (
+                        {errors.content && errors.content.type === 'maxLength' && (
                             <p>Maximum length is 300 characters</p>
                         )}
                     </label>
