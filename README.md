@@ -23,4 +23,5 @@ Things that has to be done:
 - enable the option to upload photos of cats to API;and enable this option in API.
 - enable the option to upload photos to announcement and enable this option in firebase;
 - design component when all announcements will be displayed, maybe with filter option;
-- design 404 component
+- design 404 component;
+- fix styles in photo galeries (remove image src and use backgroundImage)
