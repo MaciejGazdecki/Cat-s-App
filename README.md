@@ -17,9 +17,11 @@ http://cat-lovers.cba.pl/
 
 Things that has to be done:
 
-- code RWD for adoption section (the rest of RWD is done);
+- code RWD for adoption section (the rest of RWD is plus minus done with small bugs left);
+- style form validation in AdoptCat component for small devices and desktop screens;
 - fix the charts bug;
-- enable the option to upload photos of cats;
-- enable the option to upload photos to announcement;
+- enable the option to upload photos of cats to API;and enable this option in API.
+- enable the option to upload photos to announcement and enable this option in firebase;
 - design component when all announcements will be displayed, maybe with filter option;
-- design 404 component
+- design 404 component;
+- fix styles in photo galeries (remove image src and use backgroundImage)
