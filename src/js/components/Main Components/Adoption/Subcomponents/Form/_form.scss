@@ -26,9 +26,10 @@ form.announcement {
   @include all-big-screens {
     width: 50%;
     flex-direction: row;
-    height: 600px;
+    height: 750px;
     padding: 20px;
-    div{
+    div.formCompartment {
+      height: 100%;
       &:nth-child(1){
         margin-right: 40px;
       }
@@ -37,19 +38,30 @@ form.announcement {
   input[type=text], input[type=email], textarea {
     width: 100%;
     padding: 12px 20px;
-    margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
-    resize: none;
+  }
+  input[type=text], input[type=email] {
+    height: 60px;
   }
 
   label {
     font-size: 1.2rem;
-    text-align: center;
+    margin: 7px 0;
+    display: inline-block;
+    height: 105px;
+  }
+  label.textArea {
+    height: 369px;
+    textarea {
+      resize: none;
+      height: 299px;
+    }
   }
   input[type=submit] {
     width: 100%;
+    height: 60px;
     background-color: $button-colors;
     color: black;
     padding: 14px 20px;
@@ -66,4 +78,7 @@ form.announcement {
   input[placeholder], textarea[placeholder] {
     font-size: 1.2rem;
   }
+}
+.errors {
+  font-size: 14px;
 }
