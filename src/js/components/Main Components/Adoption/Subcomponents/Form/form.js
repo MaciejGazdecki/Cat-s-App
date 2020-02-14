@@ -20,7 +20,7 @@ function Form() {
     };
     return (
             <form  className='announcement' onSubmit={handleSubmit(onSubmit)}>
-                <div>
+                <div className="formCompartment">
                     <label>
                         Title:
                         <input
@@ -30,10 +30,10 @@ function Form() {
                             ref={register({required:true, maxLength: 50})}
                         />
                         {errors.title && errors.title.type === 'required' && (
-                            <p>This field is required</p>
+                            <p className="errors">This field is required</p>
                         )}
                         {errors.title && errors.title.type === 'maxLength' && (
-                            <p>You can only use 50 characters</p>
+                            <p className="errors">You can only use 50 characters</p>
                         )}
                     </label>
                     <label>
@@ -45,10 +45,10 @@ function Form() {
                             ref={register({required:true, minLength: 3})}
                         />
                         {errors.name && errors.name.type === 'required' && (
-                            <p>This field is required</p>
+                            <p className="errors">This field is required</p>
                         )}
                         {errors.name && errors.name.type === 'minLength' && (
-                            <p>Minimum length is 3 characters</p>
+                            <p className="errors">Minimum length is 3 characters</p>
                         )}
                     </label>
                     <label>
@@ -60,10 +60,10 @@ function Form() {
                             ref={register({required:true, pattern: /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/})}
                         />
                         {errors.email && errors.email.type === 'required' && (
-                            <p>This field is required</p>
+                            <p className="errors">This field is required</p>
                         )}
                         {errors.email && errors.email.type === 'pattern' && (
-                            <p>Email format incorrect</p>
+                            <p className="errors">Email format incorrect</p>
                         )}
                     </label>
                     <label>
@@ -75,10 +75,10 @@ function Form() {
                             ref={register({required:true, minLength: 3})}
                         />
                         {errors.catName && errors.catName.type === 'required' && (
-                            <p>This field is required</p>
+                            <p className="errors">This field is required</p>
                         )}
                         {errors.catName && errors.catName.type === 'minLength' && (
-                            <p>Minimum length is 3 characters</p>
+                            <p className="errors">Minimum length is 3 characters</p>
                         )}
                     </label>
                     <label>
@@ -90,13 +90,13 @@ function Form() {
                             ref={register({required:true, minLength: 3, maxLength: 10})}
                         />
                         {errors.catAge && errors.catAge.type === 'required' && (
-                            <p>This field is required</p>
+                            <p className="errors">This field is required</p>
                         )}
                         {errors.catAge && errors.catAge.type === 'minLength' && (
-                            <p>Minimum length is 3 characters</p>
+                            <p className="errors">Minimum length is 3 characters</p>
                         )}
                         {errors.catAge && errors.catAge.type === 'maxLength' && (
-                            <p>Maximum length is 10 characters</p>
+                            <p className="errors">Maximum length is 10 characters</p>
                         )}
                     </label>
                     <label>
@@ -108,30 +108,30 @@ function Form() {
                             ref={register({required:true, minLength: 3, maxLength: 10})}
                         />
                         {errors.gender && errors.gender.type === 'required' && (
-                            <p>This field is required</p>
+                            <p className="errors">This field is required</p>
                         )}
                         {errors.gender && errors.gender.type === 'minLength' && (
-                            <p>Minimum length is 3 characters</p>
+                            <p className="errors">Minimum length is 3 characters</p>
                         )}
                         {errors.gender && errors.gender.type === 'maxLength' && (
-                            <p>Maximum length is 10 characters</p>
+                            <p className="errors">Maximum length is 10 characters</p>
                         )}
                     </label>
                 </div>
-                <div>
+                <div className="formCompartment">
                     <label>
                         Your Zip Code
                         <input
                             type="text"
                             placeholder='Please put your Zip Code'
                             name="zipCode"
-                            ref={register({required:true, pattern: /[0-9]{5}/ || /[0-9]{2}-[0-9]{3}/ })}
+                            ref={register({required:true, pattern: /[0-9]{5}/ })}
                         />
                         {errors.zipCode && errors.zipCode.type === 'required' && (
-                            <p>This field is required</p>
+                            <p className="errors">This field is required</p>
                         )}
                         {errors.zipCode && errors.zipCode.type === 'pattern' && (
-                            <p>Invalid postcode format, please put eg. 12345 or 12-345</p>
+                            <p className="errors">Invalid postcode format. 5 digits only</p>
                         )}
                     </label>
                     <label>
@@ -143,30 +143,30 @@ function Form() {
                             ref={register({required:true, minLength: 3})}
                         />
                         {errors.city && errors.city.type === 'required' && (
-                            <p>This field is required</p>
+                            <p className="errors">This field is required</p>
                         )}
                         {errors.city && errors.city.type === 'minLength' && (
-                            <p>Minimum length is 3 characters</p>
+                            <p className="errors">Minimum length is 3 characters</p>
                         )}
                     </label>
-                    <label>
+                    <label className="textArea">
                         Your message
                         <textarea
                             name="content"
                             id="announcement"
-                            cols="80" rows="9"
+                            cols="80" rows="11"
                             placeholder="Please put your message here"
                             ref={register({required:true, minLength: 3, maxLength: 300})}
                         >
                         </textarea>
                         {errors.content && errors.content.type === 'required' && (
-                            <p>This field is required</p>
+                            <p className="errors">This field is required</p>
                         )}
                         {errors.content && errors.content.type === 'minLength' && (
-                            <p>Minimum length is 3 characters</p>
+                            <p className="errors">Minimum length is 3 characters</p>
                         )}
                         {errors.content && errors.content.type === 'maxLength' && (
-                            <p>Maximum length is 300 characters</p>
+                            <p className="errors">Maximum length is 300 characters</p>
                         )}
                     </label>
                     <input className="submitBtn" type="submit" value="Place announcement"/>
