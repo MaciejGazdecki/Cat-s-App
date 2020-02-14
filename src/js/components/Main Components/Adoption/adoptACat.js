@@ -1,43 +1,14 @@
-import React, {useState, useEffect,useReducer, useContext} from 'react';
+import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-const uniqid = require('uniqid');
 import Form from "./Subcomponents/Form/form";
 import Announcement from "./Subcomponents/Announcement/announcement";
 import Cat from "../../../../../images/contactbg1.png";
-import {AppUserContext} from "../../../App/appUserContext";
 
 const axiosAdoption = axios.create({
    baseURL:'https://cats-app-d2f04.firebaseio.com/'
 });
 
 function AdoptACat() {
-    const appUser = useContext(AppUserContext);
-
-    const initialState = {
-        title: '',
-        name: '',
-        email:'',
-        city:'',
-        zipCode:'',
-        content:'',
-        gender:'',
-        catAge:'',
-        catName:''
-    };
-
-    const reducer = (state, action) => {
-        if (action.type === "CLEAR") {
-            return initialState
-        }
-        if (action.type === "SET_VALUE") {
-            return {
-                ...state,
-                [action.name]: action.value
-            }
-        }
-    };
-
-    const [state, dispatch] = useReducer(reducer, initialState);
     const [announcements, setAnnouncements] = useState([]);
     const [page, setPage] = useState(1);
     const perPage = 1;
@@ -51,21 +22,6 @@ function AdoptACat() {
            .catch(err => console.log(err));
     });
 
-    const onChangeHandler = (e) => {
-        dispatch({type:"SET_VALUE", name: e.target.name, value: e.target.value});
-    };
-
-    const submitHandler = async () => {
-        if (appUser) {
-            event.preventDefault();
-            await axiosAdoption.post('/adoption.json', {...state, id: uniqid()})
-                .then(res => console.log(res, alert("announcement placed")))
-                .catch(err => console.log(err));
-            dispatch({type:"CLEAR"})
-        } else {
-            alert('You can only add announcement when logged in')
-        }
-    };
     const onClickNextHandler = () => {
         if (announcements.length === page) {
             setPage(prevState => prevState);
@@ -113,11 +69,7 @@ function AdoptACat() {
                 <div className="catForm">
                     <img  src={Cat} alt=""/>
                 </div>
-                <Form
-                    state={state}
-                    submitHandler={submitHandler}
-                    onChangeHandler={onChangeHandler}
-                />
+                <Form/>
             </section>
         </section>
     )

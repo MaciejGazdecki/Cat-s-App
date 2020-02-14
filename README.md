@@ -18,7 +18,7 @@ http://cat-lovers.cba.pl/
 Things that has to be done:
 
 - code RWD for adoption section (the rest of RWD is plus minus done with small bugs left);
-- style form validation in AdoptCat component;
+- style form validation in AdoptCat component for small devices and desktop screens;
 - fix the charts bug;
 - enable the option to upload photos of cats to API;and enable this option in API.
 - enable the option to upload photos to announcement and enable this option in firebase;
